@@ -1,0 +1,5 @@
+# Microchip MCP1700T-3302E/TT SOT-23 display evidence
+
+Reviewed 2026-11-20. The catalogue identifier names MCP1700T-3302E/TT, but the source record omits the manufacturer and full orderable MPN. Microchip's [MCP1700 datasheet](https://www.microchip.com/content/dam/mchp/documents/APID/ProductDocuments/DataSheets/MCP1700-Data-Sheet-20001826F.pdf) identifies `CS` as the extended-temperature 3.3 V SOT-23 device code. The display uses `CS` as a partial marking; variable traceability characters are omitted, and typeface, position, pin indicator and orientation are illustrative. Microchip is inferred from the exact identifier and datasheet, not silently filled into the source record.
+
+The source lists 2.9 × 1.6 × 1.1 mm and a SOT-23 footprint. Microchip drawing C04-104B gives 2.9 mm nominal length, 1.30 mm nominal body width, 0.95 mm pitch and 1.12 mm maximum overall height. The generic KiCad model has 2.5 × 3.0 × 1.2 mm overall bounds and is scaled to 1.1 mm height for display. It is not a verified mechanical model or footprint.

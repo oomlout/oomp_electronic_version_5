@@ -1,0 +1,5 @@
+# MY1690X-16S SOP16 display evidence
+
+The [MY1690X-16S manual mirrored by SparkFun](https://docs.sparkfun.com/SparkFun_Audio_Player_Breakout_MY1690X-16S/assets/component_documentation/MY1690X%E2%80%9116S%20MP3%20Decoder%20IC%20User%20Manual.pdf) attributes the document to Shenzhen Maiyou Technology and identifies MY1690X-16S in SOP16, body 9.70–10.30 × 3.75–4.15 mm, overall height 1.30–1.70 mm, and 1.27 mm pitch. The catalogue ID says MY Semi and MY1690X-16S but manufacturer and MPN fields are absent. Represented Shenzhen Maiyou and part identity are inferred from the ID and matching document; the relation between MY Semi and the document author has not been independently established.
+
+Exact top marking is unconfirmed. `MY1690X` is an illustrative family identifier; suffix, logo and variable production details are omitted. Typeface, placement and orientation are illustrative. Catalogue specifies 10.0 × 4.0 × 1.75 mm, 0.05 mm above the manual maximum. Generic KiCad SOIC16 model is vertically scaled from 1.75 to 1.65 mm to approximate the manual package. It is not a verified mechanical model or PCB footprint.

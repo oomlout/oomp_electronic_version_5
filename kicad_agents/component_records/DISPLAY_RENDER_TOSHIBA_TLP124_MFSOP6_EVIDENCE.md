@@ -1,0 +1,5 @@
+# Toshiba TLP124(BV-TPL,F) MFSOP6 display evidence
+
+Toshiba's [photocoupler catalogue](https://www.mouser.com/datasheet/2/408/toshiba%20america%20electronic%20components%2C%20inc._bce003-1209342.pdf) identifies TLP124 as a four-lead MFSOP6. Toshiba's [package catalogue](https://toshiba.semicon-storage.com/info/TLP3127_catalog_en_20200401_ALQ00217.pdf?did=61170&prodName=TLP3127) gives nominal body 4.4 × 3.6 mm, 2.5 mm height, 7.0 mm lead span and 2.54 mm pitch. [DigiKey](https://www.digikey.at/en/products/detail/toshiba-semiconductor-and-storage/TLP124-BV-TPL-F/9699364) lists the exact orderable as four-lead MFSOP6. TLP124 is an illustrative family identifier; actual package marking, BV rank marking, logo, typography and variable codes are not verified and are omitted.
+
+The source gives 10 × 5 mm with no height, footprint or dimension reference. The procedural display model follows nominal body and span; lead profile, chamfers and pin-one dot are approximate. It is not a verified mechanical model or footprint.

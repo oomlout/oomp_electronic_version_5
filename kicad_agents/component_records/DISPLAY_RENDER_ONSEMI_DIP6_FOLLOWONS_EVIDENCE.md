@@ -1,0 +1,5 @@
+# onsemi DIP-6 optocoupler display evidence
+
+Reviewed 2026-11-20. The [4N37M family datasheet](https://www.onsemi.com/pdf/datasheet/4n37m-d.pdf) identifies 4N35M as a six-pin DIP, but its marking diagram depicts 4N25. The [MOC3023M family datasheet](https://www.onsemi.com/pdf/datasheet/moc3023m-d.pdf) covers MOC3021M and MOC3023M and applies its DIP orderable system across the family; its marking illustration depicts MOC3010. The displayed `4N35`, `MOC3021` and `MOC3023` are illustrative device identifiers; exact physical top markings for these orderables have not been independently confirmed. Manufacturer logo and date/lot codes are omitted, and font, position and orientation are illustrative.
+
+Onsemi identifies case 646BX as a 6-pin DIP, nominal 8.51 × 6.35 mm body and 2.54 mm pitch. The catalogue lists 10 × 5 mm without width reference, height or footprint. The repository's procedural DIP-6 model uses nominal body dimensions and pitch; lead geometry, body height and pin-one dot are illustrative. It is not a verified mechanical model or footprint.

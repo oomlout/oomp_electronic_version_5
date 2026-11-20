@@ -1,0 +1,5 @@
+# TI SN74CBTD3384DBR SSOP-24 display evidence
+
+Reviewed 2026-11-20. [TI's SN74CBTD3384 datasheet](https://www.ti.com/lit/ds/symlink/sn74cbtd3384.pdf) lists exact SN74CBTD3384DBR as a 24-pin DB SSOP with `CC384` part marking. TI's [package index](https://www.ti.com/packaging/docs/searchtipackages.tsp?packageName=SO) lists DB 24 with nominal 8.2 × 5.3 mm body, 0.65 mm pitch and 1.95 mm height. Typeface, marking position and orientation and omitted logo and lot/date information are illustrative.
+
+The catalogue lists 10 × 5 mm with no width reference, height or footprint; its dimensions differ from the manufacturer's nominal body. This discrepancy must remain explicit. KiCad `SSOP-24_5.3x8.2mm_P0.65mm.step` has SHA-256 `77dd0a1fc7e70e9eda1bfde9dde937dc6e391803cff9978790523c850c85a21d` and measured overall bounds 7.8 × 8.2 × 2.1 mm. The display approximation scales its height to TI's 1.95 mm nominal package height. A generic display model is not a verified mechanical model or PCB footprint.

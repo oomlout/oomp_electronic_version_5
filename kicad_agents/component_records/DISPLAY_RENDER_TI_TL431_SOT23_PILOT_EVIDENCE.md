@@ -1,0 +1,3 @@
+# TI TL431BCDBZR SOT-23 display evidence
+
+Reviewed 2026-11-19. [TI order addendum](https://www.ti.com/lit/ds/symlink/tl431.pdf) lists TL431BCDBZR as three-pin SOT-23 DBZ and four marking alternatives: T3G3, T3GG, T3GS, T3GU. This illustrative render depicts T3G3; the other three remain valid. [TI DBZ0003A outline](https://www.ti.com/lit/ml/mpds108g/mpds108g.pdf) specifies 2.80–3.04 mm body length, 1.20–1.40 mm body width, 2.10–2.64 mm lead span and 1.12 mm maximum height. KiCad SOT-23 model measures 2.5 × 3.0 × 1.2 mm overall and is scaled vertically to 1.12 mm as an approximation. Catalogue 10 × 5 mm source dimensions conflict and omit height. Not a verified mechanical model; typeface, orientation, placement and omitted date/lot marks are illustrative.

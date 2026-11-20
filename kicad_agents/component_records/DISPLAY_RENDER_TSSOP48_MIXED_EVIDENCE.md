@@ -1,0 +1,11 @@
+# Nexperia and onsemi TSSOP-48 batch evidence
+
+Reviewed 2026-11-19. Each manufacturer link identifies the exact orderable, TSSOP-48 package and marking. [Nexperia SOT362-1](https://assets.nexperia.com/documents/package-information/SOT362-1.pdf) lists 12.4–12.6 × 6.0–6.2 mm body, 0.5 mm pitch and 1.2 mm maximum seated height. The onsemi drawing case 948BQ lists 12.5 × 6.1 mm body, 0.5 mm pitch and 1.2 mm maximum seated height. Each catalogue source lists 10 × 5 mm without height, width reference or footprint, differing from the drawing. Generic KiCad model is 8.1 × 12.5 × 1.0 mm including leads, illustrative and not mechanically verified. Typeface, placement and omitted lot/logo/date marks are illustrative. Do not stage until independent pilot and shared-pass comparison are accepted.
+
+| Part ID | Manufacturer | Orderable | Marking | Source |
+| --- | --- | --- | --- | --- |
+| `electronic_ic_logic_16_bit_bus_buffer_tri_state_tssop_48_nexperia_74lvc16244adgg_118` | Nexperia | 74LVC16244ADGG,118 | `LVC16244A` | [manufacturer source](https://www.nexperia.com/products/analog-logic-ics/logic/buffers-inverters-transceivers/buffers/serie/74lvc16244a-74lvch16244a) |
+| `electronic_ic_logic_16_bit_bus_transceiver_tri_state_tssop_48_nexperia_74lvc162245adgg_11` | Nexperia | 74LVC162245ADGG:11 | `LVC162245A` | [manufacturer source](https://www.nexperia.com/products/analog-logic-ics/logic/buffers-inverters-transceivers/transceivers/serie/74lvc162245a-74lvch162245a) |
+| `electronic_ic_logic_16_bit_d_type_flip_flop_tri_state_tssop_48_nexperia_74lvc16374adgg_118` | Nexperia | 74LVC16374ADGG,118 | `LVC16374A` | [manufacturer source](https://www.nexperia.com/products/analog-logic-ics/logic/flip-flops-latches-registers-counters-dividers/d-type-flip-flops/serie/74lvc16374a-74lvch16374a) |
+| `electronic_ic_logic_16_bit_bus_transceiver_tri_state_tssop_48_nexperia_74alvc164245dgg_11` | Nexperia | 74ALVC164245DGG:11 | `ALVC164245` | [manufacturer source](https://www.nexperia.com/products/analog-logic-ics/voltage-translators-level-shifters/serie/74alvc164245) |
+| `electronic_ic_logic_16_bit_bus_buffer_tri_state_tssop_48_onsemi_74lcx16244mtdx` | onsemi | 74LCX16244MTDX | `LCX16244G` | [manufacturer source](https://www.onsemi.com/download/data-sheet/pdf/74lcx16244-d.pdf) |

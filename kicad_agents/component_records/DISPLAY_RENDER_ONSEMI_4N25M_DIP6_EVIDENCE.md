@@ -1,0 +1,5 @@
+# onsemi 4N25M DIP-6 display evidence
+
+Reviewed 2026-11-20. [onsemi's 4N37M family datasheet](https://www.onsemi.com/pdf/datasheet/4n37m-d.pdf) identifies exact 4N25M as a six-pin DIP and shows `4N25` as its example device marking. The V suffix on the diagram applies only to the separately ordered IEC option and is omitted here. The [onsemi package index](https://www.onsemi.com/download/reference-manuals/pdf/brd8011-d.pdf) identifies case 646BX as 8.51 × 6.35 mm with 2.54 mm pitch.
+
+The catalogue source lists 10 × 5 mm without width reference, height or footprint. The installed generic KiCad DIP-6 model is only 7.05 mm long overall, shorter than the manufacturer's 8.51 mm body. `kicad_agents/display_model_onsemi_dip6.py` builds a display-only 8.51 × 6.35 mm nominal body with 2.54 mm lead pitch. Body height, lead geometry, dot, marking typeface, placement and orientation are illustrative; manufacturer logo and variable date/lot marks are omitted. This is not a verified mechanical model or PCB footprint.

@@ -5,7 +5,13 @@
 IC Converter Load Cell Amplifier SOP_16 is an OOMP electronic ic definition. It uses the sop 16 package or form factor. Its nominal drawing size is 9.9 &#x00D7; 3.9 mm.
 
 
-![IC Converter Load Cell Amplifier SOP_16 pinout](data/working_svg_square_pins.svg)
+![IC Converter Load Cell Amplifier SOP_16 studio render](data/display_render/render.png)
+
+Illustrative KiCad SOIC-16 model scaled from 1.75 mm to 1.50 mm height, within manufacturer 1.2&#x2013;1.6 mm thickness range. Catalogue lists 9.9 x 3.9 mm without height or footprint; manufacturer and MPN are absent and AVIA HX711 identity is inferred from the ID. Not a verified mechanical model or footprint. HX711 is an illustrative family identifier; exact physical marking is not confirmed. Typeface, orientation, placement and variable lot/date details are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_SO.3dshapes/SOIC-16_3.9x9.9mm_P1.27mm.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -70,6 +76,7 @@ IC Converter Load Cell Amplifier SOP_16 is an OOMP electronic ic definition. It 
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -91,6 +98,7 @@ IC Converter Load Cell Amplifier SOP_16 is an OOMP electronic ic definition. It 
 | **Hand-solder footprint guide** | — | [MD](data/kicad/hand_solder/README.md) |
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |

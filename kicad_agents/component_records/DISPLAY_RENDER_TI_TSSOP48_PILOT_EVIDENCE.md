@@ -1,0 +1,3 @@
+# TI SN74ALVC164245DGGR TSSOP-48 display evidence
+
+Reviewed 2026-11-19. [TI ordering addendum](https://www.ti.com/lit/ds/symlink/sn74alvc164245.pdf) identifies exact orderable SN74ALVC164245DGGR as 48-pin TSSOP DGG, marking ALVC164245. [TI DGG0048A drawing](https://www.ti.com/jp/lit/ml/mpds583/mpds583.pdf) specifies 12.4–12.6 mm body length, 6.0–6.2 mm body width, 0.5 mm pitch and 1.2 mm maximum height. Catalogue records 12.5 × 6.2 × 1.1 mm. KiCad model total bounds are 8.1 × 12.5 × 1.0 mm, and is illustrative rather than a verified mechanical model. Typeface, orientation, placement, and omitted logo/lot/date details are illustrative.

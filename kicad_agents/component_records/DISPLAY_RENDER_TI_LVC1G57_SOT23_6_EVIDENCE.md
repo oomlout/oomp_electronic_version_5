@@ -1,0 +1,5 @@
+# TI SN74LVC1G57DBVR SOT-23-6 display evidence
+
+Reviewed 2026-11-20. [TI's SN74LVC1G57 datasheet](https://www.ti.com/lit/ds/symlink/sn74lvc1g57.pdf) identifies the exact SN74LVC1G57DBVR orderable as six-pin DBV SOT-23 and lists two permitted package markings, `CA7O` and `CA7R`. The `CA7R` version is a valid illustrative choice, not a claim that every production lot bears it. Drawing DBV0006A specifies a 2.75–3.05 × 1.45–1.75 mm body, 0.95 mm pitch and 1.45 mm maximum height. Typeface, logo, orientation, placement and variable lot/date information remain illustrative.
+
+The source record specifies SN74LVC1G57DBVR and 2.9 × 1.6 mm dimensions but does not name a manufacturer, footprint or overall height. The TI manufacturer is inferred from the precise orderable part number and verified against TI's ordering information; no source data is rewritten. KiCad's generic SOT-23-6 STEP has SHA-256 `c9fe686b4d1b56927a41fa84a9bc1efb61d8a45a123a3db43bcaa05c2891d635` and measured bounds 2.8 × 2.9 × 1.55 mm. Its height is scaled to the TI drawing's 1.45 mm maximum for display. It is an approximation, not a verified mechanical model or footprint.

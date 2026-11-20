@@ -34,6 +34,18 @@ dimensions_mm:
   length: 7.8
   width: 4.4
 directory: parts/electronic_ic_logic_16_channel_analog_multiplexer_tssop_24_nexperia_74hct4067pw118
+display_render:
+  description: Illustrative KiCad TSSOP-24 model is 0.97 mm high, below Nexperia SOT355-1
+    1.2 mm maximum. Catalogue omits manufacturer field, height and footprint; this
+    is not a verified PCB footprint. Nexperia lists HCT4067 as the package marking.
+    Typeface, orientation, placement and variable lot/date details are illustrative.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: HCT4067
+  model_credit: 2025 KiCAD
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_SO.3dshapes/TSSOP-24_4.4x7.8mm_P0.65mm.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C547734
@@ -203,6 +215,19 @@ oomlout_ai_roboclick_4:
         length: 7.8
         width: 4.4
       directory: parts\electronic_ic_logic_16_channel_analog_multiplexer_tssop_24_nexperia_74hct4067pw118
+      display_render:
+        description: Illustrative KiCad TSSOP-24 model is 0.97 mm high, below Nexperia
+          SOT355-1 1.2 mm maximum. Catalogue omits manufacturer field, height and
+          footprint; this is not a verified PCB footprint. Nexperia lists HCT4067
+          as the package marking. Typeface, orientation, placement and variable lot/date
+          details are illustrative.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: HCT4067
+        model_credit: 2025 KiCAD
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_SO.3dshapes/TSSOP-24_4.4x7.8mm_P0.65mm.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C547734
@@ -840,8 +865,8 @@ oomlout_ai_roboclick_5:
 oomlout_ai_roboclick_6:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

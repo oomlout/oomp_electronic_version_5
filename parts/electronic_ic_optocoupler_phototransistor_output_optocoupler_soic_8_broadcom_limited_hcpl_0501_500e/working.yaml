@@ -34,6 +34,20 @@ dimensions_mm:
   length: 4.9
   width: 3.9
 directory: parts/electronic_ic_optocoupler_phototransistor_output_optocoupler_soic_8_broadcom_limited_hcpl_0501_500e
+display_render:
+  description: Illustrative procedural SO-8 optocoupler model uses 5.080 x 3.937 mm
+    body, 3.175 mm nominal height and 1.27 mm pitch from Broadcom. Catalogue lists
+    4.9 x 3.9 mm and omits height. Lead profile, chamfers and pin-one dot are approximate;
+    not a verified mechanical model or footprint. Broadcom specifies the last three
+    type digits on its package drawing; 501 represents HCPL-0501. Typeface, orientation,
+    placement and variable lot/date details are illustrative.
+  image: data/display_render/render.png
+  license: Project source; procedural display geometry
+  marking: '501'
+  model_credit: Procedural model generated in this repository
+  model_source: https://github.com/oomlout/oomp_electronic_version_5/blob/main/kicad_agents/display_model_broadcom_so8_optocoupler.py
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C6673
@@ -253,6 +267,21 @@ oomlout_ai_roboclick_4:
         length: 4.9
         width: 3.9
       directory: parts\electronic_ic_optocoupler_phototransistor_output_optocoupler_soic_8_broadcom_limited_hcpl_0501_500e
+      display_render:
+        description: Illustrative procedural SO-8 optocoupler model uses 5.080 x 3.937
+          mm body, 3.175 mm nominal height and 1.27 mm pitch from Broadcom. Catalogue
+          lists 4.9 x 3.9 mm and omits height. Lead profile, chamfers and pin-one
+          dot are approximate; not a verified mechanical model or footprint. Broadcom
+          specifies the last three type digits on its package drawing; 501 represents
+          HCPL-0501. Typeface, orientation, placement and variable lot/date details
+          are illustrative.
+        image: data/display_render/render.png
+        license: Project source; procedural display geometry
+        marking: '501'
+        model_credit: Procedural model generated in this repository
+        model_source: https://github.com/oomlout/oomp_electronic_version_5/blob/main/kicad_agents/display_model_broadcom_so8_optocoupler.py
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C6673
@@ -771,8 +800,8 @@ oomlout_ai_roboclick_5:
 oomlout_ai_roboclick_6:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

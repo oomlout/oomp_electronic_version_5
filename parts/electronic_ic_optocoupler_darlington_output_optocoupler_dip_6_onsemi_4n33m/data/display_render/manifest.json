@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "part_id": "electronic_ic_optocoupler_darlington_output_optocoupler_dip_6_onsemi_4n33m",
+  "purpose": "display_only",
+  "input_fingerprint": "000c426cf2cd67d719d72e79e2523c29029301a9d6e2567102400d4a841d7fb9",
+  "recipe": {
+    "schema_version": 1,
+    "family": "integrated_circuit",
+    "package": "onsemi_646bx_dip6_2.54mm",
+    "model": {
+      "relative_path": "kicad_agents/display_model_onsemi_dip6.py",
+      "source_url": "https://github.com/oomlout/oomp_electronic_version_5/blob/main/kicad_agents/display_model_onsemi_dip6.py",
+      "copyright": "Procedural model generated in this repository",
+      "license": "Project source; procedural display geometry",
+      "expected_bounds_mm": [
+        8.1,
+        8.51,
+        6.802
+      ],
+      "dimension_tolerance_mm": 0.015,
+      "sha256": "412213cc41d0ea41cf2b2a05df688e4b03421bd94cd66971da61eea6f0456b86",
+      "required_roles": [
+        "coating",
+        "termination",
+        "pin_indicator"
+      ]
+    },
+    "represented_manufacturer": "onsemi",
+    "represented_mpn": "4N33M",
+    "marking": {
+      "policy": "illustrative_literal",
+      "text": "4N33",
+      "font_file": "arialbd.ttf",
+      "rotation_degrees": 90,
+      "maximum_width_mm": 4.0,
+      "maximum_height_mm": 0.8,
+      "evidence": {
+        "file": "kicad_agents/component_records/DISPLAY_RENDER_ONSEMI_4N33_DIP6_EVIDENCE.md",
+        "sha256": "8c60b1ab33fe767bc8a4d0806e3c442d5d357e1390fa39dbbb4c4a8313c0aa59",
+        "document": "onsemi 4N33 marking and package review",
+        "source_record": "parts_source/electronic_ic_optocoupler_darlington_output_optocoupler_dip_6_onsemi_4n33m/working.yaml"
+      },
+      "appearance_status": "4N33 is an illustrative device identifier; the exact physical top marking is not confirmed by the manufacturer example. Typeface, orientation, placement and variable lot/date details are illustrative."
+    },
+    "appearance_status": "Illustrative procedural DIP-6 model with 2.54 mm pitch and 8.51 x 6.35 mm nominal body from onsemi. Catalogue lists 10 x 5 mm without width reference, height or footprint. Body height, lead profile and pin-one dot are approximate; not a verified mechanical model or footprint.",
+    "output": {
+      "pixels": 1400,
+      "samples": 256,
+      "thumbnail_pixels": 512
+    }
+  },
+  "recipe_sha256": "1e52d395bf887eff73050176b3c705b8a42f88ebdc4ce0751a8f5388253728fa",
+  "studio": {
+    "schema_version": 1,
+    "reference": "https://github.com/oomlout/oomp_hardware_screw_version_5/blob/main/screw_model_render.py",
+    "renderer": "Mitsuba 3 path tracer",
+    "note": "Electronics adaptation of the screw product studio: three softboxes, orthographic framing, neutral floor and filmic highlights. Does not claim identical Blender AgX colour management.",
+    "camera_direction": [
+      1.3,
+      -2.4,
+      2.4
+    ],
+    "framing_margin": 0.16,
+    "world_radiance": [
+      0.24,
+      0.26,
+      0.29
+    ],
+    "floor_reflectance": [
+      0.72,
+      0.73,
+      0.75
+    ],
+    "exposure": 1.25,
+    "denoise_strength": 3.0,
+    "seed": 7991,
+    "lights": [
+      {
+        "name": "key",
+        "position": [
+          -1.4,
+          -1.8,
+          2.5
+        ],
+        "half_size": [
+          1.0,
+          0.7
+        ],
+        "radiance": [
+          4.0,
+          3.85,
+          3.6
+        ]
+      },
+      {
+        "name": "fill",
+        "position": [
+          2.0,
+          -0.5,
+          1.5
+        ],
+        "half_size": [
+          0.6,
+          0.9
+        ],
+        "radiance": [
+          1.8,
+          2.0,
+          2.3
+        ]
+      },
+      {
+        "name": "rim",
+        "position": [
+          0.3,
+          1.8,
+          2.0
+        ],
+        "half_size": [
+          0.9,
+          0.3
+        ],
+        "radiance": [
+          4.5,
+          4.7,
+          5.0
+        ]
+      }
+    ]
+  },
+  "runtime": {
+    "cadquery": "2.8.0",
+    "cadquery-ocp": "7.9.3.1.1",
+    "mitsuba": "3.7.1",
+    "drjit": "1.2.0",
+    "numpy": "2.5.5",
+    "Pillow": "13.0.0",
+    "opencv-python-headless": "5.0.0.93"
+  },
+  "model": {
+    "relative_path": "kicad_agents/display_model_onsemi_dip6.py",
+    "sha256": "412213cc41d0ea41cf2b2a05df688e4b03421bd94cd66971da61eea6f0456b86",
+    "actual_bounds_mm": [
+      8.1,
+      8.51,
+      6.802
+    ],
+    "source_face_colours": {
+      "procedural": 1
+    },
+    "triangle_count": 816,
+    "source_header": "\"\"\"Illustrative onsemi 646BX DIP-6 mesh; no CAD files are exported.\n\nThe 8.51 x 6.35 mm body and 2.54 mm pitch follow onsemi's package index.\nPin length, lead shape, body chamfers and the pin-one dot are approximations.\n\"\"\"\nfrom collections import defaultdict\n\n\ndef build():\n    import cadquery as cq\n    import numpy as np\n\n    groups = defaultdict(lambda: {'vertices': [], 'normals': [], 'triangles': []})\n\n    def add(role, solid):\n        group = groups[role]\n        for face in solid.Faces():\n            vertices, triangles = face.tessellate(0.003, 0.08)\n            offset = len(group['vertices'])\n            group['vertices'].extend(v.toTuple() for v in vertices)\n            group['normals'].extend(face.normalAt(v).toTuple() for v in vertices)\n            group['triangles'].extend(tuple(offset + i for i in tri) for tri in triangles)\n\n    body = cq.Workplane('XY').box(6.35, 8.51, 3.5).edges().chamfer(0.16).translate((0, 0, 5.05)).val()\n    add('coating', body)\n    for side in (-1, 1):\n        profile = [(side*x, z) for x, z in [\n            (3.05, 4.55), (3.82, 4.55), (4.05, 4.20), (4.05, 0.0),\n            (3.75, 0.0), (3.75, 4.10), (3.05, 4.25),\n        ]]\n        for index in range(3):\n            y = (index - 1) * 2.54\n            lead = cq.Workplane('XZ').polyline(profile).close().extrude(0.48).translate((0, y + 0.24, 0)).val()\n            add('termination', lead)\n    marker = cq.Workplane('XY').circle(0.25).extrude(0.002).translate((-2.05, 3.0, 6.8)).val()\n    add('pin_indicator', marker)\n    return dict(groups), np.array([-4.05, -4.255, 0.0]), np.array([4.05, 4.255, 6.802]), {'procedural': 1}\n"
+  },
+  "marking": {
+    "text": "4N33",
+    "font": {
+      "file": "arialbd.ttf",
+      "sha256": "4d59199834e7439c67ea4949407639961060b21b173833f566eb60ac6fd8f5af",
+      "bitmap_size": [
+        1024,
+        512
+      ]
+    },
+    "evidence_sha256": "8c60b1ab33fe767bc8a4d0806e3c442d5d357e1390fa39dbbb4c4a8313c0aa59"
+  },
+  "renderer_source_sha256": "bcb20ec6db5f6c28bb2f45dbf68be84fedea15082cfce459f15e95e25d90643c",
+  "composite": {
+    "method": "linear-light blend of shared path-traced body and ink passes",
+    "limitation": "Approximate indirect reflections; marking not independently path traced.",
+    "compositor_source_sha256": "90afce7a8eeba2751305a8d5b32fda203b65a95e87985a7d59bdb6545420ee3c",
+    "master_manifest": "source_file/display_render/masters/8c98f6abf459c9261723c2ee7af39c4e9e39774101324c17f3ee689b4da5cf56/manifest.json",
+    "master_manifest_sha256": "896517f83ab268ee40aca2448bbf0e20fd43c0798808d9f4cb205dc277b1d003",
+    "candidate_validator_sha256": "5292c45447bc2c565950bb2c00f250c68a84f4d5689ad6a4927258514ad30b41",
+    "candidate_batch_sha256": "e668b878fc6ccb0ecb41f5030ab00e63b241b1daa72ca18e732660f128854533"
+  },
+  "render": {
+    "pixels": 1400,
+    "samples_per_master": 256,
+    "seconds": 15.31
+  },
+  "artifacts": {
+    "render.png": {
+      "sha256": "f90a27aa8326c30e8c474c37d11dcb0b253d21258e85f60815aba4eea6e581e8",
+      "bytes": 218009
+    },
+    "preview.webp": {
+      "sha256": "9f5347d25f0b1017ca31d81cf743fb4cf66eddd0fcb039d985e1ae782b0a0e41",
+      "bytes": 6120
+    }
+  }
+}

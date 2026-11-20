@@ -34,6 +34,20 @@ dimensions_mm:
   length: 10.0
   width: 5.0
 directory: parts/electronic_ic_optocoupler_phototransistor_output_optocoupler_sop_4_vishay_intertech_sfh6106_1x001t
+display_render:
+  description: Illustrative procedural four-lead SMD model uses midpoint body 6.645
+    x 4.69 mm, 3.555 mm body height, 9.78 mm lead span and 2.54 mm pitch from Vishay.
+    Catalogue lists 10 x 5 mm without height or footprint. Lead profile, surface and
+    pin-one indicator are approximate; not a verified mechanical model or footprint.
+    SFH6106 is an illustrative family identifier; exact physical marking is unverified.
+    Typeface, orientation, placement and variable lot/date details are illustrative.
+  image: data/display_render/render.png
+  license: Project source; procedural display geometry
+  marking: SFH6106
+  model_credit: Procedural model generated in this repository
+  model_source: https://github.com/oomlout/oomp_electronic_version_5/blob/main/kicad_agents/display_model_vishay_sfh6106_smd4.py
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C6901
@@ -246,6 +260,21 @@ oomlout_ai_roboclick_3:
         length: 10.0
         width: 5.0
       directory: parts\electronic_ic_optocoupler_phototransistor_output_optocoupler_sop_4_vishay_intertech_sfh6106_1x001t
+      display_render:
+        description: Illustrative procedural four-lead SMD model uses midpoint body
+          6.645 x 4.69 mm, 3.555 mm body height, 9.78 mm lead span and 2.54 mm pitch
+          from Vishay. Catalogue lists 10 x 5 mm without height or footprint. Lead
+          profile, surface and pin-one indicator are approximate; not a verified mechanical
+          model or footprint. SFH6106 is an illustrative family identifier; exact
+          physical marking is unverified. Typeface, orientation, placement and variable
+          lot/date details are illustrative.
+        image: data/display_render/render.png
+        license: Project source; procedural display geometry
+        marking: SFH6106
+        model_credit: Procedural model generated in this repository
+        model_source: https://github.com/oomlout/oomp_electronic_version_5/blob/main/kicad_agents/display_model_vishay_sfh6106_smd4.py
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C6901
@@ -756,8 +785,8 @@ oomlout_ai_roboclick_4:
 oomlout_ai_roboclick_5:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

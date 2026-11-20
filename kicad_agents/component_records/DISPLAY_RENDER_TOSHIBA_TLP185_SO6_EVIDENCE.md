@@ -1,0 +1,5 @@
+# Toshiba TLP185 4-pin SO6 display evidence
+
+Toshiba's [photocoupler product page](https://toshiba.semicon-storage.com/ap-en/semiconductor/product/isolators-solid-state-relays/detail.TLP185.html) identifies TLP185 as four-pin SO6. Toshiba's [package catalogue](https://toshiba-semicon-storage.com/info/TLP185%28SE_catalog_en_20200401_ALQ00217.pdf?did=61170&prodName=TLP185%28SE) gives nominal 4.55 × 3.7 mm body, 2.1 mm height, 7.0 mm lead span and 2.54 mm pitch. The source manufacturer number is truncated as `TLP185(GB-TPL,SE`; [JLCPCB](https://jlcpcb.com/partdetail/Toshiba-TLP185_GB_TPL_SET/C7240) uses the same displayed text. This is an illustrative TLP185 family representation, not confirmation of a complete ordering code. Exact type marking, GB rank, logo, typography and variable codes are omitted or unverified.
+
+The catalogue source gives 10 × 5 mm with no dimension reference, height or footprint. Procedural display geometry follows nominal body and lead span; individual lead shape, bevels and pin-one dot are approximate, not a verified mechanical model or footprint.

@@ -5,7 +5,13 @@
 IC MC74HC04ADTR2G TSSOP 14 is an OOMP electronic ic definition. It uses the tssop 14 package or form factor. Its nominal drawing size is 5.0 &#x00D7; 4.4 mm. The definition includes 14 documented pins.
 
 
-![IC MC74HC04ADTR2G TSSOP 14 pinout](data/working_svg_square_pins.svg)
+![IC MC74HC04ADTR2G TSSOP 14 studio render](data/display_render/render.png)
+
+Illustrative KiCad TSSOP-14 model measures 1.0 mm high; onsemi case 948G drawing title describes 0.95 mm. Catalogue specifies 1.1 mm height and a footprint. Not a verified mechanical model. onsemi lists HC / 04A as a two-line package marking. Typeface, orientation, placement and variable lot/date details are illustrative. Marking composited in linear light from shared path-traced material passes; indirect reflections are approximate.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_SO.3dshapes/TSSOP-14_4.4x5mm_P0.65mm.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -106,6 +112,7 @@ IC MC74HC04ADTR2G TSSOP 14 is an OOMP electronic ic definition. It uses the tsso
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -150,6 +157,7 @@ IC MC74HC04ADTR2G TSSOP 14 is an OOMP electronic ic definition. It uses the tsso
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_ic_logic_hex_inverter_tssop_14_onsemi_mc74hc04adtr2g.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |

@@ -1,0 +1,5 @@
+# TI SN74HC04NSR SOP-14 source discrepancy
+
+Reviewed 2026-11-20. [TI's SN74HC04 datasheet](https://www.ti.com/lit/ds/symlink/sn74hc04.pdf) identifies exact SN74HC04NSR as SOP package NS, 14 pins, with `HC04` part marking. TI's [logic package guide](https://www.ti.com/lit/sg/sdyu001ac/sdyu001ac.pdf) lists the NS 14 package as approximately 10.3 × 5.3 mm with 1.27 mm pitch.
+
+The catalogue record instead specifies the 6.2 × 5.3 mm SSOP-14 package with a 0.65 mm pitch footprint, which conflicts with the manufacturer for this exact orderable. Do not use that footprint or treat it as verified for the display. No NS-14 KiCad STEP was found in the installed `Package_SO.3dshapes` models. The purpose-built display-only model `kicad_agents/display_model_ti_sop14.py` uses TI's 10.3 × 5.3 mm nominal body, 1.95 mm nominal height and 1.27 mm lead pitch; its lead cross-section, molded edge and pin-one dot are approximations. It is not a verified mechanical model or footprint. This does not alter the catalogue record or stretch an SSOP model in a way that distorts its pitch.

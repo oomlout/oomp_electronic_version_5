@@ -5,7 +5,13 @@
 IC AiP74LVC1T45GC363.TR SOT 363 6 is an OOMP electronic ic definition. It uses the sot 363 6 package or form factor. Its nominal drawing size is 2.0 &#x00D7; 1.25 mm. The definition includes 6 documented pins.
 
 
-![IC AiP74LVC1T45GC363.TR SOT 363 6 pinout](data/working_svg_square_pins.svg)
+![IC AiP74LVC1T45GC363.TR SOT 363 6 studio render](data/display_render/render.png)
+
+Illustrative KiCad SOT-363 model, 1.1 mm high; catalogue omits height and footprint. Manufacturer field absent; Wuxi I-CORE identity is inferred from ID and manufacturer ordering table. Not a verified mechanical model or PCB footprint. Wuxi lists CXXX for this orderable; C is an illustrative partial marking with variable characters omitted. Typeface, orientation and placement are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/SOT-363_SC-70-6.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -96,6 +102,7 @@ IC AiP74LVC1T45GC363.TR SOT 363 6 is an OOMP electronic ic definition. It uses t
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -119,6 +126,7 @@ IC AiP74LVC1T45GC363.TR SOT 363 6 is an OOMP electronic ic definition. It uses t
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_ic_logic_single_bit_dual_supply_transceiver_sot_363_6_wuxi_i_core_elec_aip74lvc1t45gc363_tr.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |

@@ -1,0 +1,3 @@
+# TI SN74AHC125DBR SSOP-14 display evidence
+
+Reviewed 2026-11-19. [TI datasheet ordering table](https://www.ti.com/lit/ds/symlink/sn74ahc125.pdf) lists exact SN74AHC125DBR, 14-pin SSOP DB, marking HA125. [TI DB0014A drawing](https://www.ti.com/lit/ds/symlink/sn74as04.pdf) gives 5.9–6.5 × 5.0–5.6 mm body, 0.65 mm pitch and 2.0 mm max height. Catalogue specifies 6.2 × 5.3 × 1.98 mm. KiCad model total bounds 7.8 × 6.2 × 2.1 mm; vertically scaled to 1.98 mm as an illustrative display approximation, not a verified mechanical model. Typeface, placement, orientation and omitted lot/date/logo marks are illustrative.

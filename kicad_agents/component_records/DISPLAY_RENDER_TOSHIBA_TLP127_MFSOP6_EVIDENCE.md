@@ -1,0 +1,5 @@
+# Toshiba TLP127(TPL,U,F) MFSOP6 display evidence
+
+[Toshiba's TLP127 datasheet](https://toshiba.semicon-storage.com/info/TLP127_datasheet_ja_20190527.pdf?did=16901&prodName=TLP127) identifies package 11-4C1. [Toshiba's package catalogue](https://toshiba.semicon-storage.com/info/TLP3127_catalog_en_20200401_ALQ00217.pdf?did=61170&prodName=TLP3127) identifies four-pin MFSOP6 nominal body 4.4 × 3.6 mm, height 2.5 mm, lead span 7.0 mm and 2.54 mm pitch. [Arrow](https://www.arrow.com/en/products/tlp127-tpluf/toshiba) lists the exact orderable in four-pin MFSOP. TLP127 is an illustrative family identifier; exact marking, typeface, logo and variable codes are unverified.
+
+The source gives 10 × 5 mm with no dimension reference, height or footprint. A nearby KiCad SOP-4 model has 6.096 × 4.089 × 2.1 mm overall bounds, smaller than the nominal Toshiba lead span and height. The procedural display model follows nominal size and pitch; individual lead form, chamfers and pin-one dot are illustrative, not a verified mechanical model or footprint.

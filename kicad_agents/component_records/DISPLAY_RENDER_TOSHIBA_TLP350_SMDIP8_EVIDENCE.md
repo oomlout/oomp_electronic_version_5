@@ -1,0 +1,5 @@
+# Toshiba TLP350(TP1,F) surface-mount DIP8 display evidence
+
+Toshiba's [TLP350 datasheet](https://toshiba.semicon-storage.com/info/TLP350_datasheet_en_20251023.pdf?did=6217&prodName=TLP350) identifies the TP1 surface-mount lead-form option. The 11-10C401S package drawing gives nominal 9.66 × 6.4 mm body, 4.0 mm overall height, 2.54 mm lead pitch and no more than 10 mm lead span. [DigiKey](https://www.digikey.com/en/products/detail/toshiba-semiconductor-and-storage/TLP350-TP1-F/1647147) identifies the exact orderable as gull-wing surface mount. TLP350 is an illustrative family identifier; exact package marking, logo, typography and variable codes are unverified.
+
+A procedural display model follows nominal body dimensions and height rather than the generic KiCad SMDIP model, whose overall 8.82 × 9.27 × 3.68 mm bounds were shorter and lower than the Toshiba drawing. The new model approximates lead profile, bevels and pin-one dot. Source lists 10 × 5 mm with no dimension reference, height or footprint. The model is for display, not a verified mechanical model or footprint.

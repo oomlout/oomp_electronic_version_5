@@ -5,7 +5,13 @@
 IC 74F373D SOIC 20 300MIL is an OOMP electronic ic definition. It uses the soic 20 300mil package or form factor. Its nominal drawing size is 12.8 &#x00D7; 7.5 mm. The definition includes 20 documented pins.
 
 
-![IC 74F373D SOIC 20 300MIL pinout](data/working_svg_square_pins.svg)
+![IC 74F373D SOIC 20 300MIL studio render](data/display_render/render.png)
+
+Illustrative KiCad SOIC-20W model scaled vertically from 2.75 mm to catalogue 2.65 mm; Philips/Nexperia SOT163-1 specifies 2.65 mm maximum; source 74F373D differs from datasheet order code N74F373D. Display approximation, not a verified mechanical model. 74F373 is an illustrative family identifier; exact physical marking and the orderable prefix are not confirmed. Typeface, orientation, placement and variable lot/date details are illustrative. Marking composited in linear light from shared path-traced material passes; indirect reflections are approximate.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_SO.3dshapes/SOIC-20W_7.5x12.8mm_P1.27mm.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -112,6 +118,7 @@ IC 74F373D SOIC 20 300MIL is an OOMP electronic ic definition. It uses the soic 
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -144,6 +151,7 @@ IC 74F373D SOIC 20 300MIL is an OOMP electronic ic definition. It uses the soic 
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_ic_logic_octal_d_type_transparent_latch_soic_20_300mil_nxp_semiconductors_74f373d.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |

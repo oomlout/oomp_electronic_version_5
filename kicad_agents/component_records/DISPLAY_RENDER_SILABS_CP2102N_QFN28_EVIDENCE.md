@@ -1,0 +1,5 @@
+# Silicon Labs CP2102N-A01-GQFN28R QFN28 display evidence
+
+[Silicon Labs' CP2102N datasheet](https://www.silabs.com/documents/public/data-sheets/cp2102n-datasheet.pdf) specifies a 5 × 5 mm QFN28 body, 0.70–0.80 mm overall height, 0.5 mm pitch and a 3.15–3.35 mm exposed pad. Its package marking diagram shows a part-number designation and variable trace and date codes, without spelling out the exact top-side type text. A [Silicon Labs change notice](https://www.silabs.com/documents/public/pcns/201020907-CP2102N-Datasheet-Release-v14-.pdf) lists the exact catalogue orderable CP2102N-A01-GQFN28R. `CP2102N` is an illustrative family identifier; logo, exact top-side marking, trace, date and revision details are omitted or unverified.
+
+The catalogue specifies 5 × 5 mm and the KiCad QFN-28-1EP_5x5mm_P0.5mm_EP3.35x3.35mm footprint, but omits height. The corresponding KiCad 3D package has 5 × 5 × 0.92 mm overall bounds; its height is scaled to 0.75 mm for display, affecting all vertical features. Render is for display, not a verified mechanical model or PCB footprint.

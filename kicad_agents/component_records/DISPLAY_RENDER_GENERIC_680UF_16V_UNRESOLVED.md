@@ -1,0 +1,5 @@
+# 680 µF, 16 V, 8 × 14.5 mm generic capacitor: unresolved package evidence
+
+The source record has no manufacturer, distributor, footprint or mounting style and contains generic 10 × 5 mm dimensions that conflict with its 8 × 14.5 mm name. `kicad_agents/oomp_matching_agent.py` maps `EMZR160ARA681MHA0G` to this generic record, but [Nippon Chemi-Con's product page](https://www.chemi-con.co.jp/en/products/detail-condenser.php?part_number=EMZR160ARA681MHA0G) specifies that part as an 8 × 10 mm surface-mount can. This cross-reference does not establish the generic record's 14.5 mm height or mounting style; its match should be reviewed separately.
+
+[SamYoung NXE distributor listing](https://www.elektronik.ropla.eu/en/magazyn/magazyn/?ic=SMY5404) describes a different 680 µF / 16 V radial capacitor at 8 × 15 mm, with 3.5 mm lead pitch. It is an example of a similarly rated capacitor, not proof of the generic record's identity, exact 14.5 mm body or mounting. Do not infer a brand or package style from either example. Locate a photograph, physical measurement or verified source identifying the catalogue item before choosing a model or physical markings.

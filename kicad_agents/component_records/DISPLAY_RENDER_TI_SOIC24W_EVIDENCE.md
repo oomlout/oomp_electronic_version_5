@@ -1,0 +1,5 @@
+# TI wide SOIC-24 display evidence
+
+Reviewed 2026-11-20. TI ordering addenda identify CD4067BM96 as SOIC DW-24 marked `CD4067BM` in the [CD4067B datasheet](https://www.ti.com/lit/ds/symlink/cd4067b-mil.pdf), and CD74HC4514M96 as SOIC DW-24 marked `HC4514M` in the [CD74HC4514 datasheet](https://www.ti.com/lit/ds/symlink/cd74hc4514.pdf). The [TI package index](https://www.ti.com/packaging/docs/searchtipackages.tsp?packageName=SO) describes DW-24 as nominal 15.4 × 7.5 mm body, 1.27 mm pitch and 2.35 mm height. Typeface, positioning, orientation and omitted logo and lot/date information are illustrative.
+
+Both catalogue records list 10 × 5 mm with no width reference, height or footprint, differing from TI's nominal package dimensions. KiCad `SOIC-24W_7.5x15.4mm_P1.27mm.step` SHA-256 `4b0d20f82f5b0124fecfe11c941274a3c865a30f7baee8b8fadd7df55972d4cd` measures 10.3 × 15.4 × 2.75 mm overall. For display the height is scaled to TI's 2.35 mm nominal. This generic model is a display approximation, not a verified mechanical model or footprint.

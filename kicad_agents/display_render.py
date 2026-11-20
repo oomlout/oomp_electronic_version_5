@@ -442,6 +442,11 @@ def generate(part_id, *, model_root=None, output=None, pixels=None, samples=None
               'renderer_sha256': digest(__file__), 'marking_code_sha256': digest(Path(__file__).with_name('package_markings.py')),
               'font_sha256': digest(find_font(recipe['marking']['font_file'])) if text and not axial else None,
               'runtime': runtime}
+    orientation = recipe['model'].get('display_orientation')
+    if orientation is not None:
+        if orientation != 'to220_face_up':
+            raise ValueError(f'Unreviewed display orientation {orientation!r}')
+        inputs['orientation_adapter_sha256'] = digest(Path(__file__).with_name('display_render_orientation.py'))
     fingerprint = hashlib.sha256(json.dumps(inputs, sort_keys=True).encode()).hexdigest()
     manifest_file = destination / 'manifest.json'
     if not check and not force and manifest_file.is_file():
@@ -454,6 +459,9 @@ def generate(part_id, *, model_root=None, output=None, pixels=None, samples=None
             return
     groups, lower, upper, colour_counts = load_coloured_step(model_path, recipe['model'])
     source_bounds = (upper - lower).tolist()
+    if orientation == 'to220_face_up':
+        from kicad_agents.display_render_orientation import orient_to220_face_up
+        lower, upper = orient_to220_face_up(groups, lower, upper)
     if 'display_scale_xyz' in recipe['model']:
         lower, upper = scale_display_geometry(groups, lower, upper, recipe['model']['display_scale_xyz'])
     print(f'{part_id}: {text!r}; bounds {(upper-lower).tolist()} mm; {sum(len(g["triangles"]) for g in groups.values())} triangles', flush=True)
@@ -489,6 +497,10 @@ def generate(part_id, *, model_root=None, output=None, pixels=None, samples=None
     if 'display_scale_xyz' in recipe['model']:
         manifest['model']['source_bounds_mm'] = source_bounds
         manifest['model']['display_scale_xyz'] = recipe['model']['display_scale_xyz']
+    if orientation is not None:
+        manifest['model']['source_bounds_mm'] = source_bounds
+        manifest['model']['display_orientation'] = orientation
+        manifest['model']['orientation_adapter_sha256'] = inputs['orientation_adapter_sha256']
     (destination / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
     print(f'Rendered {destination} ({settings["seconds"]} seconds)', flush=True)
 

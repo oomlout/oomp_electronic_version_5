@@ -34,6 +34,22 @@ dimensions_mm:
   length: 10.0
   width: 5.0
 directory: parts/electronic_ic_driver_fluorescent_ballast_controller_dip_8_infineon_ir2520dpbf
+display_render:
+  description: Illustrative KiCad DIP-8 model. Source lists 10 x 5 mm without width
+    reference, height or footprint; Infineon confirms an 8-lead PDIP package. Total
+    model height 6.98 mm includes projecting pins. Not a verified mechanical model
+    or footprint. IR2520D is an illustrative family identifier; the datasheet uses
+    a generic part-number placeholder and exact complete marking is unconfirmed. Typeface,
+    orientation, placement and variable lot/date details are illustrative. Marking
+    composited in linear light from shared path-traced material passes; indirect reflections
+    are approximate.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: IR2520D
+  model_credit: 2025 KiCAD
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_DIP.3dshapes/DIP-8_W7.62mm.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C2981
@@ -226,6 +242,22 @@ oomlout_ai_roboclick_3:
         length: 10.0
         width: 5.0
       directory: parts\electronic_ic_driver_fluorescent_ballast_controller_dip_8_infineon_ir2520dpbf
+      display_render:
+        description: Illustrative KiCad DIP-8 model. Source lists 10 x 5 mm without
+          width reference, height or footprint; Infineon confirms an 8-lead PDIP package.
+          Total model height 6.98 mm includes projecting pins. Not a verified mechanical
+          model or footprint. IR2520D is an illustrative family identifier; the datasheet
+          uses a generic part-number placeholder and exact complete marking is unconfirmed.
+          Typeface, orientation, placement and variable lot/date details are illustrative.
+          Marking composited in linear light from shared path-traced material passes;
+          indirect reflections are approximate.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: IR2520D
+        model_credit: 2025 KiCAD
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_DIP.3dshapes/DIP-8_W7.62mm.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C2981
@@ -721,8 +753,8 @@ oomlout_ai_roboclick_4:
 oomlout_ai_roboclick_5:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

@@ -1,0 +1,5 @@
+# Infineon IR2112 and IR2113 SOIC-16W evidence
+
+Infineon identifies [IR2112SPBF](https://www.infineon.com/part/IR2112S) and [IR2113STRPBF](https://www.infineon.com/part/IR2113S) as wide SOIC-16. The [IR2112 datasheet](https://www.infineon.com/assets/row/public/documents/24/49/infineon-ir2112-ds-en.pdf) and [IR2110/IR2113 datasheet](https://www.infineon.com/assets/row/public/documents/24/49/infineon-ir2110-datasheet-en.pdf) specify MS-013AA body 10.1–10.5 × 7.4–7.6 mm, 10.0–10.65 mm lead span, 1.27 mm pitch and 2.35–2.65 mm height. Both catalogue records list 9.9 × 3.9 mm, in conflict with wide body, and omit height and footprint. Generic KiCad model has 10.3 × 10.3 × 2.75 mm overall bounds and is scaled vertically to 2.5 mm for display; it is not a verified mechanical model or footprint.
+
+`IR2112` and `IR2113` are illustrative partial identifiers; exact top markings for these orderables are not established. Suffix, logo, date and traceability marks are omitted; typography, placement and orientation are illustrative.

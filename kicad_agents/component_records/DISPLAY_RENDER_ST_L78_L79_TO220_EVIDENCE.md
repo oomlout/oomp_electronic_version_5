@@ -1,0 +1,7 @@
+# ST L78 and L79 TO-220 display research
+
+ST's [L78 datasheet](https://www.st.com/resource/en/datasheet/cd00000444.pdf), order codes table, distinguishes single-gauge TO-220 `CV` and dual-gauge `CV-DG` versions of the positive regulators, including L7805, L7806, L7808, L7809, L7812, L7815 and L7824. ST's [L79 datasheet](https://www.st.com/resource/en/datasheet/l79.pdf) likewise distinguishes the single- and dual-gauge versions of negative L7905, L7912 and L7915. Check each exact source identity and its corresponding table entry before selecting a candidate.
+
+KiCad `Package_TO_SOT_THT.3dshapes/TO-220-3_Vertical.step`, SHA-256 `7cb065d935df5771f0ba6e48ddd180863a121af76483dad7f18e667a7b68204a`, has overall mesh bounds 10.25 × 4.455 × 28.525 mm including straight leads, and distinct dark body and metal face colours. Its flat front coating face has outward normal -Y, x from -2.585 to 7.665 mm and z from 4.185 to 11.875 mm. This generic model does not establish whether its leads match the specific single- or dual-gauge package; disclose the limitation rather than claim an exact mechanical representation.
+
+The physical top marking of each exact manufacturer orderable is unverified. For a preview, use the corresponding product family identifier only as an illustrative literal, with no invented logo or date/lot code. A display pose must turn the front face upward before planar marking; inspect the placement, orientation, metal tab, pins, and output for each reviewed representative. This research alone does not authorize a completed catalogue render.

@@ -40,6 +40,21 @@ dimensions_mm:
   length: 4.0
   width: 4.0
 directory: parts/electronic_ic_converter_usb_to_serial_converter_qfn_24_wch_ch342f
+display_render:
+  description: KiCad QFN-24 model has 4.0 x 4.0 mm body, 0.77 mm height and 0.5 mm
+    pitch. WCH confirms body size and an exposed ground pad, which contradicts the
+    source note claiming no pad. Source manufacturer and part number are missing and
+    identity is inferred from catalogue ID. Pad dimensions and marking remain unverified;
+    not a verified mechanical model or footprint. CH342F is an illustrative identifier;
+    the physical marking is unverified. Typeface, orientation, placement and variable
+    lot/date details are illustrative.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: CH342F
+  model_credit: 2025 KiCAD
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_DFN_QFN.3dshapes/QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors: []
 id: electronic_ic_converter_usb_to_serial_converter_qfn_24_wch_ch342f
 id_no_class: electronic_ic_converter_usb_to_serial_converter_qfn_24_wch_ch342f
@@ -205,6 +220,21 @@ oomlout_ai_roboclick_4:
         length: 4.0
         width: 4.0
       directory: parts\electronic_ic_converter_usb_to_serial_converter_qfn_24_wch_ch342f
+      display_render:
+        description: KiCad QFN-24 model has 4.0 x 4.0 mm body, 0.77 mm height and
+          0.5 mm pitch. WCH confirms body size and an exposed ground pad, which contradicts
+          the source note claiming no pad. Source manufacturer and part number are
+          missing and identity is inferred from catalogue ID. Pad dimensions and marking
+          remain unverified; not a verified mechanical model or footprint. CH342F
+          is an illustrative identifier; the physical marking is unverified. Typeface,
+          orientation, placement and variable lot/date details are illustrative.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: CH342F
+        model_credit: 2025 KiCAD
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_DFN_QFN.3dshapes/QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors: []
       kicad:
         hand_solder: Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm
@@ -972,8 +1002,8 @@ oomlout_ai_roboclick_5:
 oomlout_ai_roboclick_6:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

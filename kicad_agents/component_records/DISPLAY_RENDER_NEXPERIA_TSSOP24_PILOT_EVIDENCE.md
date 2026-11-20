@@ -1,0 +1,3 @@
+# Nexperia 74HCT4067PW,118 TSSOP-24 display evidence
+
+Reviewed 2026-11-19. [Nexperia product ordering table](https://www.nexperia.com/products/analog-logic-ics/analog-switches-and-multiplexers/analog-switches/serie/74hc4067-74hct4067) lists the exact orderable 74HCT4067PW,118 with marking HCT4067 and package SOT355-1, TSSOP24. The manufacturer describes its 7.8 × 4.4 mm body, 0.65 mm pitch and 1.2 mm maximum height. Catalogue records 7.8 × 4.4 mm but omits manufacturer field, height and footprint. KiCad TSSOP-24 is illustrative; dimensions and footprint should not be inferred as verified. Typography, placement, logo and variable manufacturing codes are illustrative or omitted.

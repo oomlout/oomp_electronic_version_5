@@ -5,7 +5,13 @@
 IC SN74LVC1G57DBVR SOT 23 6 is an OOMP electronic ic definition. It uses the sot 23 6 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 1.6 mm. The definition includes 6 documented pins.
 
 
-![IC SN74LVC1G57DBVR SOT 23 6 pinout](data/working_svg_square_pins.svg)
+![IC SN74LVC1G57DBVR SOT 23 6 studio render](data/display_render/render.png)
+
+Illustrative display-only KiCad SOT-23-6; original 1.55 mm model vertically scaled to the TI DBV0006A 1.45 mm maximum. Catalogue source omits manufacturer, footprint and height; TI is inferred from the exact orderable. Model is not a verified PCB or mechanical footprint. TI lists CA7R and CA7O as alternative package markings; CA7R is shown. Typeface, orientation, placement and variable lot/date details are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/SOT-23-6.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -96,6 +102,7 @@ IC SN74LVC1G57DBVR SOT 23 6 is an OOMP electronic ic definition. It uses the sot
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -117,6 +124,7 @@ IC SN74LVC1G57DBVR SOT 23 6 is an OOMP electronic ic definition. It uses the sot
 | **Hand-solder footprint guide** | — | [MD](data/kicad/hand_solder/README.md) |
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |

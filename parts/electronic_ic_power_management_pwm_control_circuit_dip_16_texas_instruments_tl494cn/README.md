@@ -5,6 +5,14 @@
 IC TL494CN DIP 16 is an OOMP electronic ic definition. It uses the dip 16 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
 
 
+![IC TL494CN DIP 16 studio render](data/display_render/render.png)
+
+Illustrative KiCad DIP-16 model; TI N0016E body is about 19.32 x 6.35 mm. Catalogue lists 10 x 5 mm with no width reference, height or footprint. Model bounds 7.874 x 19.177 x 6.98 mm include projecting pins. This is not a verified mechanical model. Texas Instruments lists TL494CN as the package marking. Typeface, orientation, placement and variable lot/date details are illustrative. Marking composited in linear light from shared path-traced material passes; indirect reflections are approximate.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_DIP.3dshapes/DIP-16_W7.62mm.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
+
 
 
 
@@ -77,9 +85,12 @@ IC TL494CN DIP 16 is an OOMP electronic ic definition. It uses the dip 16 packag
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |
 | **Large drawer label** | <img src="label_drawer_3x2.svg" alt="Large drawer label" width="160"> | [SVG](label_drawer_3x2.svg) |
+| **Web catalogue file index** | — | [YAML](web.yaml) |
 | **Part definition and build recipe** | — | [YAML](working.yaml) |
 
 <!-- /oomp-part-file-table -->

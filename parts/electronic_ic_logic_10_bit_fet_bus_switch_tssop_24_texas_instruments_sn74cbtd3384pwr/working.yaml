@@ -34,6 +34,20 @@ dimensions_mm:
   length: 7.8
   width: 4.4
 directory: parts/electronic_ic_logic_10_bit_fet_bus_switch_tssop_24_texas_instruments_sn74cbtd3384pwr
+display_render:
+  description: Illustrative KiCad TSSOP-24 model is 0.97 mm high; manufacturer TSSOP
+    maximum is 1.2 mm. Catalogue lists 7.8 x 4.4 mm without height or footprint. Not
+    a verified PCB footprint. Texas Instruments lists CC384 as the package marking.
+    Typeface, orientation, placement and variable lot/date details are illustrative.
+    Marking composited in linear light from shared path-traced material passes; indirect
+    reflections are approximate.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: CC384
+  model_credit: 2025 KiCAD
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_SO.3dshapes/TSSOP-24_4.4x7.8mm_P0.65mm.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C7155
@@ -233,6 +247,20 @@ oomlout_ai_roboclick_3:
         length: 7.8
         width: 4.4
       directory: parts\electronic_ic_logic_10_bit_fet_bus_switch_tssop_24_texas_instruments_sn74cbtd3384pwr
+      display_render:
+        description: Illustrative KiCad TSSOP-24 model is 0.97 mm high; manufacturer
+          TSSOP maximum is 1.2 mm. Catalogue lists 7.8 x 4.4 mm without height or
+          footprint. Not a verified PCB footprint. Texas Instruments lists CC384 as
+          the package marking. Typeface, orientation, placement and variable lot/date
+          details are illustrative. Marking composited in linear light from shared
+          path-traced material passes; indirect reflections are approximate.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: CC384
+        model_credit: 2025 KiCAD
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_SO.3dshapes/TSSOP-24_4.4x7.8mm_P0.65mm.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C7155
@@ -733,8 +761,8 @@ oomlout_ai_roboclick_4:
 oomlout_ai_roboclick_5:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

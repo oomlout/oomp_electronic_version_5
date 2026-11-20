@@ -1,0 +1,5 @@
+# Sharp PC817X2NSZW DIP4 display evidence
+
+The catalogue records Sharp Microelectronics PC817X2NSZW. The Sharp-authored [PC817X series datasheet](https://media.digikey.com/pdf/Data%20Sheets/Sharp%20PDFs/PC817X%20Series.pdf) describes the PC817X2 through-hole family, depicting PC817/PC817X and identifying rank, date, factory and anode marks. The render uses only the illustrative family identifier PC817; rank, SHARP name, date, factory and other variable codes are omitted, and exact layout and typography are not verified for this particular orderable. [DigiKey](https://www.digikey.com/en/products/detail/sharp-socle-technology/PC817X2NSZW/21264771) lists the exact orderable as 7.62 mm DIP4.
+
+The family datasheet gives approximately 6.5 × 4.58 × 3.5 mm body dimensions. The catalogue source lists 10 × 5 mm without a dimension reference, height or footprint. The generic KiCad DIP4 model has total bounds 7.874 × 4.93 × 6.98 mm including projecting pins, and a generic end notch; the actual anode marking and exact geometry may differ. It is a display approximation, not a verified mechanical model or PCB footprint.

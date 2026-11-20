@@ -5,6 +5,14 @@
 IC SFH6106-1X001T SOP 4 is an OOMP electronic ic definition. It uses the sop 4 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
 
 
+![IC SFH6106-1X001T SOP 4 studio render](data/display_render/render.png)
+
+Illustrative procedural four-lead SMD model uses midpoint body 6.645 x 4.69 mm, 3.555 mm body height, 9.78 mm lead span and 2.54 mm pitch from Vishay. Catalogue lists 10 x 5 mm without height or footprint. Lead profile, surface and pin-one indicator are approximate; not a verified mechanical model or footprint. SFH6106 is an illustrative family identifier; exact physical marking is unverified. Typeface, orientation, placement and variable lot/date details are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://github.com/oomlout/oomp_electronic_version_5/blob/main/kicad_agents/display_model_vishay_sfh6106_smd4.py)
+
+Model credit: Procedural model generated in this repository. Project source; procedural display geometry.
+
 
 
 
@@ -77,9 +85,12 @@ IC SFH6106-1X001T SOP 4 is an OOMP electronic ic definition. It uses the sop 4 p
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |
 | **Large drawer label** | <img src="label_drawer_3x2.svg" alt="Large drawer label" width="160"> | [SVG](label_drawer_3x2.svg) |
+| **Web catalogue file index** | — | [YAML](web.yaml) |
 | **Part definition and build recipe** | — | [YAML](working.yaml) |
 
 <!-- /oomp-part-file-table -->

@@ -1,0 +1,5 @@
+# Broadcom HCPL-0501-500E SO-8 display evidence
+
+Broadcom's [HCPL-0501 datasheet](https://www.mouser.com/datasheet/2/678/AV02-0171EN-DS-6N135-6_2019-01-30-1827661.pdf) specifies SO-8 for the -500E ordering option. Its SO-8 drawing shows 5.080 × 3.937 mm nominal body, 3.175 mm nominal overall height, 5.994 mm lead span and 1.27 mm pitch, plus a pin-one mark. It identifies the type marking as the last three digits, represented here as 501; the manufacturer logo, date and lot codes are omitted and typography and placement are illustrative. [Broadcom's marking change notice](https://docs.broadcom.com/doc/PCN_V13-006-32002150-0B) lists the exact orderable and documents changes in production markings over time.
+
+The catalogue source specifies 4.9 × 3.9 mm and omits height. The procedural display model follows the manufacturer's nominal body and lead span rather than a conventional thin SOIC. Its individual lead profiles, chamfers and pin-one dot are approximations; the model is not a verified mechanical model or PCB footprint.

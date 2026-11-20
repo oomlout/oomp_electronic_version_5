@@ -5,7 +5,13 @@
 IC SP485EEN-L/TR SOIC 8 is an OOMP electronic ic definition. It uses the soic 8 package or form factor. Its nominal drawing size is 4.9 &#x00D7; 3.9 mm. The definition includes 8 documented pins.
 
 
-![IC SP485EEN-L/TR SOIC 8 pinout](data/working_svg_square_pins.svg)
+![IC SP485EEN-L/TR SOIC 8 studio render](data/display_render/render.png)
+
+Illustrative KiCad SOIC-8 model measures 1.75 mm high; catalogue specifies 1.75 mm height. Not a verified manufacturer mechanical model. SP485E is an illustrative family identifier; exact physical marking for this orderable is not confirmed. Suffix, logo and variable date/lot codes are omitted; typeface and placement are illustrative. Marking composited in linear light from shared path-traced material passes; indirect reflections are approximate.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_SO.3dshapes/SOIC-8_3.9x4.9mm_P1.27mm.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -100,6 +106,7 @@ IC SP485EEN-L/TR SOIC 8 is an OOMP electronic ic definition. It uses the soic 8 
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -131,6 +138,7 @@ IC SP485EEN-L/TR SOIC 8 is an OOMP electronic ic definition. It uses the soic 8 
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_ic_interface_rs_485_transceiver_soic_8_maxlinear_sp485een_l_tr.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
 | **Archived KiCad footprint** | — | [KICAD_MOD](data/kicad/previous_generated/5563ffd8c806fbb9de027db4e264a9e774114ef56124e6a1920eac97b62d9590/hand_solder/electronic_ic_interface_rs_485_transceiver_soic_8_maxlinear_sp485een_l_tr.kicad_mod) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |

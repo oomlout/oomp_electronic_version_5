@@ -5,7 +5,13 @@
 IC CH343P QFN 16 3 MM X 3 MM is an OOMP electronic ic definition. It uses the qfn 16 3 mm x 3 mm package or form factor. Its nominal drawing size is 3.0 &#x00D7; 3.0 mm. The definition includes 17 documented pins.
 
 
-![IC CH343P QFN 16 3 MM X 3 MM pinout](data/working_svg_square_pins.svg)
+![IC CH343P QFN 16 3 MM X 3 MM studio render](data/display_render/render.png)
+
+KiCad QFN-16 model has 3.0 x 3.0 mm body, 0.77 mm overall height and 0.5 mm pitch. WCH confirms body size and pitch; catalogue manufacturer is missing and WCH is inferred. Manufacturer height and exposed pad details remain unverified. Not a verified mechanical model or footprint. CH343P is an illustrative identifier; the physical marking is unverified. Typeface, orientation, placement and variable lot/date details are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_DFN_QFN.3dshapes/QFN-16-1EP_3x3mm_P0.5mm_EP1.8x1.8mm.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -107,6 +113,7 @@ IC CH343P QFN 16 3 MM X 3 MM is an OOMP electronic ic definition. It uses the qf
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -128,6 +135,7 @@ IC CH343P QFN 16 3 MM X 3 MM is an OOMP electronic ic definition. It uses the qf
 | **Hand-solder footprint guide** | — | [MD](data/kicad/hand_solder/README.md) |
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |

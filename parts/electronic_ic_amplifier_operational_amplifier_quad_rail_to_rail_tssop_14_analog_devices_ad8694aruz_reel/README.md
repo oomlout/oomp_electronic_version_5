@@ -5,6 +5,14 @@
 IC AD8694ARUZ-REEL TSSOP 14 is an OOMP electronic ic definition. It uses the tssop 14 package or form factor. Its nominal drawing size is 5.0 &#x00D7; 4.4 mm.
 
 
+![IC AD8694ARUZ-REEL TSSOP 14 studio render](data/display_render/render.png)
+
+Illustrative KiCad TSSOP-14 model measures 1.0 mm high; Analog Devices RU-14 drawing permits up to 1.2 mm. Catalogue height and footprint are unspecified. Not a verified mechanical model. AD8694 is an illustrative partial family identifier; exact physical marking is not confirmed. Typeface, orientation, placement and variable lot/date details are illustrative. Marking composited in linear light from shared path-traced material passes; indirect reflections are approximate.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_SO.3dshapes/TSSOP-14_4.4x5mm_P0.65mm.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
+
 
 
 
@@ -77,9 +85,12 @@ IC AD8694ARUZ-REEL TSSOP 14 is an OOMP electronic ic definition. It uses the tss
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |
 | **Large drawer label** | <img src="label_drawer_3x2.svg" alt="Large drawer label" width="160"> | [SVG](label_drawer_3x2.svg) |
+| **Web catalogue file index** | — | [YAML](web.yaml) |
 | **Part definition and build recipe** | — | [YAML](working.yaml) |
 
 <!-- /oomp-part-file-table -->

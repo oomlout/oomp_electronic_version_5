@@ -5,7 +5,13 @@
 IC Converter Usb To Serial Converter MSOP_10 is an OOMP electronic ic definition. It uses the msop 10 package or form factor. Its nominal drawing size is 3.0 &#x00D7; 3.0 mm. The definition includes 10 documented pins.
 
 
-![IC Converter Usb To Serial Converter MSOP_10 pinout](data/working_svg_square_pins.svg)
+![IC Converter Usb To Serial Converter MSOP_10 studio render](data/display_render/render.png)
+
+KiCad MSOP-10 model has 3.0 x 3.0 mm body, 1.1 mm overall height and 0.5 mm pitch. WCH confirms CH340E MSOP-10 width and pitch; source manufacturer and part number are missing and identity is inferred from the catalogue ID. The source package drawing lists inconsistent 0.6 mm pin spacing. Not a verified mechanical model or footprint. CH340E is an illustrative identifier; the physical marking is unverified. Typeface, orientation, placement and variable lot/date details are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_SO.3dshapes/MSOP-10_3x3mm_P0.5mm.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -88,6 +94,7 @@ IC Converter Usb To Serial Converter MSOP_10 is an OOMP electronic ic definition
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -117,6 +124,7 @@ IC Converter Usb To Serial Converter MSOP_10 is an OOMP electronic ic definition
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_ic_converter_usb_to_serial_converter_msop_10_wch_ch340e.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |
