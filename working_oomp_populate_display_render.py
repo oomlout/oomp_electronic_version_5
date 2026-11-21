@@ -12,8 +12,31 @@ def unmarked_visual_recipe(recipe):
     """Keep every image-affecting field; remove only part identity/evidence."""
     family = recipe.get('family')
     policy = recipe.get('marking', {}).get('policy')
-    if (family, policy) not in {('chip_resistor', 'none'), ('chip_capacitor', 'unmarked_illustration')}:
-        raise ValueError('Only reviewed unmarked chip illustrations can share this image')
+    if (family, policy) not in {('chip_resistor', 'none'), ('chip_capacitor', 'unmarked_illustration'),
+                                ('led', 'unmarked_illustration'), ('chip_inductor', 'unmarked_illustration')}:
+        raise ValueError('Only reviewed unmarked chip or LED illustrations can share this image')
+    if family == 'led':
+        reviewed_packages = {'0201_metric_0603': ('0201', ('blue', 'green', 'red', 'white', 'yellow')),
+                             '0402_metric_1005Metric': ('0402', ('green', 'red', 'white', 'yellow')),
+                             '0603_metric_1608Metric': ('0603', ('blue', 'green', 'red', 'white', 'yellow')),
+                             '0805_metric_2012Metric': ('0805', ('blue', 'green', 'red', 'white', 'yellow')),
+                             '1206_metric_3216Metric': ('1206', ('blue', 'green', 'red', 'white', 'yellow'))}
+        specification = reviewed_packages.get(recipe.get('package'))
+        if not specification or recipe.get('represented_manufacturer') != 'Unspecified':
+            raise ValueError('Only reviewed unspecified-lens LED illustrations can share this image')
+        size, colours = specification
+        reviewed_leds = {f'generic {colour} {size} LED' for colour in colours}
+        reviewed_leds.add(f'generic {size} LED, emission colour unspecified')
+        if recipe.get('represented_mpn') not in reviewed_leds:
+            raise ValueError('Only reviewed unspecified-lens LED illustrations can share this image')
+    if family == 'chip_inductor':
+        reviewed_inductors = {'CMI321609U2R2KT', 'CMI321609U4R7KT', 'CMI321609U5R6KT', 'CMI321609X100KT'}
+        reviewed_generic = {'generic 0603 30 ohm', 'generic 0603 470 ohm', 'generic 0603 33 nano henry'}
+        identity = (recipe.get('package'), recipe.get('represented_manufacturer'), recipe.get('represented_mpn'))
+        valid = ((identity[0] == '1206_metric_3216' and identity[1] == 'Fenghua' and identity[2] in reviewed_inductors)
+                 or (identity[0] == '0603_metric_1608' and identity[1] == 'Unspecified' and identity[2] in reviewed_generic))
+        if not valid:
+            raise ValueError('Only explicitly reviewed inductor illustrations can share this image')
     result = copy.deepcopy(recipe)
     for key in ('represented_manufacturer', 'represented_mpn', 'appearance_status'):
         result.pop(key, None)
@@ -100,6 +123,14 @@ def composite_sources_valid(manifest, recipe, studio):
         or inputs.get('renderer_sha256') != manifest.get('renderer_source_sha256')
         or not source_available(inputs.get('builder_sha256'), 'kicad_agents/display_render_composite.py')):
         return False
+    if ('orientation_adapter_sha256' in inputs and not source_available(
+        inputs['orientation_adapter_sha256'], 'kicad_agents/display_render_orientation.py')):
+        return False
+    if 'model_adapter_sha256' in inputs:
+        if (manifest.get('model', {}).get('adapter_sha256') != inputs['model_adapter_sha256']
+            or not source_available(inputs['model_adapter_sha256'],
+                                    'kicad_agents/display_render_infineon_irfp4310z.py')):
+            return False
     artifacts = master.get('artifacts', {})
     return set(artifacts) == {'body.png', 'ink.png'} and all(
         (path.parent/name).is_file() and (path.parent/name).stat().st_size == info.get('bytes')
@@ -140,7 +171,9 @@ def apply_extras(extras_dict):
         ):
             continue
         description = recipe['appearance_status'] + ' ' + recipe['marking']['appearance_status']
-        if manifest.get('composite'):
+        if manifest.get('composite') and not manifest['marking']['text']:
+            description += ' Unmarked image derived from a shared path-traced package material pass.'
+        elif manifest.get('composite'):
             description += (' Marking composited in linear light from shared path-traced material passes; '
                             'indirect reflections are approximate.')
         if manifest.get('reused_image'):

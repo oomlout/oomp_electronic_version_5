@@ -5,7 +5,13 @@
 Transistor FQA28N50 TO 3P 3 is an OOMP electronic transistor definition. It uses the to 3p 3 package or form factor. Its nominal drawing size is 15.9 &#x00D7; 5.5 mm. The definition includes 3 documented pins.
 
 
-![Transistor FQA28N50 TO 3P 3 pinout](data/working_svg_square_pins.svg)
+![Transistor FQA28N50 TO 3P 3 studio render](data/display_render/render.png)
+
+KiCad TO-3P model is laid face-up with display-only leads adjusted from 20.7 mm to 16.5 mm below the body. Body and lead transitions are approximate; catalogue dimensions differ from the drawing. The local historical sheet calls this TO-3P, while a later onsemi family sheet says TO-3PN; the catalogue revision is uncertain. Not a manufacturing model or footprint. FQA28N50 is an illustrative partial identifier; exact marking, typeface, logo, placement and variable production details are unverified.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_THT.3dshapes/TO-3P-3_Vertical.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -98,6 +104,7 @@ Transistor FQA28N50 TO 3P 3 is an OOMP electronic transistor definition. It uses
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -130,6 +137,7 @@ Transistor FQA28N50 TO 3P 3 is an OOMP electronic transistor definition. It uses
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_transistor_to_3p_3_mosfet_n_channel_enhancement_mode_500_volt_28_4_amp_onsemi_fqa28n50.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |

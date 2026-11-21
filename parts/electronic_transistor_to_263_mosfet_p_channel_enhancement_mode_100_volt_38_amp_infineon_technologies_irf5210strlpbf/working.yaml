@@ -41,6 +41,21 @@ dimensions_mm:
   length: 10.0
   width: 9.2
 directory: parts/electronic_transistor_to_263_mosfet_p_channel_enhancement_mode_100_volt_38_amp_infineon_technologies_irf5210strlpbf
+display_render:
+  description: The KiCad TO-263 model is adapted for display by trimming its centre
+    lead to an approximate 0.5 mm external stub. Its body and overall dimensions fit
+    the reviewed drawing; stub shape, finish and details are approximate. Not verified
+    manufacturing CAD or a footprint. IRF5210S is an illustrative partial identifier;
+    exact top marking, typeface, placement and production codes are unverified. The
+    drawing example shows another part. Marking composited in linear light from shared
+    path-traced material passes; indirect reflections are approximate.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: IRF5210S
+  model_credit: 2025 KiCAD
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/TO-263-3_TabPin2.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C2622
@@ -294,6 +309,22 @@ oomlout_ai_roboclick_5:
         length: 10.0
         width: 9.2
       directory: parts\electronic_transistor_to_263_mosfet_p_channel_enhancement_mode_100_volt_38_amp_infineon_technologies_irf5210strlpbf
+      display_render:
+        description: The KiCad TO-263 model is adapted for display by trimming its
+          centre lead to an approximate 0.5 mm external stub. Its body and overall
+          dimensions fit the reviewed drawing; stub shape, finish and details are
+          approximate. Not verified manufacturing CAD or a footprint. IRF5210S is
+          an illustrative partial identifier; exact top marking, typeface, placement
+          and production codes are unverified. The drawing example shows another part.
+          Marking composited in linear light from shared path-traced material passes;
+          indirect reflections are approximate.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: IRF5210S
+        model_credit: 2025 KiCAD
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/TO-263-3_TabPin2.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C2622
@@ -876,8 +907,8 @@ oomlout_ai_roboclick_6:
 oomlout_ai_roboclick_7:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

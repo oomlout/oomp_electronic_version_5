@@ -12,6 +12,16 @@ Long single-row 2.54 mm breakaway header with equal 6.25 mm exposed pins on both
 Straight single-row 2.54 mm breakaway header. This reference model uses a 2.54 mm square insulator, 0.64 mm square contacts, 6.1 mm mating ends and 3 mm tails.
 {% endif %}
 
+{% if p.display_render is defined and p.display_render %}
+![{{ p.name_short }} studio render]({{ p.display_render.image }})
+
+{{ p.display_render.description }}
+
+[Render recipe and provenance]({{ p.display_render.provenance }}) · [KiCad model]({{ p.display_render.model_source }})
+
+Model credit: {{ p.display_render.model_credit }}. {{ p.display_render.license }}.
+{% endif %}
+
 {% if p.model_3d.render is defined %}
 ![AI-generated header reference]({{ p.model_3d.render }})
 {% endif %}

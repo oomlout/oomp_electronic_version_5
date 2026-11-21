@@ -41,6 +41,23 @@ dimensions_mm:
   length: 6.5
   width: 6.1
 directory: parts/electronic_transistor_to_252_mosfet_n_channel_enhancement_mode_600_volt_1_9_amp_onsemi_fqd2n60ctm
+display_render:
+  description: The KiCad TO-252-2 display model approximates the drawing with two
+    full leads, a short centre stub and a metal tab; its overall bounds are 9.9 x
+    6.5 x 2.32 mm. The catalogue footprint remains TO-252-3_TabPin2. Model overall
+    length exceeds the local drawing maximum by about 0.1 mm; stub, finish and marking
+    are approximate; not a manufacturing model. FQD2N60C is an illustrative partial
+    identifier; exact top marking, typeface, placement and variable production details
+    are unverified. The local family datasheet does not establish the exact top marking
+    or orderable suffix. Marking composited in linear light from shared path-traced
+    material passes; indirect reflections are approximate.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: FQD2N60C
+  model_credit: 2025 KiCAD
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/TO-252-2.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C5386
@@ -291,6 +308,24 @@ oomlout_ai_roboclick_5:
         length: 6.5
         width: 6.1
       directory: parts\electronic_transistor_to_252_mosfet_n_channel_enhancement_mode_600_volt_1_9_amp_onsemi_fqd2n60ctm
+      display_render:
+        description: The KiCad TO-252-2 display model approximates the drawing with
+          two full leads, a short centre stub and a metal tab; its overall bounds
+          are 9.9 x 6.5 x 2.32 mm. The catalogue footprint remains TO-252-3_TabPin2.
+          Model overall length exceeds the local drawing maximum by about 0.1 mm;
+          stub, finish and marking are approximate; not a manufacturing model. FQD2N60C
+          is an illustrative partial identifier; exact top marking, typeface, placement
+          and variable production details are unverified. The local family datasheet
+          does not establish the exact top marking or orderable suffix. Marking composited
+          in linear light from shared path-traced material passes; indirect reflections
+          are approximate.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: FQD2N60C
+        model_credit: 2025 KiCAD
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/TO-252-2.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C5386
@@ -869,8 +904,8 @@ oomlout_ai_roboclick_6:
 oomlout_ai_roboclick_7:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml
