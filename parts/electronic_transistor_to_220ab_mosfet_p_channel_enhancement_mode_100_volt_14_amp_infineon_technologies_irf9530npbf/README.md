@@ -5,7 +5,13 @@
 Transistor IRF9530NPBF TO 220AB is an OOMP electronic transistor definition. It uses the to 220ab package or form factor. Its nominal drawing size is 10.0 &#x00D7; 4.4 mm. The definition includes 3 documented pins.
 
 
-![Transistor IRF9530NPBF TO 220AB pinout](data/working_svg_square_pins.svg)
+![Transistor IRF9530NPBF TO 220AB studio render](data/display_render/render.png)
+
+KiCad TO-220-3 model is laid face-up and measures 10.25 x 4.455 x 28.525 mm including leads. Source dimensions are generic; lead proportions and finish are approximate, not a verified mechanical model or footprint. The model lead projection is about 0.035 mm shorter than the drawing minimum. IRF9530N is an illustrative partial identifier; exact marking, typeface, logo and lot/date are unverified. Marking composited in linear light from shared path-traced material passes; indirect reflections are approximate.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_THT.3dshapes/TO-220-3_Vertical.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -98,6 +104,7 @@ Transistor IRF9530NPBF TO 220AB is an OOMP electronic transistor definition. It 
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -130,6 +137,7 @@ Transistor IRF9530NPBF TO 220AB is an OOMP electronic transistor definition. It 
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_transistor_to_220ab_mosfet_p_channel_enhancement_mode_100_volt_14_amp_infineon_technologies_irf9530npbf.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |

@@ -34,6 +34,21 @@ dimensions_mm:
   length: 10.0
   width: 5.0
 directory: parts/electronic_transistor_so_8_mosfet_p_channel_enhancement_mode_dual_30_volt_5_amp_apec_advanced_power_elec_ap4953gm
+display_render:
+  description: KiCad SOIC-8 6.0 x 4.9 x 1.75 mm overall model approximates the manufacturer
+    SO-8 package. The catalogue 10 x 5 mm dimensions differ from the package. This
+    part has no separate local PDF. Finish and details are illustrative; not manufacturing
+    CAD or a footprint. 4953GM is the manufacturer-documented fixed code; typeface,
+    logo, placement and omitted production details are illustrative. Marking composited
+    in linear light from shared path-traced material passes; indirect reflections
+    are approximate.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: 4953GM
+  model_credit: 2025 KiCAD
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_SO.3dshapes/SOIC-8_3.9x4.9mm_P1.27mm.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C6193
@@ -229,6 +244,21 @@ oomlout_ai_roboclick_3:
         length: 10.0
         width: 5.0
       directory: parts\electronic_transistor_so_8_mosfet_p_channel_enhancement_mode_dual_30_volt_5_amp_apec_advanced_power_elec_ap4953gm
+      display_render:
+        description: KiCad SOIC-8 6.0 x 4.9 x 1.75 mm overall model approximates the
+          manufacturer SO-8 package. The catalogue 10 x 5 mm dimensions differ from
+          the package. This part has no separate local PDF. Finish and details are
+          illustrative; not manufacturing CAD or a footprint. 4953GM is the manufacturer-documented
+          fixed code; typeface, logo, placement and omitted production details are
+          illustrative. Marking composited in linear light from shared path-traced
+          material passes; indirect reflections are approximate.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: 4953GM
+        model_credit: 2025 KiCAD
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_SO.3dshapes/SOIC-8_3.9x4.9mm_P1.27mm.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C6193
@@ -730,8 +760,8 @@ oomlout_ai_roboclick_4:
 oomlout_ai_roboclick_5:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

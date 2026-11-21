@@ -41,6 +41,21 @@ dimensions_mm:
   length: 15.9
   width: 5.5
 directory: parts/electronic_transistor_to_247ac_mosfet_n_channel_enhancement_mode_100_volt_134_amp_infineon_technologies_irfp4310zpbf
+display_render:
+  description: KiCad TO-247 model laid face-up, with display-only lead adjustment
+    from 20.15 mm to 15.15 mm below body. Lead features and transition remain approximate,
+    and the 20.95 mm body height and 15.9 mm width slightly exceed the local drawing
+    maxima. Source generic dimensions differ. The datasheet marking illustration is
+    an unrelated example. Not a verified mechanical model or footprint. IRFP4310Z
+    is an illustrative family identifier; exact package marking, typeface, logo, orientation,
+    placement and variable lot/date details are unverified.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: IRFP4310Z
+  model_credit: 2025 KiCAD
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_THT.3dshapes/TO-247-3_Vertical.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C2916
@@ -292,6 +307,22 @@ oomlout_ai_roboclick_5:
         length: 15.9
         width: 5.5
       directory: parts\electronic_transistor_to_247ac_mosfet_n_channel_enhancement_mode_100_volt_134_amp_infineon_technologies_irfp4310zpbf
+      display_render:
+        description: KiCad TO-247 model laid face-up, with display-only lead adjustment
+          from 20.15 mm to 15.15 mm below body. Lead features and transition remain
+          approximate, and the 20.95 mm body height and 15.9 mm width slightly exceed
+          the local drawing maxima. Source generic dimensions differ. The datasheet
+          marking illustration is an unrelated example. Not a verified mechanical
+          model or footprint. IRFP4310Z is an illustrative family identifier; exact
+          package marking, typeface, logo, orientation, placement and variable lot/date
+          details are unverified.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: IRFP4310Z
+        model_credit: 2025 KiCAD
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_THT.3dshapes/TO-247-3_Vertical.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C2916
@@ -871,8 +902,8 @@ oomlout_ai_roboclick_6:
 oomlout_ai_roboclick_7:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

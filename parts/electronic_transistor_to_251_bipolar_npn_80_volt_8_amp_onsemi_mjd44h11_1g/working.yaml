@@ -41,6 +41,22 @@ dimensions_mm:
   length: 6.6
   width: 6.2
 directory: parts/electronic_transistor_to_251_bipolar_npn_80_volt_8_amp_onsemi_mjd44h11_1g
+display_render:
+  description: The KiCad TO-251 model is laid face-up, with three full leads approximately
+    9.56 mm long. Its main dimensions fit the reviewed drawing; finish and fine details
+    are approximate. Not verified manufacturing CAD or a footprint. The fixed device
+    code and G mark follow the onsemi family diagram; variable assembly and date codes
+    are omitted. Typeface and placement are illustrative. Marking composited in linear
+    light from shared path-traced material passes; indirect reflections are approximate.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: 'J4
+
+    4H11G'
+  model_credit: 2025 KiCAD
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_THT.3dshapes/TO-251-3_Vertical.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C5439
@@ -278,6 +294,23 @@ oomlout_ai_roboclick_5:
         length: 6.6
         width: 6.2
       directory: parts\electronic_transistor_to_251_bipolar_npn_80_volt_8_amp_onsemi_mjd44h11_1g
+      display_render:
+        description: The KiCad TO-251 model is laid face-up, with three full leads
+          approximately 9.56 mm long. Its main dimensions fit the reviewed drawing;
+          finish and fine details are approximate. Not verified manufacturing CAD
+          or a footprint. The fixed device code and G mark follow the onsemi family
+          diagram; variable assembly and date codes are omitted. Typeface and placement
+          are illustrative. Marking composited in linear light from shared path-traced
+          material passes; indirect reflections are approximate.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: 'J4
+
+          4H11G'
+        model_credit: 2025 KiCAD
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_THT.3dshapes/TO-251-3_Vertical.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C5439
@@ -843,8 +876,8 @@ oomlout_ai_roboclick_6:
 oomlout_ai_roboclick_7:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

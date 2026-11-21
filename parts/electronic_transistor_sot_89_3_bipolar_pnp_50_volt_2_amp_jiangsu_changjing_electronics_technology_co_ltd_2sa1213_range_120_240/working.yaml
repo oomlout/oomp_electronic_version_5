@@ -41,6 +41,19 @@ dimensions_mm:
   length: 4.5
   width: 2.5
 directory: parts/electronic_transistor_sot_89_3_bipolar_pnp_50_volt_2_amp_jiangsu_changjing_electronics_technology_co_ltd_2sa1213_range_120_240
+display_render:
+  description: KiCad SOT-89 model has 4 x 4.5 x 1.52 mm overall bounds. The local
+    PDF is from JCST, a different manufacturer; JSCJ package and marking were independently
+    reviewed online. Finish and marking placement are approximate; not a verified
+    mechanical model or footprint. NY1 is the manufacturer code for the Y gain range;
+    typeface, orientation, placement and variable production details are illustrative.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: NY1
+  model_credit: 2025 KiCAD
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/SOT-89-3.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C2078
@@ -279,6 +292,20 @@ oomlout_ai_roboclick_5:
         length: 4.5
         width: 2.5
       directory: parts\electronic_transistor_sot_89_3_bipolar_pnp_50_volt_2_amp_jiangsu_changjing_electronics_technology_co_ltd_2sa1213_range_120_240
+      display_render:
+        description: KiCad SOT-89 model has 4 x 4.5 x 1.52 mm overall bounds. The
+          local PDF is from JCST, a different manufacturer; JSCJ package and marking
+          were independently reviewed online. Finish and marking placement are approximate;
+          not a verified mechanical model or footprint. NY1 is the manufacturer code
+          for the Y gain range; typeface, orientation, placement and variable production
+          details are illustrative.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: NY1
+        model_credit: 2025 KiCAD
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/SOT-89-3.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C2078
@@ -846,8 +873,8 @@ oomlout_ai_roboclick_6:
 oomlout_ai_roboclick_7:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

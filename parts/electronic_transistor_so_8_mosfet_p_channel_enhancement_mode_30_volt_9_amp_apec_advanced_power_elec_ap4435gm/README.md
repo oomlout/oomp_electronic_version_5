@@ -5,6 +5,14 @@
 Transistor AP4435GM SO 8 is an OOMP electronic transistor definition. It uses the so 8 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
 
 
+![Transistor AP4435GM SO 8 studio render](data/display_render/render.png)
+
+KiCad SOIC-8 6.0 x 4.9 x 1.75 mm overall model approximates the manufacturer SO-8 package. The catalogue 10 x 5 mm dimensions differ from the package. This part has no separate local PDF. Finish and details are illustrative; not manufacturing CAD or a footprint. 4435GM is the manufacturer-documented fixed code; typeface, logo, placement and omitted production details are illustrative. Marking composited in linear light from shared path-traced material passes; indirect reflections are approximate.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_SO.3dshapes/SOIC-8_3.9x4.9mm_P1.27mm.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
+
 
 
 
@@ -80,9 +88,12 @@ Transistor AP4435GM SO 8 is an OOMP electronic transistor definition. It uses th
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |
 | **Large drawer label** | <img src="label_drawer_3x2.svg" alt="Large drawer label" width="160"> | [SVG](label_drawer_3x2.svg) |
+| **Web catalogue file index** | — | [YAML](web.yaml) |
 | **Part definition and build recipe** | — | [YAML](working.yaml) |
 
 <!-- /oomp-part-file-table -->

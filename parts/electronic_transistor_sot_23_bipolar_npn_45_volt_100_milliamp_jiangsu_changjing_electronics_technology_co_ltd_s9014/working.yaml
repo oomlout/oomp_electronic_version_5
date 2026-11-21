@@ -41,6 +41,21 @@ dimensions_mm:
   length: 2.9
   width: 1.3
 directory: parts/electronic_transistor_sot_23_bipolar_npn_45_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_s9014
+display_render:
+  description: KiCad SOT-23 2.5 x 3.0 x 1.2 mm overall display model is scaled vertically
+    to 1.1 mm; generic source body dimensions differ from overall bounds. The local
+    linked PDF is JCST rather than JSCJ; the JSCJ manufacturer sheet supports J6 for
+    S9014. Appearance is illustrative, not a verified mechanical model or footprint.
+    JSCJ specifies J6 for S9014; the exact complete manufacturer orderable, typeface,
+    placement and variable details remain illustrative. Marking composited in linear
+    light from shared path-traced material passes; indirect reflections are approximate.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: J6
+  model_credit: 2025 KiCAD
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/SOT-23.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C2148
@@ -278,6 +293,22 @@ oomlout_ai_roboclick_5:
         length: 2.9
         width: 1.3
       directory: parts\electronic_transistor_sot_23_bipolar_npn_45_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_s9014
+      display_render:
+        description: KiCad SOT-23 2.5 x 3.0 x 1.2 mm overall display model is scaled
+          vertically to 1.1 mm; generic source body dimensions differ from overall
+          bounds. The local linked PDF is JCST rather than JSCJ; the JSCJ manufacturer
+          sheet supports J6 for S9014. Appearance is illustrative, not a verified
+          mechanical model or footprint. JSCJ specifies J6 for S9014; the exact complete
+          manufacturer orderable, typeface, placement and variable details remain
+          illustrative. Marking composited in linear light from shared path-traced
+          material passes; indirect reflections are approximate.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: J6
+        model_credit: 2025 KiCAD
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/SOT-23.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C2148
@@ -842,8 +873,8 @@ oomlout_ai_roboclick_6:
 oomlout_ai_roboclick_7:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

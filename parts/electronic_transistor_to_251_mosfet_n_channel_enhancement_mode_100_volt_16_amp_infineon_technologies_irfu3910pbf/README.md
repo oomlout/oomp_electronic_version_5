@@ -5,7 +5,13 @@
 Transistor IRFU3910PBF TO 251 is an OOMP electronic transistor definition. It uses the to 251 package or form factor. Its nominal drawing size is 6.6 &#x00D7; 6.2 mm. The definition includes 3 documented pins.
 
 
-![Transistor IRFU3910PBF TO 251 pinout](data/working_svg_square_pins.svg)
+![Transistor IRFU3910PBF TO 251 studio render](data/display_render/render.png)
+
+The KiCad TO-251 model is laid face-up, with three full leads approximately 9.56 mm long. Its main dimensions fit the reviewed drawing; finish and fine details are approximate. Not verified manufacturing CAD or a footprint. The local family PDF does not independently confirm the exact full orderable suffix. IRFU3910 is an illustrative partial identifier; exact top marking, typeface, placement and production codes are unverified in the family drawing. Marking composited in linear light from shared path-traced material passes; indirect reflections are approximate.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_THT.3dshapes/TO-251-3_Vertical.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -98,6 +104,7 @@ Transistor IRFU3910PBF TO 251 is an OOMP electronic transistor definition. It us
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -130,6 +137,7 @@ Transistor IRFU3910PBF TO 251 is an OOMP electronic transistor definition. It us
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_transistor_to_251_mosfet_n_channel_enhancement_mode_100_volt_16_amp_infineon_technologies_irfu3910pbf.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |

@@ -5,7 +5,13 @@
 Transistor MJ11032G TO 204 is an OOMP electronic transistor definition. It uses the to 204 package or form factor. Its nominal drawing size is 26.0 &#x00D7; 20.0 mm. The definition includes 3 documented pins.
 
 
-![Transistor MJ11032G TO 204 pinout](data/working_svg_square_pins.svg)
+![Transistor MJ11032G TO 204 studio render](data/display_render/render.png)
+
+KiCad TO-3 metal can has a 40.2 x 27.2 mm flange and 9.0 mm height above the seating plane, slightly oversized compared with the manufacturer drawing. The catalogue 26 x 20 x 10.5 mm dimensions use a different envelope. Finish and fine details are illustrative; not a manufacturing model or footprint. The fixed device code and G suffix follow the manufacturer marking diagram; variable production details are omitted. Typeface, ink and placement are illustrative. Marking composited in linear light from shared path-traced material passes; indirect reflections are approximate.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_THT.3dshapes/TO-3.step)
+
+Model credit: KiCad library contributors. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -98,6 +104,7 @@ Transistor MJ11032G TO 204 is an OOMP electronic transistor definition. It uses 
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -130,6 +137,7 @@ Transistor MJ11032G TO 204 is an OOMP electronic transistor definition. It uses 
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_transistor_to_204_bipolar_npn_darlington_120_volt_50_amp_onsemi_mj11032g.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |

@@ -5,7 +5,13 @@
 Transistor BC2301T-2.8A SOT 523 is an OOMP electronic transistor definition. It uses the sot 523 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 1.6 mm. The definition includes 3 documented pins.
 
 
-![Transistor BC2301T-2.8A SOT 523 pinout](data/working_svg_square_pins.svg)
+![Transistor BC2301T-2.8A SOT 523 studio render](data/display_render/render.png)
+
+Procedural SOT-523 display geometry follows nominal dimensions from the manufacturer drawing: 1.6 mm body length, 1.6 mm overall width and 0.7 mm height. Lead bends, bevels and finish are illustrative; not manufacturing CAD or a PCB footprint. CBI specifies 2301; exact typeface, size, position and additional production markings are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://github.com/oomlout/oomp_electronic_version_5/blob/main/kicad_agents/display_model_cbi_sot523.py)
+
+Model credit: Procedural model generated in this repository. Project source; procedural display geometry.
 
 
 
@@ -96,6 +102,7 @@ Transistor BC2301T-2.8A SOT 523 is an OOMP electronic transistor definition. It 
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -119,6 +126,7 @@ Transistor BC2301T-2.8A SOT 523 is an OOMP electronic transistor definition. It 
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_transistor_sot_523_mosfet_p_channel_enhancement_mode_20_volt_2_8_amp_cbi_bc2301t_2_8a.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |
