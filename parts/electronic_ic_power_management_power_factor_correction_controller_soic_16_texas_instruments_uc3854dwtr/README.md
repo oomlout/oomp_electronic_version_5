@@ -5,6 +5,14 @@
 IC UC3854DWTR SOIC 16 is an OOMP electronic ic definition. It uses the soic 16 package or form factor. Its nominal drawing size is 9.9 &#x00D7; 3.9 mm.
 
 
+![IC UC3854DWTR SOIC 16 studio render](data/display_render/render.png)
+
+KiCad SOIC-16W model is scaled vertically from 2.75 mm to 2.5 mm to meet the TI 2.65 mm height maximum. Catalogue 9.9 x 3.9 mm body and 6.04 mm overall width conflict with the manufacturer DW wide package, approximately 10.3 mm overall width; catalogue height and footprint are missing. Not a verified mechanical model or footprint. TI specifies UC3854DW for UC3854DWTR; variable production characters are omitted. Typeface, orientation, placement and variable lot/date details are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_SO.3dshapes/SOIC-16W_7.5x10.3mm_P1.27mm.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
+
 
 
 
@@ -77,9 +85,12 @@ IC UC3854DWTR SOIC 16 is an OOMP electronic ic definition. It uses the soic 16 p
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |
 | **Large drawer label** | <img src="label_drawer_3x2.svg" alt="Large drawer label" width="160"> | [SVG](label_drawer_3x2.svg) |
+| **Web catalogue file index** | — | [YAML](web.yaml) |
 | **Part definition and build recipe** | — | [YAML](working.yaml) |
 
 <!-- /oomp-part-file-table -->

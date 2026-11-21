@@ -34,6 +34,21 @@ dimensions_mm:
   length: 10.0
   width: 5.0
 directory: parts/electronic_ic_power_management_pwm_controller_dip_16_onsemi_sg3525ang
+display_render:
+  description: Generic KiCad DIP-16 model has 19.177 mm overall length and 6.98 mm
+    overall height including projecting pins. Source 10 x 5 mm dimensions are generic
+    and conflict with onsemi body range 18.80-19.55 x 6.35-6.85 mm. The manufacturer
+    drawing was text-extracted but not visually confirmed. Display only, not a verified
+    footprint or mechanical model. SG3525AN is the fixed marking shown in the manufacturer
+    diagram. Typeface, orientation and placement are illustrative; variable assembly,
+    lot and date codes are omitted. The diagram has not been visually confirmed.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: SG3525AN
+  model_credit: 2025 KiCAD
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_DIP.3dshapes/DIP-16_W7.62mm.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C5286
@@ -232,6 +247,22 @@ oomlout_ai_roboclick_3:
         length: 10.0
         width: 5.0
       directory: parts\electronic_ic_power_management_pwm_controller_dip_16_onsemi_sg3525ang
+      display_render:
+        description: Generic KiCad DIP-16 model has 19.177 mm overall length and 6.98
+          mm overall height including projecting pins. Source 10 x 5 mm dimensions
+          are generic and conflict with onsemi body range 18.80-19.55 x 6.35-6.85
+          mm. The manufacturer drawing was text-extracted but not visually confirmed.
+          Display only, not a verified footprint or mechanical model. SG3525AN is
+          the fixed marking shown in the manufacturer diagram. Typeface, orientation
+          and placement are illustrative; variable assembly, lot and date codes are
+          omitted. The diagram has not been visually confirmed.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: SG3525AN
+        model_credit: 2025 KiCAD
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_DIP.3dshapes/DIP-16_W7.62mm.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C5286
@@ -733,8 +764,8 @@ oomlout_ai_roboclick_4:
 oomlout_ai_roboclick_5:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

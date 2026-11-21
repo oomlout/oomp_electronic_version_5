@@ -39,6 +39,25 @@ dimensions_mm:
   length: 5.0
   width: 5.0
 directory: parts/electronic_ic_microcontroller_wifi_bluetooth_qfn_33_5_mm_x_5_mm_espressif_esp8285h16
+display_render:
+  description: Espressif ESP8285H16 identity is inferred from the catalogue ID. KiCad
+    display has 32 perimeter contacts plus an exposed pad, 5 x 5 mm body and 0.85
+    mm height. Source drawing instead shows 33 perimeter contacts and a 2.1 mm centre
+    box, and source height is 1.0 mm. Manufacturer package table gives 3.7 mm pad
+    and 0.85 mm nominal height; its drawing image was not visually confirmed. Display
+    is not a verified footprint or mechanical model. ESP8285 and H16 are fixed portions
+    from Espressif change notice; variable week/year and lot codes are omitted. Typeface,
+    layout, orientation and omitted logo are illustrative; notice illustration was
+    not visually confirmed.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: 'ESP8285
+
+    H16'
+  model_credit: 2025 KiCAD
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_DFN_QFN.3dshapes/QFN-32-1EP_5x5mm_P0.5mm_EP3.7x3.7mm.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors: []
 id: electronic_ic_microcontroller_wifi_bluetooth_qfn_33_5_mm_x_5_mm_espressif_esp8285h16
 id_no_class: electronic_ic_microcontroller_wifi_bluetooth_qfn_33_5_mm_x_5_mm_espressif_esp8285h16
@@ -195,6 +214,26 @@ oomlout_ai_roboclick_3:
         length: 5.0
         width: 5.0
       directory: parts\electronic_ic_microcontroller_wifi_bluetooth_qfn_33_5_mm_x_5_mm_espressif_esp8285h16
+      display_render:
+        description: Espressif ESP8285H16 identity is inferred from the catalogue
+          ID. KiCad display has 32 perimeter contacts plus an exposed pad, 5 x 5 mm
+          body and 0.85 mm height. Source drawing instead shows 33 perimeter contacts
+          and a 2.1 mm centre box, and source height is 1.0 mm. Manufacturer package
+          table gives 3.7 mm pad and 0.85 mm nominal height; its drawing image was
+          not visually confirmed. Display is not a verified footprint or mechanical
+          model. ESP8285 and H16 are fixed portions from Espressif change notice;
+          variable week/year and lot codes are omitted. Typeface, layout, orientation
+          and omitted logo are illustrative; notice illustration was not visually
+          confirmed.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: 'ESP8285
+
+          H16'
+        model_credit: 2025 KiCAD
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_DFN_QFN.3dshapes/QFN-32-1EP_5x5mm_P0.5mm_EP3.7x3.7mm.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors: []
       kicad:
         hand_solder: ''
@@ -1074,8 +1113,8 @@ oomlout_ai_roboclick_4:
 oomlout_ai_roboclick_5:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

@@ -5,7 +5,13 @@
 IC RP2040 QFN 56 7 MM X 7 MM is an OOMP electronic ic definition. It uses the qfn 56 7 mm x 7 mm package or form factor. Its nominal drawing size is 7.0 &#x00D7; 7.0 mm. The definition includes 57 documented pins.
 
 
-![IC RP2040 QFN 56 7 MM X 7 MM pinout](data/working_svg_square_pins.svg)
+![IC RP2040 QFN 56 7 MM X 7 MM studio render](data/display_render/render.png)
+
+KiCad QFN-56 model has 7 x 7 x 0.9 mm overall bounds and 0.4 mm pitch. Raspberry Pi specifies a 7 x 7 mm reduced-pad QFN-56 with 0.9 mm maximum height and 3.0 to 3.2 mm exposed pad. Source does not select a footprint or specify height. Not a verified mechanical model or footprint. RP2040 is an illustrative identifier; actual package markings include a logo and production-specific details. Typeface, orientation, placement and variable lot/date details are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_DFN_QFN.3dshapes/QFN-56-1EP_7x7mm_P0.4mm_EP3.2x3.2mm.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -148,6 +154,7 @@ IC RP2040 QFN 56 7 MM X 7 MM is an OOMP electronic ic definition. It uses the qf
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -171,6 +178,7 @@ IC RP2040 QFN 56 7 MM X 7 MM is an OOMP electronic ic definition. It uses the qf
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_ic_microcontroller_dual_core_arm_cortex_m0_plus_qfn_56_7_mm_x_7_mm_raspberry_pi_rp2040.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |

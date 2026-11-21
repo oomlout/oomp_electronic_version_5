@@ -35,6 +35,21 @@ dimensions_mm:
   length: 2.9
   width: 1.6
 directory: parts/electronic_ic_power_management_linear_voltage_regulator_sot_23_5_diodes_ap2112k_3_3
+display_render:
+  description: The KiCad SOT-23-5 model has 2.8 x 2.9 x 1.55 mm source bounds; it
+    is scaled vertically to 1.1 mm for display. Diodes and AP2112K are inferred from
+    the ID; exact orderable is unspecified. Source package drawing lists 4.2 x 3.2
+    mm overall, while its dimensions record specifies 2.65 to 2.95 mm overall width.
+    Not a verified mechanical model or footprint. Diodes specifies G3P for AP2112K-3.3TRG1;
+    this is representative because the exact orderable is unspecified. Typeface, orientation,
+    placement and variable lot/date details are illustrative.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: G3P
+  model_credit: 2025 KiCAD
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/SOT-23-5.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors: []
 ic_dimensions_mm:
   body_length: 2.92
@@ -215,6 +230,22 @@ oomlout_ai_roboclick_4:
         length: 2.9
         width: 1.6
       directory: parts\electronic_ic_power_management_linear_voltage_regulator_sot_23_5_diodes_ap2112k_3_3
+      display_render:
+        description: The KiCad SOT-23-5 model has 2.8 x 2.9 x 1.55 mm source bounds;
+          it is scaled vertically to 1.1 mm for display. Diodes and AP2112K are inferred
+          from the ID; exact orderable is unspecified. Source package drawing lists
+          4.2 x 3.2 mm overall, while its dimensions record specifies 2.65 to 2.95
+          mm overall width. Not a verified mechanical model or footprint. Diodes specifies
+          G3P for AP2112K-3.3TRG1; this is representative because the exact orderable
+          is unspecified. Typeface, orientation, placement and variable lot/date details
+          are illustrative.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: G3P
+        model_credit: 2025 KiCAD
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/SOT-23-5.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors: []
       ic_dimensions_mm:
         body_length: 2.92
@@ -752,8 +783,8 @@ oomlout_ai_roboclick_5:
 oomlout_ai_roboclick_6:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

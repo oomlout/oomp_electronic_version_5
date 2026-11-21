@@ -34,6 +34,19 @@ dimensions_mm:
   length: 10.0
   width: 5.0
 directory: parts/electronic_ic_power_management_buck_converter_wson_8_ep_2x2_texas_instruments_tps62067dsgr
+display_render:
+  description: KiCad WSON-8 display has 2 x 1.98 x 0.77 mm bounds, 0.5 mm pitch and
+    approximate 0.9 x 1.7 mm exposed pad. Source lists generic 10 x 5 mm dimensions
+    without a documented reference. Not a verified mechanical model or footprint.
+    TI specifies ODH for TPS62067DSGR; variable production characters are omitted.
+    Typeface, orientation, placement and variable lot/date details are illustrative.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: ODH
+  model_credit: 2025 KiCAD
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_DFN_QFN.3dshapes/VDFN-8-1EP_2x2mm_P0.5mm_EP0.9x1.7mm.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C7098
@@ -232,6 +245,20 @@ oomlout_ai_roboclick_3:
         length: 10.0
         width: 5.0
       directory: parts\electronic_ic_power_management_buck_converter_wson_8_ep_2x2_texas_instruments_tps62067dsgr
+      display_render:
+        description: KiCad WSON-8 display has 2 x 1.98 x 0.77 mm bounds, 0.5 mm pitch
+          and approximate 0.9 x 1.7 mm exposed pad. Source lists generic 10 x 5 mm
+          dimensions without a documented reference. Not a verified mechanical model
+          or footprint. TI specifies ODH for TPS62067DSGR; variable production characters
+          are omitted. Typeface, orientation, placement and variable lot/date details
+          are illustrative.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: ODH
+        model_credit: 2025 KiCAD
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_DFN_QFN.3dshapes/VDFN-8-1EP_2x2mm_P0.5mm_EP0.9x1.7mm.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C7098
@@ -728,8 +755,8 @@ oomlout_ai_roboclick_4:
 oomlout_ai_roboclick_5:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

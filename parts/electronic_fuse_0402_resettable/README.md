@@ -5,7 +5,13 @@
 Fuse SMD0402-004-12 0402 is an OOMP electronic fuse definition. It uses the 0402 package or form factor. Its nominal drawing size is 1.0 &#x00D7; 0.5 mm. The definition includes 2 documented pins.
 
 
-![Fuse SMD0402-004-12 0402 pinout](data/working_svg_square_pins.svg)
+![Fuse SMD0402-004-12 0402 studio render](data/display_render/render.png)
+
+Generic KiCad 0402 fuse model with 1.00 x 0.52 x 0.35 mm bounds; the exact device height is not established. R+O source identity differs from another listing naming Hongjiacheng; their relationship is unverified. Dark body and metal ends are illustrative, and any marking is omitted. Display illustration only; not manufacturer CAD or a PCB footprint. Deliberately unmarked: exact production marking, material and colour are not established.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Fuse.3dshapes/Fuse_0402_1005Metric.step)
+
+Model credit: 2020 kicad StepUp. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -84,6 +90,7 @@ Fuse SMD0402-004-12 0402 is an OOMP electronic fuse definition. It uses the 0402
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -120,6 +127,7 @@ Fuse SMD0402-004-12 0402 is an OOMP electronic fuse definition. It uses the 0402
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_fuse_0402_resettable.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |

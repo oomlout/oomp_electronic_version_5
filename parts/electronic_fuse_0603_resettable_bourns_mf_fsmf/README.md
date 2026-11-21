@@ -5,7 +5,13 @@
 Fuse MF-FSMF 0603 is an OOMP electronic fuse definition. It uses the 0603 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm. The definition includes 2 documented pins.
 
 
-![Fuse MF-FSMF 0603 pinout](data/working_svg_square_pins.svg)
+![Fuse MF-FSMF 0603 studio render](data/display_render/render.png)
+
+Family-level 1.6 x 0.8 x 0.65 mm concave-end illustration; actual current variant and marking are unspecified. The real device is marked according to its variant; this illustration deliberately omits the mark. Body shade, exact notch shape and gold-coloured terminal finish are illustrative. Display only; not manufacturer CAD or a PCB footprint. Unmarked illustration: the unspecified current variant determines the actual marking.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://github.com/oomlout/oomp_electronic_version_5/blob/main/kicad_agents/display_model_littelfuse_minismdc.py)
+
+Model credit: Procedural model generated in this repository. Project source; procedural display geometry.
 
 
 
@@ -92,6 +98,7 @@ A local PDF has not been captured. The linked source is not an offline datasheet
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -128,6 +135,7 @@ A local PDF has not been captured. The linked source is not an offline datasheet
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_fuse_0603_resettable_bourns_mf_fsmf.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |

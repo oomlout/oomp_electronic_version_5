@@ -5,6 +5,14 @@
 IC TPS60110PWPR HTSSOP 20 EP is an OOMP electronic ic definition. It uses the htssop 20 ep package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
 
 
+![IC TPS60110PWPR HTSSOP 20 EP studio render](data/display_render/render.png)
+
+KiCad HTSSOP-20 model has 6.4 x 6.6 x 1.2 mm overall bounds. Its 3.4 x 6.6 mm thermal pad is display-corrected to 2.0 x 2.7 mm and the underside is filled; the pad remains approximate. Catalogue 10 x 5 mm dimensions are generic and footprint is missing. A catalogue note says 3.3 V, while manufacturer and source ratings indicate 5 V. Not a verified mechanical model or footprint. TI specifies TPS60110 for TPS60110PWPR; variable production characters are omitted. Typeface, orientation, placement and variable lot/date details are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_SO.3dshapes/HTSSOP-20-1EP_4.4x6.5mm_P0.65mm_EP3.4x6.5mm.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
+
 
 
 
@@ -77,9 +85,12 @@ IC TPS60110PWPR HTSSOP 20 EP is an OOMP electronic ic definition. It uses the ht
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |
 | **Large drawer label** | <img src="label_drawer_3x2.svg" alt="Large drawer label" width="160"> | [SVG](label_drawer_3x2.svg) |
+| **Web catalogue file index** | — | [YAML](web.yaml) |
 | **Part definition and build recipe** | — | [YAML](working.yaml) |
 
 <!-- /oomp-part-file-table -->

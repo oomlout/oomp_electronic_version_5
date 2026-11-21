@@ -5,7 +5,13 @@
 IC MT29F1G01ABAFDWB UPDFN 8 is an OOMP electronic ic definition. It uses the updfn 8 package or form factor. Its nominal drawing size is 6.0 &#x00D7; 5.0 mm. The definition includes 8 documented pins.
 
 
-![IC MT29F1G01ABAFDWB UPDFN 8 pinout](data/working_svg_square_pins.svg)
+![IC MT29F1G01ABAFDWB UPDFN 8 studio render](data/display_render/render.png)
+
+Procedural eight-terminal model has 8 x 6 x 0.65 mm body and 1.27 mm pitch, based on the reviewed Micron WB drawing. Catalogue 6 x 5 mm dimensions conflict; manufacturer Micron is inferred, complete orderable and footprint are missing. Terminal form, marking and pin-one indicator appearance are approximate; not a verified mechanical model or footprint. MT29F1G01 is an illustrative partial family identifier; exact physical marking and complete orderable are unverified. Typeface, orientation, placement and variable lot/date details are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://github.com/oomlout/oomp_electronic_version_5/blob/main/kicad_agents/display_model_micron_mt29f1g01_udfn8.py)
+
+Model credit: Procedural model generated in this repository. Project source; procedural display geometry.
 
 
 
@@ -98,6 +104,7 @@ IC MT29F1G01ABAFDWB UPDFN 8 is an OOMP electronic ic definition. It uses the upd
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -119,6 +126,7 @@ IC MT29F1G01ABAFDWB UPDFN 8 is an OOMP electronic ic definition. It uses the upd
 | **Hand-solder footprint guide** | — | [MD](data/kicad/hand_solder/README.md) |
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |

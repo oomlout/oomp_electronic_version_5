@@ -5,7 +5,13 @@
 Fuse 7A 250VACGlass Tube Fuse 5 2 X 20 MM GLASS PLUGIN is an OOMP electronic fuse definition. It uses the 5 2 x 20 mm glass plugin package or form factor. Its nominal drawing size is 20.0 &#x00D7; 5.2 mm. The definition includes 2 documented pins.
 
 
-![Fuse 7A 250VACGlass Tube Fuse 5 2 X 20 MM GLASS PLUGIN pinout](data/working_svg_square_pins.svg)
+![Fuse 7A 250VACGlass Tube Fuse 5 2 X 20 MM GLASS PLUGIN studio render](data/display_render/render.png)
+
+Transparent hollow glass fuse with visible alloy element and nickel-coloured caps, nominal 20 x 5.2 mm source dimensions. Source height 6.5 mm conflicts with the cylindrical diameter. No exact manufacturer PDF or time characteristic has been verified. Cap marking, glass wall, wire size and finish are illustrative. Display illustration only; not manufacturer CAD or a PCB footprint. Illustrative 7A 250V marking from distributor row; exact manufacturer identity and production marking not established.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://github.com/oomlout/oomp_electronic_version_5/blob/main/kicad_agents/display_model_xucheng_5f_2a.py)
+
+Model credit: Procedural model generated in this repository. Project source; procedural display geometry.
 
 
 
@@ -93,6 +99,7 @@ Fuse 7A 250VACGlass Tube Fuse 5 2 X 20 MM GLASS PLUGIN is an OOMP electronic fus
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -125,6 +132,7 @@ Fuse 7A 250VACGlass Tube Fuse 5 2 X 20 MM GLASS PLUGIN is an OOMP electronic fus
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_fuse_5_2_x_20_mm_glass_plugin_disposable_xucheng_elec_7a_250vacglass_tube_fuse.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |

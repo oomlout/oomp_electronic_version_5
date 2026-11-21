@@ -39,6 +39,21 @@ dimensions_mm:
   length: 24.0
   width: 16.0
 directory: parts/electronic_ic_microcontroller_wifi_bluetooth_module_esp_12s_espressif_esp_12s
+display_render:
+  description: Illustrative ESP-12S family appearance using a KiCad ESP-12E source
+    model, with its six extra end contacts recoloured as PCB and height scaled from
+    3.2 to 3.0 mm. End notches, PCB antenna and component details remain approximate.
+    Source identity does not establish module manufacturer; its pin drawing conflicts
+    with its two-row description. Not a verified footprint or mechanical model. ESP-12S
+    is an illustrative family label; exact shield printing, logo, certifications,
+    placement and production details are unverified.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: ESP-12S
+  model_credit: 2025 KiCAD
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/RF_Module.3dshapes/ESP-12E.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors: []
 id: electronic_ic_microcontroller_wifi_bluetooth_module_esp_12s_espressif_esp_12s
 id_no_class: electronic_ic_microcontroller_wifi_bluetooth_module_esp_12s_espressif_esp_12s
@@ -194,6 +209,21 @@ oomlout_ai_roboclick_3:
         length: 24.0
         width: 16.0
       directory: parts\electronic_ic_microcontroller_wifi_bluetooth_module_esp_12s_espressif_esp_12s
+      display_render:
+        description: Illustrative ESP-12S family appearance using a KiCad ESP-12E
+          source model, with its six extra end contacts recoloured as PCB and height
+          scaled from 3.2 to 3.0 mm. End notches, PCB antenna and component details
+          remain approximate. Source identity does not establish module manufacturer;
+          its pin drawing conflicts with its two-row description. Not a verified footprint
+          or mechanical model. ESP-12S is an illustrative family label; exact shield
+          printing, logo, certifications, placement and production details are unverified.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: ESP-12S
+        model_credit: 2025 KiCAD
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/RF_Module.3dshapes/ESP-12E.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors: []
       kicad:
         hand_solder: ''
@@ -851,8 +881,8 @@ oomlout_ai_roboclick_4:
 oomlout_ai_roboclick_5:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

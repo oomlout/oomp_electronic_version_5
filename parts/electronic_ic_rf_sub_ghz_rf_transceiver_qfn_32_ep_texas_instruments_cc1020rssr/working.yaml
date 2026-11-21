@@ -34,6 +34,20 @@ dimensions_mm:
   length: 10.0
   width: 5.0
 directory: parts/electronic_ic_rf_sub_ghz_rf_transceiver_qfn_32_ep_texas_instruments_cc1020rssr
+display_render:
+  description: KiCad QFN-32 display has 7 x 7 x 0.87 mm bounds; source 10 x 5 mm dimensions
+    are generic. Its measured 4.70 mm thermal pad is resized to 4.28 mm by a guarded
+    display adapter; the scaled chamfer is approximate. The TI drawing was not visually
+    confirmed. Display is not a verified footprint or mechanical model. TI lists CC1020
+    as the device marking. Typeface, orientation, placement and omitted logo and production
+    codes are illustrative.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: CC1020
+  model_credit: 2025 KiCAD
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_DFN_QFN.3dshapes/QFN-32-1EP_7x7mm_P0.65mm_EP5.46x5.46mm.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C6517
@@ -241,6 +255,20 @@ oomlout_ai_roboclick_3:
         length: 10.0
         width: 5.0
       directory: parts\electronic_ic_rf_sub_ghz_rf_transceiver_qfn_32_ep_texas_instruments_cc1020rssr
+      display_render:
+        description: KiCad QFN-32 display has 7 x 7 x 0.87 mm bounds; source 10 x
+          5 mm dimensions are generic. Its measured 4.70 mm thermal pad is resized
+          to 4.28 mm by a guarded display adapter; the scaled chamfer is approximate.
+          The TI drawing was not visually confirmed. Display is not a verified footprint
+          or mechanical model. TI lists CC1020 as the device marking. Typeface, orientation,
+          placement and omitted logo and production codes are illustrative.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: CC1020
+        model_credit: 2025 KiCAD
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_DFN_QFN.3dshapes/QFN-32-1EP_7x7mm_P0.65mm_EP5.46x5.46mm.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C6517
@@ -749,8 +777,8 @@ oomlout_ai_roboclick_4:
 oomlout_ai_roboclick_5:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

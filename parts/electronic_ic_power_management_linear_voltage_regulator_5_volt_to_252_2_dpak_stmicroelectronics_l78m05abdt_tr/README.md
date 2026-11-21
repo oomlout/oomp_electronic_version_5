@@ -5,7 +5,13 @@
 IC L78M05ABDT-TR TO 252 2 DPAK is an OOMP electronic ic definition. It uses the to 252 2 dpak package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
 
 
-![IC L78M05ABDT-TR TO 252 2 DPAK pinout](data/working_svg_square_pins.svg)
+![IC L78M05ABDT-TR TO 252 2 DPAK studio render](data/display_render/render.png)
+
+KiCad TO-252-2 model has 9.9 x 6.5 x 2.32 mm overall bounds. The colourless source is assigned coating and metal roles by checked solid geometry, including a short central stub. Catalogue 10 x 5 mm dimensions are generic; manufacturer drawing variant and exact marking layout remain unverified. Not a verified mechanical model or footprint. L78M05AB is an illustrative partial identifier; exact package-top marking is unverified. Typeface, orientation, placement and variable lot/date details are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/TO-252-2.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -79,6 +85,7 @@ IC L78M05ABDT-TR TO 252 2 DPAK is an OOMP electronic ic definition. It uses the 
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -101,6 +108,7 @@ IC L78M05ABDT-TR TO 252 2 DPAK is an OOMP electronic ic definition. It uses the 
 | **Hand-solder footprint guide** | — | [MD](data/kicad/hand_solder/README.md) |
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |

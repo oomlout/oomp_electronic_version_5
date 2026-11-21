@@ -5,7 +5,13 @@
 IC Trusted Platform Module Trusted Platform Module QFN_32_5_MM_X_5_MM is an OOMP electronic ic definition. It uses the qfn 32 5 mm x 5 mm package or form factor. Its nominal drawing size is 5.0 &#x00D7; 5.0 mm. The definition includes 32 documented pins.
 
 
-![IC Trusted Platform Module Trusted Platform Module QFN_32_5_MM_X_5_MM pinout](data/working_svg_square_pins.svg)
+![IC Trusted Platform Module Trusted Platform Module QFN_32_5_MM_X_5_MM studio render](data/display_render/render.png)
+
+Infineon SLB9665 family identity is inferred from the catalogue ID; exact variant is unspecified. KiCad display has 5 x 5 mm body, 0.85 mm height, 0.5 mm pitch and 3.7 mm exposed pad. The source drawing uses 0.625 mm pitch and a 2.1 mm centre box; the manufacturer recommends a 3.6 mm PCB land. Manufacturer drawing was not visually confirmed. Display is not a verified footprint or mechanical model. SLB9665 is an illustrative family marking. Exact variant, firmware, production codes and logo are omitted; typeface, layout and orientation are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_DFN_QFN.3dshapes/QFN-32-1EP_5x5mm_P0.5mm_EP3.7x3.7mm.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -110,6 +116,7 @@ IC Trusted Platform Module Trusted Platform Module QFN_32_5_MM_X_5_MM is an OOMP
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -132,6 +139,7 @@ IC Trusted Platform Module Trusted Platform Module QFN_32_5_MM_X_5_MM is an OOMP
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_ic_trusted_platform_module_trusted_platform_module_qfn_32_5_mm_x_5_mm_infineon_slb9665.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |

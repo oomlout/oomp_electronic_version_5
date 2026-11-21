@@ -41,6 +41,21 @@ dimensions_mm:
   length: 20.0
   width: 5.2
 directory: parts/electronic_fuse_5_2_x_20_mm_glass_plugin_disposable_xucheng_elec_5f_1600210000r1
+display_render:
+  description: Transparent hollow glass fuse with visible alloy element and nickel-coloured
+    caps, nominal 20 x 5.2 mm source dimensions. Source height 6.5 mm conflicts with
+    the cylindrical diameter. The sibling 2 A PDF does not establish the exact 1.6
+    A marking. Cap marking, glass wall, wire size and finish are illustrative. Display
+    illustration only; not manufacturer CAD or a PCB footprint. Illustrative F1.6A
+    250V marking based on 5F family and distributor rating; production marking not
+    established.
+  image: data/display_render/render.png
+  license: Project source; procedural display geometry
+  marking: F1.6A 250V
+  model_credit: Procedural model generated in this repository
+  model_source: https://github.com/oomlout/oomp_electronic_version_5/blob/main/kicad_agents/display_model_xucheng_5f_2a.py
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C3124
@@ -286,6 +301,21 @@ oomlout_ai_roboclick_5:
         length: 20.0
         width: 5.2
       directory: parts\electronic_fuse_5_2_x_20_mm_glass_plugin_disposable_xucheng_elec_5f_1600210000r1
+      display_render:
+        description: Transparent hollow glass fuse with visible alloy element and
+          nickel-coloured caps, nominal 20 x 5.2 mm source dimensions. Source height
+          6.5 mm conflicts with the cylindrical diameter. The sibling 2 A PDF does
+          not establish the exact 1.6 A marking. Cap marking, glass wall, wire size
+          and finish are illustrative. Display illustration only; not manufacturer
+          CAD or a PCB footprint. Illustrative F1.6A 250V marking based on 5F family
+          and distributor rating; production marking not established.
+        image: data/display_render/render.png
+        license: Project source; procedural display geometry
+        marking: F1.6A 250V
+        model_credit: Procedural model generated in this repository
+        model_source: https://github.com/oomlout/oomp_electronic_version_5/blob/main/kicad_agents/display_model_xucheng_5f_2a.py
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C3124
@@ -851,8 +881,8 @@ oomlout_ai_roboclick_6:
 oomlout_ai_roboclick_7:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

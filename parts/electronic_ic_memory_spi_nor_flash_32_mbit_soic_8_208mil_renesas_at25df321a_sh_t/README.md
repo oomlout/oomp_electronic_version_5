@@ -5,6 +5,14 @@
 IC AT25DF321A-SH-T SOIC 8 208MIL is an OOMP electronic ic definition. It uses the soic 8 208mil package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
 
 
+![IC AT25DF321A-SH-T SOIC 8 208MIL studio render](data/display_render/render.png)
+
+KiCad SOIC-8 model has 5.3 x 5.3 mm body, 7.8 mm lead span and 2.16 mm overall height, within manufacturer limits. Catalogue gives generic 10 x 5 mm, conflicting with package dimensions, and omits height and footprint. Package details remain illustrative; not a verified mechanical model or PCB footprint. AT25DF321A is an illustrative partial identifier; exact package marking is unverified. Typeface, orientation, placement and variable lot/date details are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_SO.3dshapes/SOIC-8_5.3x5.3mm_P1.27mm.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
+
 
 
 
@@ -77,9 +85,12 @@ IC AT25DF321A-SH-T SOIC 8 208MIL is an OOMP electronic ic definition. It uses th
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |
 | **Large drawer label** | <img src="label_drawer_3x2.svg" alt="Large drawer label" width="160"> | [SVG](label_drawer_3x2.svg) |
+| **Web catalogue file index** | — | [YAML](web.yaml) |
 | **Part definition and build recipe** | — | [YAML](working.yaml) |
 
 <!-- /oomp-part-file-table -->

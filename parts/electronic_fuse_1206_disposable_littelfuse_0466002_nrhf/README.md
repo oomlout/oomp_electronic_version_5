@@ -5,7 +5,13 @@
 Fuse 0466002.NRHF 1206 is an OOMP electronic fuse definition. It uses the 1206 package or form factor. Its nominal drawing size is 3.2 &#x00D7; 1.6 mm. The definition includes 2 documented pins.
 
 
-![Fuse 0466002.NRHF 1206 pinout](data/working_svg_square_pins.svg)
+![Fuse 0466002.NRHF 1206 studio render](data/display_render/render.png)
+
+Generic KiCad 1206 fuse model measures 3.2 x 1.6 x 0.55 mm within drawing tolerances; the source 1.1 mm height exceeds the drawing 0.66 mm maximum. The model omits the drawing end notches. Green coating and light ink follow the drawing artwork but exact finish is illustrative; not manufacturer CAD or a footprint. Manufacturer 2 A marking N; approximate ink, typeface and placement.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Fuse.3dshapes/Fuse_1206_3216Metric.step)
+
+Model credit: 2020 kicad StepUp. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -93,6 +99,7 @@ Fuse 0466002.NRHF 1206 is an OOMP electronic fuse definition. It uses the 1206 p
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -130,6 +137,7 @@ Fuse 0466002.NRHF 1206 is an OOMP electronic fuse definition. It uses the 1206 p
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_fuse_1206_disposable_littelfuse_0466002_nrhf.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |

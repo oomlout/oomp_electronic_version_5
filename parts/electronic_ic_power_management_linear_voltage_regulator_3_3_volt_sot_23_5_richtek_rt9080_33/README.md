@@ -5,7 +5,13 @@
 IC Power Management Linear Voltage Regulator 3 3 Volt SOT_23_5 is an OOMP electronic ic definition. It uses the sot 23 5 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 1.6 mm.
 
 
-![IC Power Management Linear Voltage Regulator 3 3 Volt SOT_23_5 pinout](data/working_svg_square_pins.svg)
+![IC Power Management Linear Voltage Regulator 3 3 Volt SOT_23_5 studio render](data/display_render/render.png)
+
+KiCad TSOT-23-5 model has 2.8 x 2.9 x 0.95 mm overall bounds. Richtek and RT9080 are inferred from the ID; exact orderable is unspecified. Source selects a SOT-23-5 footprint and omits height; Richtek specifies the thinner TSOT-23-5 package. Not a verified mechanical model or footprint. RT9080 is an illustrative family identifier; Richtek does not publish its physical marking in the data sheet. Typeface, orientation, placement and variable lot/date details are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/TSOT-23-5.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -70,6 +76,7 @@ IC Power Management Linear Voltage Regulator 3 3 Volt SOT_23_5 is an OOMP electr
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -99,6 +106,7 @@ IC Power Management Linear Voltage Regulator 3 3 Volt SOT_23_5 is an OOMP electr
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_ic_power_management_linear_voltage_regulator_3_3_volt_sot_23_5_richtek_rt9080_33.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |

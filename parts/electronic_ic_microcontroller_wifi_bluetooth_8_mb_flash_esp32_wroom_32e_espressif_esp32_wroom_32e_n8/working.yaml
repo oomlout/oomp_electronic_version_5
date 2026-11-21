@@ -45,6 +45,19 @@ dimensions_mm:
   length: 18.0
   width: 25.5
 directory: parts/electronic_ic_microcontroller_wifi_bluetooth_8_mb_flash_esp32_wroom_32e_espressif_esp32_wroom_32e_n8
+display_render:
+  description: Display-only KiCad RF module with assigned dark PCB, gold contacts
+    and metallic shield; antenna trace detail and shield printing are illustrative.
+    Model and text are not a verified production image or mechanical model. Illustrative
+    family label on shield; actual typography, placement, production marks, logos
+    and certifications are not verified.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: ESP32-WROOM-32E
+  model_credit: 2025 KiCAD
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/RF_Module.3dshapes/ESP32-WROOM-32E.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C701342
@@ -246,6 +259,19 @@ oomlout_ai_roboclick_5:
         length: 18.0
         width: 25.5
       directory: parts\electronic_ic_microcontroller_wifi_bluetooth_8_mb_flash_esp32_wroom_32e_espressif_esp32_wroom_32e_n8
+      display_render:
+        description: Display-only KiCad RF module with assigned dark PCB, gold contacts
+          and metallic shield; antenna trace detail and shield printing are illustrative.
+          Model and text are not a verified production image or mechanical model.
+          Illustrative family label on shield; actual typography, placement, production
+          marks, logos and certifications are not verified.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: ESP32-WROOM-32E
+        model_credit: 2025 KiCAD
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/RF_Module.3dshapes/ESP32-WROOM-32E.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C701342
@@ -1243,8 +1269,8 @@ oomlout_ai_roboclick_6:
 oomlout_ai_roboclick_7:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

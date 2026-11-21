@@ -34,6 +34,20 @@ dimensions_mm:
   length: 2.9
   width: 2.6
 directory: parts/electronic_diode_switching_dual_common_anode_sot_23_jiangsu_changjing_electronics_technology_co_ltd_baw56
+display_render:
+  description: KiCad SOT-23 2.5 x 3.0 x 1.2 mm model is vertically scaled to 1.1 mm
+    for display. Finish and fine details are illustrative; not a verified manufacturing
+    model or footprint. JSCJ specifies A1; optional green-moulding dot is omitted.
+    Typeface, placement and production details are illustrative. Marking composited
+    in linear light from shared path-traced material passes; indirect reflections
+    are approximate.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: A1
+  model_credit: 2025 KiCAD
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/SOT-23.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C2136
@@ -245,6 +259,20 @@ oomlout_ai_roboclick_4:
         length: 2.9
         width: 2.6
       directory: parts\electronic_diode_switching_dual_common_anode_sot_23_jiangsu_changjing_electronics_technology_co_ltd_baw56
+      display_render:
+        description: KiCad SOT-23 2.5 x 3.0 x 1.2 mm model is vertically scaled to
+          1.1 mm for display. Finish and fine details are illustrative; not a verified
+          manufacturing model or footprint. JSCJ specifies A1; optional green-moulding
+          dot is omitted. Typeface, placement and production details are illustrative.
+          Marking composited in linear light from shared path-traced material passes;
+          indirect reflections are approximate.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: A1
+        model_credit: 2025 KiCAD
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/SOT-23.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C2136
@@ -753,8 +781,8 @@ oomlout_ai_roboclick_5:
 oomlout_ai_roboclick_6:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

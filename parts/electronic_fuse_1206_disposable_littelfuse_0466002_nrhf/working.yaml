@@ -41,6 +41,19 @@ dimensions_mm:
   length: 3.2
   width: 1.6
 directory: parts/electronic_fuse_1206_disposable_littelfuse_0466002_nrhf
+display_render:
+  description: Generic KiCad 1206 fuse model measures 3.2 x 1.6 x 0.55 mm within drawing
+    tolerances; the source 1.1 mm height exceeds the drawing 0.66 mm maximum. The
+    model omits the drawing end notches. Green coating and light ink follow the drawing
+    artwork but exact finish is illustrative; not manufacturer CAD or a footprint.
+    Manufacturer 2 A marking N; approximate ink, typeface and placement.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: N
+  model_credit: 2020 kicad StepUp
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Fuse.3dshapes/Fuse_1206_3216Metric.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C3105
@@ -285,6 +298,20 @@ oomlout_ai_roboclick_5:
         length: 3.2
         width: 1.6
       directory: parts\electronic_fuse_1206_disposable_littelfuse_0466002_nrhf
+      display_render:
+        description: Generic KiCad 1206 fuse model measures 3.2 x 1.6 x 0.55 mm within
+          drawing tolerances; the source 1.1 mm height exceeds the drawing 0.66 mm
+          maximum. The model omits the drawing end notches. Green coating and light
+          ink follow the drawing artwork but exact finish is illustrative; not manufacturer
+          CAD or a footprint. Manufacturer 2 A marking N; approximate ink, typeface
+          and placement.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: N
+        model_credit: 2020 kicad StepUp
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Fuse.3dshapes/Fuse_1206_3216Metric.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C3105
@@ -847,8 +874,8 @@ oomlout_ai_roboclick_6:
 oomlout_ai_roboclick_7:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

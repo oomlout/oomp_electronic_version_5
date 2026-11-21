@@ -5,7 +5,13 @@
 IC LTV-817S-TA1-C SMD 4P is an OOMP electronic ic definition. It uses the smd 4p package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
 
 
-![IC LTV-817S-TA1-C SMD 4P pinout](data/working_svg_square_pins.svg)
+![IC LTV-817S-TA1-C SMD 4P studio render](data/display_render/render.png)
+
+Illustrative four-lead model is adapted from onsemi FOD817, with 6.5 x 4.6 mm body, 3.85 mm overall height, 10.16 mm lead span and 2.54 mm pitch. Lite-On drawing text suggests corresponding dimensions but has not been visually confirmed. Catalogue lists generic 10 x 5 mm without height or footprint. Lead profile, body height, surface and anode indicator are approximate; not a verified mechanical model or footprint. A Lite-On manufacturer drawing shows 817; rank may be omitted and variable production codes are omitted. Typeface, orientation, placement and variable lot/date details are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://github.com/oomlout/oomp_electronic_version_5/blob/main/kicad_agents/display_model_onsemi_fod817_smd4.py)
+
+Model credit: Procedural model generated in this repository. Project source; procedural display geometry.
 
 
 
@@ -79,6 +85,7 @@ IC LTV-817S-TA1-C SMD 4P is an OOMP electronic ic definition. It uses the smd 4p
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -101,6 +108,7 @@ IC LTV-817S-TA1-C SMD 4P is an OOMP electronic ic definition. It uses the smd 4p
 | **Hand-solder footprint guide** | — | [MD](data/kicad/hand_solder/README.md) |
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |

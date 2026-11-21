@@ -34,6 +34,22 @@ dimensions_mm:
   length: 10.0
   width: 5.0
 directory: parts/electronic_ic_power_management_linear_voltage_regulator_3_3_volt_sot_223_3_maxlinear_spx1117m3_l_3_3_tr
+display_render:
+  description: KiCad SOT-223 model has 7.0 x 6.5 x 1.7 mm overall bounds. Source lists
+    10 x 5 mm without a defined reference, differing from the model. MaxLinear identifies
+    the exact part in SOT223-3. Pin marker and appearance are illustrative. Not a
+    verified mechanical model or footprint. The Exar datasheet identifies 1117M3 and
+    33 as fixed marking portions; variable date and other production characters are
+    omitted. Typeface, orientation, placement and variable lot/date details are illustrative.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: '1117M3
+
+    33'
+  model_credit: 2025 KiCAD
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/SOT-223.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C6862
@@ -256,6 +272,23 @@ oomlout_ai_roboclick_4:
         length: 10.0
         width: 5.0
       directory: parts\electronic_ic_power_management_linear_voltage_regulator_3_3_volt_sot_223_3_maxlinear_spx1117m3_l_3_3_tr
+      display_render:
+        description: KiCad SOT-223 model has 7.0 x 6.5 x 1.7 mm overall bounds. Source
+          lists 10 x 5 mm without a defined reference, differing from the model. MaxLinear
+          identifies the exact part in SOT223-3. Pin marker and appearance are illustrative.
+          Not a verified mechanical model or footprint. The Exar datasheet identifies
+          1117M3 and 33 as fixed marking portions; variable date and other production
+          characters are omitted. Typeface, orientation, placement and variable lot/date
+          details are illustrative.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: '1117M3
+
+          33'
+        model_credit: 2025 KiCAD
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/SOT-223.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C6862
@@ -776,8 +809,8 @@ oomlout_ai_roboclick_5:
 oomlout_ai_roboclick_6:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

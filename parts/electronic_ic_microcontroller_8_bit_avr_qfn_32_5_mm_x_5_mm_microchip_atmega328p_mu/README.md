@@ -5,7 +5,13 @@
 IC Microcontroller 8 Bit Avr QFN_32_5_MM_X_5_MM is an OOMP electronic ic definition. It uses the qfn 32 5 mm x 5 mm package or form factor. Its nominal drawing size is 5.0 &#x00D7; 5.0 mm. The definition includes 32 documented pins.
 
 
-![IC Microcontroller 8 Bit Avr QFN_32_5_MM_X_5_MM pinout](data/working_svg_square_pins.svg)
+![IC Microcontroller 8 Bit Avr QFN_32_5_MM_X_5_MM studio render](data/display_render/render.png)
+
+Microchip specifies 5 x 5 mm QFN-32 with 0.5 mm pitch; manufacturer and orderable are inferred from the catalogue ID. KiCad model exposed pad is 3.3 mm, 0.05 mm above manufacturer maximum. The source package drawing has inconsistent 6.2 mm overall width and 0.625 mm pin spacing. Not a verified mechanical model or footprint. MEGA328P is an illustrative identifier; the physical marking is unverified. Typeface, orientation, placement and variable lot/date details are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_DFN_QFN.3dshapes/QFN-32-1EP_5x5mm_P0.5mm_EP3.3x3.3mm.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -117,6 +123,7 @@ A local PDF has not been captured. The linked source is not an offline datasheet
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -138,6 +145,7 @@ A local PDF has not been captured. The linked source is not an offline datasheet
 | **Hand-solder footprint guide** | — | [MD](data/kicad/hand_solder/README.md) |
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |

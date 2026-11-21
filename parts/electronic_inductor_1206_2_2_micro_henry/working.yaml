@@ -41,6 +41,20 @@ dimensions_mm:
   length: 3.2
   width: 1.6
 directory: parts/electronic_inductor_1206_2_2_micro_henry
+display_render:
+  description: Generic KiCad 1206 inductor model scaled vertically from 1.6 to 0.9
+    mm to match the drawing nominal; length and width are unchanged. Dark body and
+    metal ends are illustrative; the drawing does not verify body shade or any omitted
+    marking. This is a display model, not manufacturing CAD or a footprint. Deliberately
+    unmarked illustration; the manufacturer drawing does not establish the production
+    marking. Image reused from an identical unmarked package and material setup.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: ''
+  model_credit: 2017 kicad StepUp
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Inductor_SMD.3dshapes/L_1206_3216Metric.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C1048
@@ -269,6 +283,21 @@ oomlout_ai_roboclick_5:
         length: 3.2
         width: 1.6
       directory: parts\electronic_inductor_1206_2_2_micro_henry
+      display_render:
+        description: Generic KiCad 1206 inductor model scaled vertically from 1.6
+          to 0.9 mm to match the drawing nominal; length and width are unchanged.
+          Dark body and metal ends are illustrative; the drawing does not verify body
+          shade or any omitted marking. This is a display model, not manufacturing
+          CAD or a footprint. Deliberately unmarked illustration; the manufacturer
+          drawing does not establish the production marking. Image reused from an
+          identical unmarked package and material setup.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: ''
+        model_credit: 2017 kicad StepUp
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Inductor_SMD.3dshapes/L_1206_3216Metric.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C1048
@@ -813,8 +842,8 @@ oomlout_ai_roboclick_6:
 oomlout_ai_roboclick_7:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

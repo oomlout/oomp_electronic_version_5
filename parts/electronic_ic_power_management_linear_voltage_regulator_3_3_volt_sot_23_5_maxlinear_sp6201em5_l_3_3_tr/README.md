@@ -5,6 +5,14 @@
 IC SP6201EM5-L-3-3/TR SOT 23 5 is an OOMP electronic ic definition. It uses the sot 23 5 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 1.6 mm.
 
 
+![IC SP6201EM5-L-3-3/TR SOT 23 5 studio render](data/display_render/render.png)
+
+The KiCad SOT-23-5 model has 2.8 x 2.9 x 1.55 mm source bounds; it is scaled vertically to 1.3 mm for display to respect the manufacturer 1.45 mm maximum. Source 2.9 x 1.6 mm dimensions describe the body rather than the 2.8 mm overall lead span. Not a verified mechanical model or footprint. SP6201 is an illustrative family identifier; the actual production marking is not established. Typeface, orientation, placement and variable lot/date details are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/SOT-23-5.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
+
 
 
 
@@ -77,9 +85,12 @@ IC SP6201EM5-L-3-3/TR SOT 23 5 is an OOMP electronic ic definition. It uses the 
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |
 | **Large drawer label** | <img src="label_drawer_3x2.svg" alt="Large drawer label" width="160"> | [SVG](label_drawer_3x2.svg) |
+| **Web catalogue file index** | — | [YAML](web.yaml) |
 | **Part definition and build recipe** | — | [YAML](working.yaml) |
 
 <!-- /oomp-part-file-table -->

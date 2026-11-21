@@ -34,6 +34,20 @@ dimensions_mm:
   length: 7.0
   width: 7.0
 directory: parts/electronic_ic_microcontroller_dual_core_arm_cortex_m0_plus_qfn_56_7_mm_x_7_mm_raspberry_pi_rp2040
+display_render:
+  description: KiCad QFN-56 model has 7 x 7 x 0.9 mm overall bounds and 0.4 mm pitch.
+    Raspberry Pi specifies a 7 x 7 mm reduced-pad QFN-56 with 0.9 mm maximum height
+    and 3.0 to 3.2 mm exposed pad. Source does not select a footprint or specify height.
+    Not a verified mechanical model or footprint. RP2040 is an illustrative identifier;
+    actual package markings include a logo and production-specific details. Typeface,
+    orientation, placement and variable lot/date details are illustrative.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: RP2040
+  model_credit: 2025 KiCAD
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_DFN_QFN.3dshapes/QFN-56-1EP_7x7mm_P0.4mm_EP3.2x3.2mm.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C2040
@@ -238,6 +252,21 @@ oomlout_ai_roboclick_4:
         length: 7.0
         width: 7.0
       directory: parts\electronic_ic_microcontroller_dual_core_arm_cortex_m0_plus_qfn_56_7_mm_x_7_mm_raspberry_pi_rp2040
+      display_render:
+        description: KiCad QFN-56 model has 7 x 7 x 0.9 mm overall bounds and 0.4
+          mm pitch. Raspberry Pi specifies a 7 x 7 mm reduced-pad QFN-56 with 0.9
+          mm maximum height and 3.0 to 3.2 mm exposed pad. Source does not select
+          a footprint or specify height. Not a verified mechanical model or footprint.
+          RP2040 is an illustrative identifier; actual package markings include a
+          logo and production-specific details. Typeface, orientation, placement and
+          variable lot/date details are illustrative.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: RP2040
+        model_credit: 2025 KiCAD
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_DFN_QFN.3dshapes/QFN-56-1EP_7x7mm_P0.4mm_EP3.2x3.2mm.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C2040
@@ -1145,8 +1174,8 @@ oomlout_ai_roboclick_5:
 oomlout_ai_roboclick_6:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

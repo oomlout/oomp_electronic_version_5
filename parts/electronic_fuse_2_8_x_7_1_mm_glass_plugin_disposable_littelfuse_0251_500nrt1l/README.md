@@ -5,6 +5,14 @@
 Fuse 0251.500NRT1L 2 8 X 7 1 MM GLASS PLUGIN is an OOMP electronic fuse definition. It uses the 2 8 x 7 1 mm glass plugin package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
 
 
+![Fuse 0251.500NRT1L 2 8 X 7 1 MM GLASS PLUGIN studio render](data/display_render/render.png)
+
+Molded axial PICO II body, 7.11 x 2.8 mm with 0.64 mm leads shortened for display. The source 10 x 5 mm dimensions and glass-plugin taxonomy differ from the manufacturer axial drawing. Green body, yellow ink, inscription, lead length and fine contours are illustrative. Display illustration only; not manufacturer CAD or a PCB footprint. Illustrative LF 0.5A inscription; exact production marking and placement are not verified.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://github.com/oomlout/oomp_electronic_version_5/blob/main/kicad_agents/display_model_littelfuse_251_500.py)
+
+Model credit: Procedural model generated in this repository. Project source; procedural display geometry.
+
 
 
 
@@ -76,9 +84,12 @@ Fuse 0251.500NRT1L 2 8 X 7 1 MM GLASS PLUGIN is an OOMP electronic fuse definiti
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |
 | **Large drawer label** | <img src="label_drawer_3x2.svg" alt="Large drawer label" width="160"> | [SVG](label_drawer_3x2.svg) |
+| **Web catalogue file index** | — | [YAML](web.yaml) |
 | **Part definition and build recipe** | — | [YAML](working.yaml) |
 
 <!-- /oomp-part-file-table -->

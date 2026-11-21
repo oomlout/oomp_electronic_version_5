@@ -5,6 +5,14 @@
 IC CC1020RSSR QFN 32 EP is an OOMP electronic ic definition. It uses the qfn 32 ep package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
 
 
+![IC CC1020RSSR QFN 32 EP studio render](data/display_render/render.png)
+
+KiCad QFN-32 display has 7 x 7 x 0.87 mm bounds; source 10 x 5 mm dimensions are generic. Its measured 4.70 mm thermal pad is resized to 4.28 mm by a guarded display adapter; the scaled chamfer is approximate. The TI drawing was not visually confirmed. Display is not a verified footprint or mechanical model. TI lists CC1020 as the device marking. Typeface, orientation, placement and omitted logo and production codes are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_DFN_QFN.3dshapes/QFN-32-1EP_7x7mm_P0.65mm_EP5.46x5.46mm.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
+
 
 
 
@@ -77,9 +85,12 @@ IC CC1020RSSR QFN 32 EP is an OOMP electronic ic definition. It uses the qfn 32 
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |
 | **Large drawer label** | <img src="label_drawer_3x2.svg" alt="Large drawer label" width="160"> | [SVG](label_drawer_3x2.svg) |
+| **Web catalogue file index** | — | [YAML](web.yaml) |
 | **Part definition and build recipe** | — | [YAML](working.yaml) |
 
 <!-- /oomp-part-file-table -->

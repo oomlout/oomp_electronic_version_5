@@ -39,6 +39,20 @@ dimensions_mm:
   length: 1.6
   width: 0.8
 directory: parts/electronic_fuse_0603_resettable_bourns_mf_fsmf
+display_render:
+  description: 'Family-level 1.6 x 0.8 x 0.65 mm concave-end illustration; actual
+    current variant and marking are unspecified. The real device is marked according
+    to its variant; this illustration deliberately omits the mark. Body shade, exact
+    notch shape and gold-coloured terminal finish are illustrative. Display only;
+    not manufacturer CAD or a PCB footprint. Unmarked illustration: the unspecified
+    current variant determines the actual marking.'
+  image: data/display_render/render.png
+  license: Project source; procedural display geometry
+  marking: ''
+  model_credit: Procedural model generated in this repository
+  model_source: https://github.com/oomlout/oomp_electronic_version_5/blob/main/kicad_agents/display_model_littelfuse_minismdc.py
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors: []
 generic_match:
   footprints:
@@ -215,6 +229,20 @@ oomlout_ai_roboclick_4:
         length: 1.6
         width: 0.8
       directory: parts\electronic_fuse_0603_resettable_bourns_mf_fsmf
+      display_render:
+        description: 'Family-level 1.6 x 0.8 x 0.65 mm concave-end illustration; actual
+          current variant and marking are unspecified. The real device is marked according
+          to its variant; this illustration deliberately omits the mark. Body shade,
+          exact notch shape and gold-coloured terminal finish are illustrative. Display
+          only; not manufacturer CAD or a PCB footprint. Unmarked illustration: the
+          unspecified current variant determines the actual marking.'
+        image: data/display_render/render.png
+        license: Project source; procedural display geometry
+        marking: ''
+        model_credit: Procedural model generated in this repository
+        model_source: https://github.com/oomlout/oomp_electronic_version_5/blob/main/kicad_agents/display_model_littelfuse_minismdc.py
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors: []
       generic_match:
         footprints:
@@ -707,8 +735,8 @@ oomlout_ai_roboclick_5:
 oomlout_ai_roboclick_6:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

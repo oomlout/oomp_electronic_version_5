@@ -5,7 +5,13 @@
 WiFi/BLE Module ESP32-S3-WROOM-1-N8 8MB is an OOMP electronic ic definition. It uses the esp32 s3 wroom 1 package or form factor. Its nominal drawing size is 18.0 &#x00D7; 25.5 mm.
 
 
-![WiFi/BLE Module ESP32-S3-WROOM-1-N8 8MB pinout](data/working_svg_square_pins.svg)
+![WiFi/BLE Module ESP32-S3-WROOM-1-N8 8MB studio render](data/display_render/render.png)
+
+Display-only KiCad RF module with assigned dark PCB, gold contacts and metallic shield; antenna trace detail and shield printing are illustrative. Model and text are not a verified production image or mechanical model. Illustrative family label on shield; actual typography, placement, production marks, logos and certifications are not verified.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/RF_Module.3dshapes/ESP32-S3-WROOM-1.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -86,6 +92,7 @@ A local PDF has not been captured. The linked source is not an offline datasheet
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -117,6 +124,7 @@ A local PDF has not been captured. The linked source is not an offline datasheet
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_ic_microcontroller_wifi_bluetooth_8_mb_flash_esp32_s3_wroom_1_espressif_esp32_s3_wroom_1_n8.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |

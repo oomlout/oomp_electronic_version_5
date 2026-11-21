@@ -5,6 +5,14 @@
 IC CJ78L05 SOT 89 3 is an OOMP electronic ic definition. It uses the sot 89 3 package or form factor. Its nominal drawing size is 4.5 &#x00D7; 2.5 mm.
 
 
+![IC CJ78L05 SOT 89 3 studio render](data/display_render/render.png)
+
+KiCad SOT-89 model has 4 x 4.5 x 1.52 mm overall bounds. The colourless source is assigned coating and metal roles by checked solid geometry; catalogue 4.5 x 2.5 mm dimensions do not specify their reference; the maker marking diagram was not visually confirmed. Not a verified mechanical model or footprint. JSCJ specifies CJ and 78L05 on separate lines; the optional green-material dot is omitted. Typeface, orientation, placement and variable lot/date details are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/SOT-89-3.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
+
 
 
 
@@ -77,9 +85,12 @@ IC CJ78L05 SOT 89 3 is an OOMP electronic ic definition. It uses the sot 89 3 pa
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |
 | **Large drawer label** | <img src="label_drawer_3x2.svg" alt="Large drawer label" width="160"> | [SVG](label_drawer_3x2.svg) |
+| **Web catalogue file index** | — | [YAML](web.yaml) |
 | **Part definition and build recipe** | — | [YAML](working.yaml) |
 
 <!-- /oomp-part-file-table -->

@@ -5,7 +5,13 @@
 Fuse RF1404-000 1812 is an OOMP electronic fuse definition. It uses the 1812 package or form factor. Its nominal drawing size is 4.5 &#x00D7; 3.2 mm. The definition includes 2 documented pins.
 
 
-![Fuse RF1404-000 1812 pinout](data/working_svg_square_pins.svg)
+![Fuse RF1404-000 1812 studio render](data/display_render/render.png)
+
+Drawing-based concave-end display geometry adjusted from 0.76 to 0.50 mm high, with 4.55 x 3.24 x 0.50 mm bounds within manufacturer limits. The source height 2.4 mm exceeds the drawing maximum 0.62 mm, and the distributor field 5.4 mm length exceeds the drawing maximum 4.73 mm. The code 7 is documented; body colour, ink, omitted logo, exact notch shape and finish are illustrative. Display illustration only; not manufacturer CAD or a PCB footprint. Manufacturer code 7; omitted logo, ink, typeface and placement are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://github.com/oomlout/oomp_electronic_version_5/blob/main/kicad_agents/display_model_littelfuse_minismdc.py)
+
+Model credit: Procedural model generated in this repository. Project source; procedural display geometry.
 
 
 
@@ -93,6 +99,7 @@ Fuse RF1404-000 1812 is an OOMP electronic fuse definition. It uses the 1812 pac
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -130,6 +137,7 @@ Fuse RF1404-000 1812 is an OOMP electronic fuse definition. It uses the 1812 pac
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_fuse_1812_resettable_littelfuse_rf1404_000.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |

@@ -34,6 +34,20 @@ dimensions_mm:
   length: 10.0
   width: 5.0
 directory: parts/electronic_ic_power_management_adjustable_shunt_voltage_reference_to_92_3_texas_instruments_tl431aclp
+display_render:
+  description: The generic KiCad TO-92 model is laid flat-face-up for display. Its
+    5.0 mm straight leads are shorter than TI minimum 12.7 mm. Source lists 10 x 5
+    mm without a defined reference. Not a verified mechanical model or footprint.
+    TI specifies TL431AC as the fixed marking; its font, placement, logo and variable
+    production details are illustrative. Typeface, orientation, placement and variable
+    lot/date details are illustrative.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: TL431AC
+  model_credit: 2025 KiCAD
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_THT.3dshapes/TO-92_Inline.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C5234
@@ -238,6 +252,20 @@ oomlout_ai_roboclick_3:
         length: 10.0
         width: 5.0
       directory: parts\electronic_ic_power_management_adjustable_shunt_voltage_reference_to_92_3_texas_instruments_tl431aclp
+      display_render:
+        description: The generic KiCad TO-92 model is laid flat-face-up for display.
+          Its 5.0 mm straight leads are shorter than TI minimum 12.7 mm. Source lists
+          10 x 5 mm without a defined reference. Not a verified mechanical model or
+          footprint. TI specifies TL431AC as the fixed marking; its font, placement,
+          logo and variable production details are illustrative. Typeface, orientation,
+          placement and variable lot/date details are illustrative.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: TL431AC
+        model_credit: 2025 KiCAD
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_THT.3dshapes/TO-92_Inline.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C5234
@@ -741,8 +769,8 @@ oomlout_ai_roboclick_4:
 oomlout_ai_roboclick_5:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

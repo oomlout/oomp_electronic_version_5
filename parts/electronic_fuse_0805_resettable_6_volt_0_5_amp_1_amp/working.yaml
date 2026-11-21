@@ -34,6 +34,20 @@ dimensions_mm:
   length: 2.0
   width: 1.25
 directory: parts/electronic_fuse_0805_resettable_6_volt_0_5_amp_1_amp
+display_render:
+  description: 'Generic KiCad 0805 fuse model with 2.00 x 1.25 x 0.45 mm bounds; the
+    exact device height is not established. The source has no manufacturer, MPN or
+    datasheet; its name lists 6 V, 0.5 A and 1 A without further detail; Dark body
+    and metal ends are illustrative, and any marking is omitted. Display illustration
+    only; not manufacturer CAD or a PCB footprint. Deliberately unmarked: exact production
+    marking, material and colour are not established.'
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: ''
+  model_credit: 2020 kicad StepUp
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Fuse.3dshapes/Fuse_0805_2012Metric.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors: []
 id: electronic_fuse_0805_resettable_6_volt_0_5_amp_1_amp
 id_no_class: electronic_fuse_0805_resettable_6_volt_0_5_amp_1_amp
@@ -193,6 +207,20 @@ oomlout_ai_roboclick_4:
         length: 2.0
         width: 1.25
       directory: parts\electronic_fuse_0805_resettable_6_volt_0_5_amp_1_amp
+      display_render:
+        description: 'Generic KiCad 0805 fuse model with 2.00 x 1.25 x 0.45 mm bounds;
+          the exact device height is not established. The source has no manufacturer,
+          MPN or datasheet; its name lists 6 V, 0.5 A and 1 A without further detail;
+          Dark body and metal ends are illustrative, and any marking is omitted. Display
+          illustration only; not manufacturer CAD or a PCB footprint. Deliberately
+          unmarked: exact production marking, material and colour are not established.'
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: ''
+        model_credit: 2020 kicad StepUp
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Fuse.3dshapes/Fuse_0805_2012Metric.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors: []
       kicad:
         hand_solder: ''
@@ -668,8 +696,8 @@ oomlout_ai_roboclick_5:
 oomlout_ai_roboclick_6:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

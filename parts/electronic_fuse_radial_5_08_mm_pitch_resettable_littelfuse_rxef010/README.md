@@ -5,7 +5,13 @@
 Fuse RXEF010 RADIAL 5 08 MM PITCH is an OOMP electronic fuse definition. It uses the radial 5 08 mm pitch package or form factor. Its nominal drawing size is 7.4 &#x00D7; 6.6 mm. The definition includes 2 documented pins.
 
 
-![Fuse RXEF010 RADIAL 5 08 MM PITCH pinout](data/working_svg_square_pins.svg)
+![Fuse RXEF010 RADIAL 5 08 MM PITCH studio render](data/display_render/render.png)
+
+Drawing-inspired RXEF010 radial fuse displayed lying face-up, with 5.08 mm lead pitch. Manufacturer drawing provides maximum dimensions, not the exact nominal body size. Body curvature, yellow finish, lead shape and marking layout are illustrative; manufacturer logo and lot code omitted. The drawing gives 0.10 A hold while one source note says 1 A. Display illustration only; not manufacturing CAD or a footprint. Manufacturer code X10; omitted logo and lot code, ink, typeface and placement are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://github.com/oomlout/oomp_electronic_version_5/blob/main/kicad_agents/display_model_littelfuse_rxef010.py)
+
+Model credit: Procedural model generated in this repository. Project source; procedural display geometry.
 
 
 
@@ -93,6 +99,7 @@ Fuse RXEF010 RADIAL 5 08 MM PITCH is an OOMP electronic fuse definition. It uses
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -125,6 +132,7 @@ Fuse RXEF010 RADIAL 5 08 MM PITCH is an OOMP electronic fuse definition. It uses
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_fuse_radial_5_08_mm_pitch_resettable_littelfuse_rxef010.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |

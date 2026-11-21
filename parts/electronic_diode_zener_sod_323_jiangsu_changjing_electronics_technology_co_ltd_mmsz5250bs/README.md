@@ -5,7 +5,13 @@
 Diode MMSZ5250BS SOD-323 is an OOMP electronic diode definition. It uses the sod 323 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
 
 
-![Diode MMSZ5250BS SOD-323 pinout](data/working_svg_square_pins.svg)
+![Diode MMSZ5250BS SOD-323 studio render](data/display_render/render.png)
+
+KiCad SOD-323 display model is 2.5 x 1.25 x 1.11 mm overall with cathode stripe on the pin-1 side. Its dimensions have not been verified against the manufacturer drawing. Source 10 x 5 mm dimensions appear to be placeholders. Fine details are illustrative; not manufacturing CAD or a footprint. JSCJ manufacturer evidence specifies J5; typeface, placement and finish are illustrative. The available local PDFs are different-manufacturer JCST examples; MMSZ5250BS has no local PDF.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Diode_SMD.3dshapes/D_SOD-323.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -83,6 +89,7 @@ Diode MMSZ5250BS SOD-323 is an OOMP electronic diode definition. It uses the sod
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -116,6 +123,7 @@ Diode MMSZ5250BS SOD-323 is an OOMP electronic diode definition. It uses the sod
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_diode_zener_sod_323_jiangsu_changjing_electronics_technology_co_ltd_mmsz5250bs.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |

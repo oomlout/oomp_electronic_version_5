@@ -5,6 +5,14 @@
 Fuse 5TE.10002R1BT 5 MM SQUARE PLUGIN is an OOMP electronic fuse definition. It uses the 5 mm square plugin package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
 
 
+![Fuse 5TE.10002R1BT 5 MM SQUARE PLUGIN studio render](data/display_render/render.png)
+
+Distributor-sized 5TE square fuse displayed lying face-up, with 5 mm lead pitch. No exact manufacturer drawing is available. Body curvature, dark finish, lead shape and marking are illustrative; manufacturer logo and approval marks omitted. Display illustration only; not manufacturing CAD or a footprint. Illustrative 1A 250V marking; exact production inscription, ink and layout are unknown.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://github.com/oomlout/oomp_electronic_version_5/blob/main/kicad_agents/display_model_xucheng_5te_1a.py)
+
+Model credit: Procedural model generated in this repository. Project source; procedural display geometry.
+
 
 
 
@@ -76,9 +84,12 @@ Fuse 5TE.10002R1BT 5 MM SQUARE PLUGIN is an OOMP electronic fuse definition. It 
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |
 | **Large drawer label** | <img src="label_drawer_3x2.svg" alt="Large drawer label" width="160"> | [SVG](label_drawer_3x2.svg) |
+| **Web catalogue file index** | — | [YAML](web.yaml) |
 | **Part definition and build recipe** | — | [YAML](working.yaml) |
 
 <!-- /oomp-part-file-table -->

@@ -5,7 +5,13 @@
 IC Memory SPI Nor Flash USON_8 is an OOMP electronic ic definition. It uses the uson 8 package or form factor. Its nominal drawing size is 3.0 &#x00D7; 2.0 mm. The definition includes 8 documented pins.
 
 
-![IC Memory SPI Nor Flash USON_8 pinout](data/working_svg_square_pins.svg)
+![IC Memory SPI Nor Flash USON_8 studio render](data/display_render/render.png)
+
+Inferred Winbond identity; KiCad 2 x 2.98 x 0.77 mm model is vertically scaled to 0.55 mm. Its 0.61 x 2.2 mm exposed pad is illustrative and not established in the extracted maker UX drawing. Source selects a 2 x 2 mm footprint and draws terminals on four sides, conflicting with the maker 3 x 2 mm two-row package. Not a verified mechanical model or footprint. Winbond specifies 1P as the fixed prefix for W25Q16JVUXIQ; variable production characters are omitted. Typeface, orientation, placement and variable lot/date details are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_DFN_QFN.3dshapes/DFN-8-1EP_2x3mm_P0.5mm_EP0.61x2.2mm.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -93,6 +99,7 @@ A local PDF has not been captured. The linked source is not an offline datasheet
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -118,6 +125,7 @@ A local PDF has not been captured. The linked source is not an offline datasheet
 | **KiCad symbol, unit 1 (square view)** | <img src="data/kicad/kicad_symbol_unit_1_square.png" alt="KiCad symbol, unit 1 (square view)" width="160"> | [SVG](data/kicad/kicad_symbol_unit_1_square.svg) · [PNG](data/kicad/kicad_symbol_unit_1_square.png) |
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |

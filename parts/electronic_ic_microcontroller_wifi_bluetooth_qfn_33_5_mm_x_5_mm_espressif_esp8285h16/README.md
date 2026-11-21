@@ -5,7 +5,13 @@
 IC Microcontroller Wifi Bluetooth QFN_33_5_MM_X_5_MM is an OOMP electronic ic definition. It uses the qfn 33 5 mm x 5 mm package or form factor. Its nominal drawing size is 5.0 &#x00D7; 5.0 mm. The definition includes 33 documented pins.
 
 
-![IC Microcontroller Wifi Bluetooth QFN_33_5_MM_X_5_MM pinout](data/working_svg_square_pins.svg)
+![IC Microcontroller Wifi Bluetooth QFN_33_5_MM_X_5_MM studio render](data/display_render/render.png)
+
+Espressif ESP8285H16 identity is inferred from the catalogue ID. KiCad display has 32 perimeter contacts plus an exposed pad, 5 x 5 mm body and 0.85 mm height. Source drawing instead shows 33 perimeter contacts and a 2.1 mm centre box, and source height is 1.0 mm. Manufacturer package table gives 3.7 mm pad and 0.85 mm nominal height; its drawing image was not visually confirmed. Display is not a verified footprint or mechanical model. ESP8285 and H16 are fixed portions from Espressif change notice; variable week/year and lot codes are omitted. Typeface, layout, orientation and omitted logo are illustrative; notice illustration was not visually confirmed.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_DFN_QFN.3dshapes/QFN-32-1EP_5x5mm_P0.5mm_EP3.7x3.7mm.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -118,6 +124,7 @@ A local PDF has not been captured. The linked source is not an offline datasheet
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -139,6 +146,7 @@ A local PDF has not been captured. The linked source is not an offline datasheet
 | **Hand-solder footprint guide** | — | [MD](data/kicad/hand_solder/README.md) |
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |

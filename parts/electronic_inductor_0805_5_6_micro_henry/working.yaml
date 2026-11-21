@@ -41,6 +41,21 @@ dimensions_mm:
   length: 2.0
   width: 1.25
 directory: parts/electronic_inductor_0805_5_6_micro_henry
+display_render:
+  description: Generic KiCad 0805 inductor model scaled vertically from 1.25 to 0.9
+    mm to match the drawing nominal. The 1.25 mm model width and 0.85 mm source height
+    differ from the drawing nominal 1.2 mm and 0.9 mm but are within its tolerances.
+    Dark body and metal ends are illustrative; the drawing does not verify body shade
+    or any omitted marking. This is a display model, not manufacturing CAD or a footprint.
+    Deliberately unmarked illustration; the manufacturer drawing does not establish
+    the production marking.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: ''
+  model_credit: 2017 kicad StepUp
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Inductor_SMD.3dshapes/L_0805_2012Metric.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C1045
@@ -273,6 +288,21 @@ oomlout_ai_roboclick_5:
         length: 2.0
         width: 1.25
       directory: parts\electronic_inductor_0805_5_6_micro_henry
+      display_render:
+        description: Generic KiCad 0805 inductor model scaled vertically from 1.25
+          to 0.9 mm to match the drawing nominal. The 1.25 mm model width and 0.85
+          mm source height differ from the drawing nominal 1.2 mm and 0.9 mm but are
+          within its tolerances. Dark body and metal ends are illustrative; the drawing
+          does not verify body shade or any omitted marking. This is a display model,
+          not manufacturing CAD or a footprint. Deliberately unmarked illustration;
+          the manufacturer drawing does not establish the production marking.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: ''
+        model_credit: 2017 kicad StepUp
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Inductor_SMD.3dshapes/L_0805_2012Metric.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C1045
@@ -820,8 +850,8 @@ oomlout_ai_roboclick_6:
 oomlout_ai_roboclick_7:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml
