@@ -1,0 +1,5 @@
+# MaxLinear SPX1117M3-L-3-3/TR display evidence
+
+MaxLinear's [SPX1117 data sheet](https://www.maxlinear.com/ds/spx1117.pdf?productId=12745) lists `SPX1117M3-L-3-3/TR` as a 3.3 V SOT223-3 part. The manufacturer-authored [Exar SPX1117 data sheet](https://www.mouser.com/datasheet/2/146/exars02014_1-2267033.pdf), ordering table, lists the fixed `1117M3` and `33` portions of its marking alongside variable production-date and lead-free characters. The image may use `1117M3` and `33` as a partial illustrative marking; do not invent date or lot, and disclose that typeface, placement and marker are illustrative.
+
+The source identifies the exact manufacturer and part, selects KiCad `Package_TO_SOT_SMD:SOT-223-3_TabPin2`, and lists 10 × 5 mm without a reference. The KiCad `Package_TO_SOT_SMD.3dshapes/SOT-223.step` model has inspected bounds 7.0 × 6.5 × 1.70 mm including leads, with SHA-256 `77ad6dbacc493cb619c728f26d2ddcf461eb0feb6b977b47d01d51e67016f654` and three distinct material colours. The source 10 × 5 mm differs from the model's overall dimensions; disclose it. The model is an illustrative package, not a mechanically validated footprint.

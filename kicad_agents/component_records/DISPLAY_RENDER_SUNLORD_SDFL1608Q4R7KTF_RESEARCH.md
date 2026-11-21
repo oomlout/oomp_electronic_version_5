@@ -1,0 +1,7 @@
+# Sunlord SDFL1608Q4R7KTF display research
+
+The source record `electronic_inductor_0603_4_7_micro_henry` identifies Sunlord SDFL1608Q4R7KTF, specifies 1.60 × 0.80 × 0.80 mm and selects `Inductor_SMD:L_0603_1608Metric`. It has no local PDF. The existing Sunlord SDFL family PDF stored with `electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf` has SHA-256 `335d6b6b58598ce932424478dbb3ec3c02cd90a4ff171a6c9ec78f79172651ef`; no file was downloaded or copied for this review.
+
+The PDF's first page gives the 1608 package as 1.6 × 0.8 × 0.8 mm, each ±0.15 mm, shows end terminations and a dark chip, and defines K as ±10%, T as tape and reel and F as the hazardous-substance-free suffix. Page 3 lists SDFL1608Q4R7□TF at 4.7 µH, with the square in the tolerance position; together these support the KTF identifier. The illustration does not establish whether production parts have a surface marking, so an unmarked depiction must be disclosed as illustrative.
+
+The installed KiCad `Inductor_SMD.3dshapes/L_0603_1608Metric.step` has SHA-256 `b0136ad7160588d2f5dac8c85da84a35646db656b5bc54bbb873b6b548eedbb3`, measures 1.6 × 0.8 × 0.8 mm, and has separate dark-body and metallic-end material colours. Its header credits 2017 kicad StepUp and specifies CC BY-SA 4.0 with the KiCad library exception. It is generic KiCad geometry, not a verified manufacturer-supplied model; material finish and any omitted markings remain illustrative. Independently review and validate each image and page before publication.

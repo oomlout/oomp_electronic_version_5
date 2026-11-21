@@ -1,0 +1,9 @@
+# Silicon Labs Si7211-B-00-IV package conflict
+
+The catalogue ID names `Si7211-B-00-IV` and Silicon Labs but calls for SOT-23-5 and selects a five-pin footprint; the source does not populate manufacturer or manufacturer-part-number fields. Identity is therefore inferred from the ID.
+
+Silicon Labs' [Si721x data sheet](https://www.silabs.com/documents/public/data-sheets/si721x-data-sheet.pdf), revision 1.4, explicitly lists Si7211-B-00-IV(R) as SOT-23-3 and states that Si7211 belongs to the three-pin group; the Si7217 uses the five-pin option. Silicon Labs' [current product-family selector](https://www.silabs.com/sensors/magnetic/si721x) also lists Si7211-00-IV as SOT-23-3. However, Silicon Labs' [magnetic sensor selection guide](https://www.silabs.com/documents/public/brochures/magnetic-sensors-selector-guide.pdf) lists the same Si7211 orderable as SOT-23-5. These manufacturer sources conflict, and the catalogue follows the latter.
+
+The specific data sheet and current product selector support a three-pin display for the inferred identity; it must explicitly disclose the source's five-pin taxonomy/footprint, the contradictory manufacturer selector guide, and inferred identity. Do not alter the source taxonomy or footprint as part of the display task. The manufacturer describes the SOT-23 top marking as a manufacturing code; use a clearly illustrative `7211` identifier without inventing an actual production code.
+
+The maker's three-pin drawing specifies 2.9 mm nominal length, 2.75 mm lead span, 1.6 mm body width, 0.95 mm pitch and 1.25 mm maximum height. The inspected KiCad `Package_TO_SOT_SMD.3dshapes/SOT-23.step` (SHA-256 `dd5d1711204e1d8d26cd11490923bd84340820baa69538c385a4300ec2539bc0`) is 2.5 × 3.0 × 1.2 mm overall and has the expected materials; its 2.5 mm lead span differs from the maker nominal. Disclose that approximation and review all three terminals before publication. This is not a verified footprint or mechanical model.

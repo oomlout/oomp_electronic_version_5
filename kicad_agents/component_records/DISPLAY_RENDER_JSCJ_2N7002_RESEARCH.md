@@ -1,0 +1,5 @@
+# Jiangsu Changjing Electronics Technology Co., Ltd. 2N7002 SOT-23 display research
+
+The source `electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_jiangsu_changjing_electronics_technology_co_ltd_2n7002` identifies Jiangsu Changjing Electronics Technology Co., Ltd. 2N7002 and selects a SOT-23 footprint. The existing PDF SHA-256 `7941fb423af7c6c6c8979063a7e8819bb19217ece275efcce18948950a41d9f6` was visually reviewed on page 1 and is Jiangsu Changjiang/JCET, a different manufacturer from the listed Jiangsu Changjing/JSCJ; it shows 7002. The [JSCJ manufacturer sheet](https://www.jscj-elec.com/gallery/file/2N7002%20SOT-23%20V2.0.pdf) and [product page](https://www.jscj-elec.com/related/23153.html) independently specify 7002. The optional green compound dot is omitted.
+
+KiCad SOT-23 model SHA-256 `dd5d1711204e1d8d26cd11490923bd84340820baa69538c385a4300ec2539bc0` measures 2.5 x 3.0 x 1.2 mm overall including leads, scaled vertically to 1.1 mm. Source dimensions and overall model bounds differ. Typeface, placement and omitted production details are illustrative. This is display-only, not a verified footprint or mechanical model.

@@ -1,0 +1,5 @@
+# Infineon IRFZ44NPBF TO-220AB display research
+
+Source `electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_55_volt_49_amp_infineon_technologies_irfz44npbf` identifies Infineon Technologies IRFZ44NPBF, TO-220AB and generic 10.0 x 4.4 x 9.2 mm body dimensions. The existing International Rectifier manufacturer PDF SHA-256 `28e77008b67246b0059ef0c8906509052674a9ca81773cc094d5892b274cb8de` was visually inspected on page 1; it identifies IRFZ44NPbF and TO-220AB. The cover drawing does not establish exact marking layout or complete marking for the orderable.
+
+Use `IRFZ44N` as an illustrative device identifier, not a verified complete marking. Typeface, placement, logo and variable lot/date information are unverified. KiCad TO-220-3 model SHA-256 `7cb065d935df5771f0ba6e48ddd180863a121af76483dad7f18e667a7b68204a` is laid face-up for display; its 10.25 x 4.455 x 28.525 mm overall includes leads and differs from source body dimensions. This is display-only, not a verified mechanical model or footprint.

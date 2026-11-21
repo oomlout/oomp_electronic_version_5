@@ -1,0 +1,15 @@
+# Remaining transistor identity conflicts
+
+The catalogue names Infineon for IRFPF50PBF, IRFP450LCPBF and IRFR430ATRPBF, but the three locally stored datasheets are Vishay documents. Do not present those PDFs as Infineon drawings or claim that their markings establish an Infineon factory marking.
+
+For IRFPF50, [Vishay's product page](https://www.vishay.com/en/product/91251/) identifies a high-voltage TO-247AC and links a package drawing and marking information; its [datasheet](https://www.vishay.com/docs/91251/91251.pdf) lists IRFPF50PbF. The F in its number does not establish a full-plastic package: the Vishay drawing is TO-247AC with an isolated mounting hole. This is evidence for a Vishay equivalent, not proof of the catalogue's Infineon identity.
+
+The [LCSC listing for IRFP450LCPBF](https://www.lcsc.com/es/product-detail/C2684.html) describes an Infineon TO-247AC-3 part, while [DigiKey](https://www.digikey.com/en/products/detail/vishay-siliconix/IRFP450LCPBF/811608) attributes the same orderable to Vishay. The [LCSC listing for IRFR430ATRPBF](https://www.lcsc.com/de/product-detail/C3015.html) describes an Infineon TO-252 part, while a [Vishay notice](https://www.tti.com/content/dam/ttiinc/products/PCN/Vishay/Vishay-PCN-SIL-0162022.pdf) lists the same orderable. Distributor attribution alone does not resolve the conflict.
+
+Before staging a render, inspect each local package drawing and source record, compare the relevant model dimensions, and disclose that the drawing is a different-manufacturer example. Use an illustrative partial identifier only, without a manufacturer logo or invented factory code. If a reliable Infineon primary source is found, update this record and reassess the model. Do not silently change catalogue manufacturer data as part of display work.
+
+Local drawing review: IRFPF50 PDF SHA-256 `4c668258009efa56fca9b1de998b12bd6585caae821eacfe5ef22dd7c343f152`, page 8, shows Vishay outline 91360, with 14.20–16.25 mm lead length, body height 19.71–20.82 mm and width 15.29–15.87 mm. The reviewed shared display model's 14.50 mm lead is within that example, but its 20.95 mm height and 15.90 mm width exceed the respective maxima by 0.13 and 0.03 mm. This remains a different-manufacturer example.
+
+IRFR430A PDF SHA-256 `b1da6f0077da393489486ad1c67a5c29a8497dd03ed2a638792b9cf44e07cd24`, page 8, renders after Poppler reconstructs a damaged cross-reference; the visible Vishay TO-252AA outline 71197 shows 9.40–10.41 mm overall length, 6.35–6.73 mm body width and 2.18–2.38 mm height. Rendering the page required xref reconstruction, so preserve that limitation. IRFP450LC PDF SHA-256 `e03e642fec63566fbd486420eb501a44b141a285e21033405d0d401a7f913d91` page 8 rendered blank; locate an independently visible package drawing before staging it.
+
+The [Vishay IRFP450LC product page](https://www.vishay.com/en/product/91231/) independently links its TO-247AC high-voltage package drawing; the same outline 91360 is visible in the locally reviewed IRFPF50 PDF above. This supports that Vishay example for IRFP450LC, while leaving the catalogue's Infineon attribution unresolved. No PDF was downloaded during this review.

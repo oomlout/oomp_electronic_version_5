@@ -1,0 +1,5 @@
+# JSCJ S9014-TA(RANGE:200-600) TO-92 display research
+
+Source `electronic_transistor_to_92_bipolar_npn_45_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_s9014_ta_range_200_600` identifies Jiangsu Changjing Electronics Technology Co., Ltd. S9014-TA(RANGE:200-600), TO-92 and generic body dimensions 5.2 x 4.2 x 5.2 mm. Local PDF SHA-256 `bc36a9c34b49e37ed6a86890501725af13f322ea4614f74a2d20eb3b337e3ff6` was visually reviewed on page 1: it is Jiangsu Changjiang/JCET, a different manufacturer. A [JSCJ manufacturer datasheet](https://www.jscj-elec.com/gallery/file/S9014%20TO-92%20V1.1.pdf) identifies S9014 as the device family and the TA tape orderable. The device code is shown as a single line; rank and variable production fields are omitted, and exact typography and placement remain illustrative.
+
+KiCad TO-92_Inline model SHA-256 `f0b61c32ecbf0067157adc5a3d4966ceadf5d6dafe93c51af35f76c41c71a54a` is laid flat-face-up for display. Its 5 mm straight leads are shorter than typical uncut leads and source body dimensions differ. It is not a verified mechanical model or footprint.

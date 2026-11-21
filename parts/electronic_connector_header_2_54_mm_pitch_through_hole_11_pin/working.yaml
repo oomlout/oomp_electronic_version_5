@@ -48,6 +48,20 @@ dimensions_mm:
   length: 27.94
   width: 2.48
 directory: parts/electronic_connector_header_2_54_mm_pitch_through_hole_11_pin
+display_render:
+  description: Generic KiCad eleven-position header with black body and illustrative
+    gold-coloured brass contacts. Exact HCTL contact plating is unverified; the referenced
+    local drawing is absent; legacy model and render are present. The generic model
+    has a 2.54 mm body, 6 mm mating pins and 3 mm tails; source width is 2.48 mm.
+    Display illustration only; not manufacturer CAD or a PCB footprint. Unmarked generic
+    package illustration; no printed markings are established.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: ''
+  model_credit: 2017 kicad StepUp
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x11_P2.54mm_Vertical.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C2894934
@@ -299,7 +313,6 @@ oomlout_ai_roboclick_4:
   file_test: data/kicad/contact_sheet.png
   retries_until_complete: 0
 oomlout_ai_roboclick_5:
-  action_name: step_4_jinja_template_README.md
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -326,6 +339,21 @@ oomlout_ai_roboclick_5:
         length: 27.94
         width: 2.48
       directory: parts\electronic_connector_header_2_54_mm_pitch_through_hole_11_pin
+      display_render:
+        description: Generic KiCad eleven-position header with black body and illustrative
+          gold-coloured brass contacts. Exact HCTL contact plating is unverified;
+          the referenced local drawing is absent; legacy model and render are present.
+          The generic model has a 2.54 mm body, 6 mm mating pins and 3 mm tails; source
+          width is 2.48 mm. Display illustration only; not manufacturer CAD or a PCB
+          footprint. Unmarked generic package illustration; no printed markings are
+          established.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: ''
+        model_credit: 2017 kicad StepUp
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x11_P2.54mm_Vertical.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C2894934
@@ -946,8 +974,8 @@ oomlout_ai_roboclick_6:
 oomlout_ai_roboclick_7:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

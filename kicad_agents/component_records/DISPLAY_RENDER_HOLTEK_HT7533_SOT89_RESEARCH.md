@@ -1,0 +1,7 @@
+# Holtek HT7533-1 SOT-89 display research
+
+The source identifies Holtek Semicon `HT7533-1` in SOT-89-3, records 4.5 × 2.5 mm dimensions and has no selected KiCad footprint. Holtek's [HT75xx-1 data sheet](https://www.holtek.com/webapi/116711/HT75xx-1v281.pdf) identifies the 3.3 V part and specifies the fixed SOT-89 marking pattern `75xx-1`; its [ordering cross-reference](https://www.holtek.com/webapi/168740/eol-75xx.pdf) specifically gives `7533-1`. Variable lot/date, font and placement are not established and must not be invented.
+
+The maker's SOT-89 outline table gives 4.40–4.70 mm dimension A, 2.29–2.70 mm dimension C, 3.94–4.40 mm dimension E, 1.40–1.60 mm dimension I and 1.50 mm nominal pitch. The catalogue's 4.5 × 2.5 mm dimensions are consistent with body-related dimensions but do not explicitly identify their reference.
+
+The candidate KiCad `Package_TO_SOT_SMD.3dshapes/SOT-89-3.step` has SHA-256 `844c0bb504d0c383535d9845c6376fe7a4053241a2ede8d8ef694df3fcfc37c8`, valid geometry and 4.0 × 4.5 × 1.52 mm bounds. Inspection found no per-face colours on its 42 faces; its five solids comprise one large body, one metal tab and three metal leads. The dedicated `kicad_agents/display_render_holtek_ht7533_sot89.py` adapter explicitly assigns those materials after validating each solid's bounds, volume and source hash. Review the preview and final image to verify that the tab and leads appear metallic and the body dark. This is a display model, not a verified footprint or mechanical model.

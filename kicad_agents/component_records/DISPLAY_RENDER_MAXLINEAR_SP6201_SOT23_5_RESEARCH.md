@@ -1,0 +1,5 @@
+# MaxLinear SP6201EM5-L-3-3/TR SOT-23-5 display research
+
+The source identifies exact `SP6201EM5-L-3-3/TR` by MaxLinear and selects the KiCad SOT-23-5 footprint. The manufacturer's [SP6200/SP6201 data sheet](https://www.maxlinear.com/ds/sp6200_sp6201.pdf) lists that orderable as a 3.3 V five-lead SOT-23 part. Its SOT-23 drawing specifies 2.9 mm nominal length, 1.6 mm body width, 2.8 mm overall lead span, 0.95 mm pitch and 1.45 mm maximum overall height. The catalogue dimensions 2.9 × 1.6 mm refer to the body, not the overall span.
+
+The inspected KiCad `Package_TO_SOT_SMD.3dshapes/SOT-23-5.step` has SHA-256 `720a6eab0024069bbee68e7cb4c3ff1149468a34611225cdc852662c5d0ec2b7`, 2.8 × 2.9 × 1.55 mm overall bounds and expected materials. Its height exceeds the maker maximum; display scaling to 1.3 mm is an approximation and must be disclosed. The manufacturer data sheet reviewed does not establish the exact top marking; `SP6201` is an illustrative family identifier and does not claim a production marking, logo, date or lot. The result is not a verified footprint or mechanical model.

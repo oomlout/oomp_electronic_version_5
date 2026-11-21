@@ -1,0 +1,5 @@
+# TI TPS62000DGSR VSSOP-10 display research
+
+The catalogue identifies exact Texas Instruments `TPS62000DGSR`, but its 10 × 5 mm dimensions have no documented reference and no machine-solder footprint is selected. TI's [data sheet](https://www.ti.com/lit/ds/symlink/tps62000.pdf) lists this exact orderable in VSSOP DGS-10 and specifies fixed device marking `AIH`; lot/date, logo, font and placement are not established here. TI's DGS0010A drawing in its [INA228 data sheet](https://www.ti.com/lit/ds/symlink/ina228.pdf) specifies a 3 × 3 mm nominal body, 4.75–5.05 mm lead span, 0.5 mm pitch and 1.1 mm maximum height.
+
+The inspected KiCad `Package_SO.3dshapes/MSOP-10_3x3mm_P0.5mm.step` has SHA-256 `b8f88eac3ce221c2ccb0b5048f9ad49c2ef4af148f8ae50c4e232e357683f547` and 4.9 × 3.0 × 1.1 mm overall bounds, consistent with that DGS drawing. The display should disclose the source's generic 10 × 5 mm dimensions and use the fixed `AIH` marking without inventing production data. This is not a verified footprint or mechanical model.

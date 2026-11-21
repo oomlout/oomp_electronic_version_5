@@ -1,0 +1,7 @@
+# Torex XC6206P502MR 5 V SOT-23 display research
+
+The catalogue identifies `XC6206P502MR` by Torex, selects the KiCad SOT-23 footprint, and records a package drawing with 2.92 × 1.6 mm body and 2.92 × 2.8 mm overall dimensions. Preserve the unsuffixed source identity; do not equate it to a separately listed `-G` orderable.
+
+Torex's [XC6206 data sheet](https://product.torexsemi.com/system/files/series/xc6206.pdf) specifies fixed SOT-23 marking characters `66M` for 5.0 V, followed by a variable production-lot character. Use only the fixed portion and disclose that the typeface, placement and omitted lot are illustrative. The [TO-236 drawing](https://product.torexsemi.com/files/packages/sot-23-to-236-pkg.pdf) specifies 2.4 ± 0.15 mm lead span, 2.9 ± 0.1 mm length and 1.15 mm maximum overall height. Its lead span conflicts with the catalogue's stated 2.8 mm overall width; that discrepancy must remain visible to readers and must not silently change the source data.
+
+The KiCad `Package_TO_SOT_SMD.3dshapes/SOT-23.step` inspected for the related entry has SHA-256 `dd5d1711204e1d8d26cd11490923bd84340820baa69538c385a4300ec2539bc0`, 2.5 × 3.0 × 1.2 mm overall bounds and expected coating, termination and pin-indicator colours. Vertically scaling it to 1.1 mm brings its height within the maker drawing; the original height and scaling must be disclosed. This illustrative display is not a verified mechanical model or footprint.

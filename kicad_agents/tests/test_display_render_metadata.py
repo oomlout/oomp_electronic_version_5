@@ -92,6 +92,56 @@ def test_composite_requires_current_compositor_and_intact_shared_passes(publishe
     assert not parts['part'].get('display_render')
 
 
+def test_composite_orientation_source_must_match_or_be_archived(published):
+    root, output = published
+    recipe = json.loads((root / 'source_file/display_render/recipes.json').read_text())['part']
+    manifest = json.loads((output / 'manifest.json').read_text())
+    compositor = root / 'kicad_agents/display_render_composite.py'
+    compositor.write_text('reviewed compositor')
+    compositor_hash = hashlib.sha256(compositor.read_bytes()).hexdigest()
+    orientation = root / 'kicad_agents/display_render_orientation.py'
+    orientation.write_text('reviewed orientation')
+    orientation_hash = hashlib.sha256(orientation.read_bytes()).hexdigest()
+    folder = root / 'source_file/display_render/masters/oriented'
+    folder.mkdir(parents=True)
+    artifacts = {}
+    for name in ('body.png', 'ink.png'):
+        (folder / name).write_bytes(name.encode())
+        artifacts[name] = {'bytes': (folder / name).stat().st_size,
+                           'sha256': hashlib.sha256((folder / name).read_bytes()).hexdigest()}
+    master = {'inputs': {'model': recipe['model'], 'family': recipe.get('family'), 'studio': {},
+                         'pixels': 1400, 'samples': 256,
+                         'renderer_sha256': manifest['renderer_source_sha256'],
+                         'builder_sha256': compositor_hash,
+                         'orientation_adapter_sha256': orientation_hash}, 'artifacts': artifacts}
+    master_path = folder / 'manifest.json'
+    master_path.write_text(json.dumps(master))
+    manifest['composite'] = {'compositor_source_sha256': compositor_hash,
+                             'master_manifest': master_path.relative_to(root).as_posix(),
+                             'master_manifest_sha256': hashlib.sha256(master_path.read_bytes()).hexdigest()}
+    assert metadata.composite_sources_valid(manifest, recipe, {})
+    orientation.write_text('changed orientation')
+    assert not metadata.composite_sources_valid(manifest, recipe, {})
+    archive = root / 'source_file/display_render/renderer_versions' / (orientation_hash + '.py')
+    archive.parent.mkdir(parents=True)
+    archive.write_text('reviewed orientation')
+    assert metadata.composite_sources_valid(manifest, recipe, {})
+    model_adapter = root / 'kicad_agents/display_render_infineon_irfp4310z.py'
+    model_adapter.write_text('reviewed model adapter')
+    model_hash = hashlib.sha256(model_adapter.read_bytes()).hexdigest()
+    master['inputs']['model_adapter_sha256'] = model_hash
+    master_path.write_text(json.dumps(master))
+    manifest['composite']['master_manifest_sha256'] = hashlib.sha256(master_path.read_bytes()).hexdigest()
+    manifest['model'] = {'adapter_sha256': model_hash}
+    assert metadata.composite_sources_valid(manifest, recipe, {})
+    model_adapter.write_text('changed model adapter')
+    assert not metadata.composite_sources_valid(manifest, recipe, {})
+    (archive.parent / (model_hash + '.py')).write_text('reviewed model adapter')
+    assert metadata.composite_sources_valid(manifest, recipe, {})
+    manifest['model']['adapter_sha256'] = '0' * 64
+    assert not metadata.composite_sources_valid(manifest, recipe, {})
+
+
 @pytest.mark.parametrize('change', ['image', 'recipe', 'renderer', 'evidence'])
 def test_stale_or_corrupt_render_is_not_advertised(published, change):
     root, output = published

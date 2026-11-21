@@ -1,0 +1,5 @@
+# YXC YT-26 32.768 kHz crystal initial evidence
+
+The source identifies YXC X206032768KGB2SC and a 32.768 kHz, 12.5 pF through-hole DT-26 part. Its local YXC YT-26 family datasheet, SHA-256 `19707f007a9a7363b6bb541589e4734a0bd440f02068b9b8a4efef5f8866fe18`, was visually reviewed. It shows a cylindrical 2.0 ± 0.1 mm diameter by 6.0 ± 0.3 mm body with two 5.9 ± 0.3 mm leads, nominal 0.7 mm spacing and 0.25 mm diameter. The drawing gives a generic marking location but not an exact inscription, and it does not list this exact MPN. Frequency text and typography would be illustrative. The source's 5.5 mm height does not correspond to the 2 mm can diameter; preserve this discrepancy.
+
+The selected KiCad `Crystal_C26-LF_D2.1mm_L6.5mm_Vertical.step`, SHA-256 `6349d128f372aa42b8d91288fbea54452472e1d887f008d1e5e358882c372af8`, has total bounds 2.2 × 2.1 × 11.05 mm including leads. Its nominal 6.5 mm body length may exceed the drawing maximum of 6.3 mm; body and lead dimensions and cylinder label projection still need separate verification. Display approximation and orientation must be clearly described; it is not manufacturer CAD or a footprint.

@@ -1,0 +1,5 @@
+# Analog Devices ADM213EARSZ-REEL SSOP-28 research
+
+The catalogue identifies exact Analog Devices `ADM213EARSZ-REEL`, with generic 10 × 5 mm dimensions and no selected machine-solder footprint. [Analog Devices' data sheet](https://www.analog.com/media/en/technical-documentation/data-sheets/adm206e_207e_208e_211e_213e.pdf) lists this exact reel orderable as 28-lead SSOP (RS-28). Its package drawing gives body 9.9–10.5 × 5.0–5.6 mm, lead span 7.4–8.2 mm, 0.65 mm pitch and 2.0 mm maximum height.
+
+The inspected KiCad `Package_SO.3dshapes/SSOP-28_5.3x10.2mm_P0.65mm.step` has SHA-256 `7aa76979ae41da44bded1ed74115012868f2f3f5a757faf32bb9df4f92c1e313`, expected material colours and overall bounds 7.8 × 10.2 × 2.1 mm. The 2.1 mm model exceeds the manufacturer's maximum; a display candidate scales it vertically to 1.9 mm and discloses the approximation. `ADM213E` is an illustrative family identifier: exact physical marking, logo, font and lot/date details are unverified. The source 10 × 5 mm dimensions do not state their reference. This is not a verified mechanical model or footprint.

@@ -5,7 +5,13 @@
 Diode ES2J SMA is an OOMP electronic diode definition. It uses the sma package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
 
 
-![Diode ES2J SMA pinout](data/working_svg_square_pins.svg)
+![Diode ES2J SMA studio render](data/display_render/render.png)
+
+KiCad SMA model has 5.0 x 2.7 x 2.22 mm bounds and cathode band; its body is about 0.06 mm longer than the drawing maximum. Source 10 x 5 mm dimensions conflict with the drawing. ES2J lettering is illustrative because the manufacturer marking code is not established. Display illustration only; not manufacturer CAD or a PCB footprint. Illustrative ES2J identifier; the manufacturer drawing does not establish a physical text marking.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Diode_SMD.3dshapes/D_SMA.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -83,6 +89,7 @@ Diode ES2J SMA is an OOMP electronic diode definition. It uses the sma package o
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -120,6 +127,7 @@ Diode ES2J SMA is an OOMP electronic diode definition. It uses the sma package o
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_diode_fast_recovery_sma_mdd_microdiode_semiconductor_es2j.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |

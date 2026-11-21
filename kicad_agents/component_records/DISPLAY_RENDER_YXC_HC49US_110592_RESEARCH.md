@@ -1,0 +1,3 @@
+# YXC HC-49US 11.0592 MHz display evidence
+
+The source identifies YXC X49SD110592MSD2SC and a 11.0592 MHz HC-49S through-hole crystal. It has no local datasheet. The visually reviewed YXC HC-49US family drawing is held with the sibling 10 MHz part at `parts_source/electronic_crystal_hc_49s_through_hole_2_pin_10_mhz_20_pf_60_ohm_esr/datasheet.pdf`, SHA-256 `8d9dbc91b68d398acdebaf93a00d8b21ceca8cb94e6b12e62b564e2194ada5c0`. The family drawing supports the low-profile oval two-lead package and 3.2768–32 MHz standard range, but does not identify this exact orderable number or specify its printed inscription. Frequency text, placement, typography and finish are illustrative. See `DISPLAY_RENDER_YXC_HC49US_RESEARCH.md` for dimensions and the KiCad model comparison.

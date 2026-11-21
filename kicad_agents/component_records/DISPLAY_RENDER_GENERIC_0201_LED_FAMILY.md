@@ -1,0 +1,7 @@
+# Generic 0201 unlit LED family
+
+On 2026-11-21 the generic 0201, green, red, white and yellow catalogue source records were checked individually. Each has no identified manufacturer or MPN, no local PDF, no specified lens treatment, nominal 0.60 x 0.30 mm dimensions and the same `LED_SMD:LED_0201_0603Metric` footprint as the published generic blue pilot. The colour token describes emitted light; for these entries it does not establish the unlit lens colour or a package marking. Their unlit package appearance is unknown.
+
+The existing blue pilot is an intentionally generic **unlit** KiCad illustration, not evidence that a real LED of any colour looks exactly like it. Its KiCad 0201 model is approximately 0.65 x 0.35 x 0.20 mm, versus the catalogue's 0.60 x 0.30 mm nominal dimensions. Its terminals and green orientation region are underneath. Reusing its identical unmarked image for the five equally unspecified generic entries is appropriate only when each page explicitly discloses the generic, unlit illustration and its own source identity. Reuse must be recorded in each render manifest and proven against the exact pilot artifacts, model, material, studio and rendering inputs; do not imply a separately traced render.
+
+The entries explicitly named `_clear` or `_tint` have additional lens-appearance information and are excluded. Named manufacturer variants, different package sizes and entries that gain evidence must be independently reviewed rather than included by a broad prefix match.

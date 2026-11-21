@@ -1,0 +1,5 @@
+# MDD SS1-series SMA display evidence
+
+The existing SS14 local MDD family PDF, SHA-256 `1c2e8ca38c0a1afef95e4e329afc215094264244d161999f40765f5ef79d5720`, page 1, includes SS12, SS14, SS16 and SS110. The marking-code row lists each part identifier with MDD, and the outline shows an SMA/DO-214AC body 3.80–4.50 mm long, 2.30–2.80 mm wide, 1.85–2.45 mm high and 4.70–5.30 mm overall terminal span. The band marks the cathode. This family PDF is stored with SS14; the other three records have no local PDF. The render uses the part identifier without the MDD logo; actual typography, placement, logo and production details are illustrative.
+
+KiCad `D_SMA.step` SHA-256 `1cfddd4e3b1bf22b8fc6ee3258c2aade882ed7b85b528e23b9db42437775a1db` has approximately 5.00 x 2.70 x 2.22 mm overall bounds. Its coating extends approximately 4.56 mm along the body, 0.06 mm beyond the drawing's 4.50 mm maximum; other listed overall dimensions fit the drawing. The light band lies at negative X, matching pad 1 at negative X in the selected KiCad D_SMA footprint. This is display-only geometry, not a manufacturing model.

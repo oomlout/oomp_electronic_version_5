@@ -1,0 +1,5 @@
+# Vishay Intertech SI2301CDS-T1-GE3 SOT-23 display research
+
+The source `electronic_transistor_sot_23_mosfet_p_channel_enhancement_mode_20_volt_vishay_si2301cds_t1_ge3` identifies Vishay Intertech SI2301CDS-T1-GE3, SOT-23 and generic 2.9 x 1.3 x 1.1 mm body dimensions. Local PDF SHA-256 `54dbab870c4de746422a9ddefdd19d3d78acde5ace00d0f7239d665f3bb83387` was visually reviewed on page 1. The local Vishay Siliconix PDF page 1 explicitly identifies Si2301CDS and N1 as its marking code, and lists the GE3 orderable. The [Vishay product page](https://www.vishay.com/en/product/68741/) confirms the family.
+
+Typeface, size, placement and possible variable details are illustrative. The KiCad SOT-23 model SHA-256 `dd5d1711204e1d8d26cd11490923bd84340820baa69538c385a4300ec2539bc0` measures 2.5 x 3.0 x 1.2 mm overall including leads; it is vertically scaled to 1.1 mm. Source body dimensions differ from overall bounds. This is a display-only representation, not a verified footprint or mechanical model.

@@ -1,0 +1,5 @@
+# Infineon IRFP4110PBF TO-247AC display research
+
+Source `electronic_transistor_to_247ac_mosfet_n_channel_enhancement_mode_100_volt_180_amp_infineon_technologies_irfp4110pbf` identifies Infineon Technologies IRFP4110PBF, TO-247AC and generic 15.9 x 5.5 x 15.6 mm dimensions. The local International Rectifier PDF SHA-256 `05f3eeef19ae61fa014ca580c9fb8bc33b55c0939a528cc6ff444aa6e76f5826` was visually reviewed on page 1 and page 8: it identifies IRFP4110PbF and specifies 14.20–16.10 mm lead length, with body 19.71–20.70 mm high and 15.29–15.87 mm wide. Its marking example illustrates an unrelated device, not the exact IRFP4110PBF production code.
+
+Use `IRFP4110` as an illustrative identifier; exact typography, logo, placement and variable date/lot details are unverified. The KiCad TO-247 STEP SHA-256 `ec0db59b04bcea2e0db6f976bf3ab8644e761c8b0059239f77f4febd6dc9eff4` is laid face-up. Display-only lead correction changes 20.15 mm protrusion to 15.15 mm, within this drawing's range; the 20.95 mm model body height and 15.9 mm width slightly exceed maxima. Lead shape and finish are approximate; this is not a verified mechanical model or footprint.

@@ -1,0 +1,5 @@
+# JSCJ BC857(RANGE:420-800) SOT-23 display research
+
+Source `electronic_transistor_sot_23_bipolar_pnp_45_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_bc857_range_420_800` identifies Jiangsu Changjing Electronics Technology Co., Ltd. BC857(RANGE:420-800), SOT-23 and generic 2.9 x 1.3 x 1.1 mm body dimensions. Local PDF SHA-256 `7777c6ed6963ee36bf21e02b325802ea88efdaa9ad225df2f7277fe0e1cce60f` was visually reviewed on page 1. The local PDF is Jiangsu Changjiang/JCST, a different manufacturer. The [JSCJ BC857 sheet](https://www.jscj-elec.com/gallery/file/BC857SOT-23V11.pdf) associates BC857C with gain 420–800 and code 3G; the source does not specify a complete orderable, so the grade is inferred.
+
+Typeface, placement and variable details are illustrative. KiCad SOT-23 model SHA-256 `dd5d1711204e1d8d26cd11490923bd84340820baa69538c385a4300ec2539bc0` measures 2.5 x 3.0 x 1.2 mm overall including leads, scaled vertically to 1.1 mm. Source body dimensions differ from overall bounds. This is display-only, not a verified mechanical model or footprint.

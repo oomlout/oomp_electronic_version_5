@@ -1,0 +1,5 @@
+# Vishay Intertech IRFBG30PBF TO-220 display research
+
+Source `electronic_transistor_to_220_mosfet_n_channel_enhancement_mode_1000_volt_3_1_amp_vishay_intertech_irfbg30pbf` identifies Vishay Intertech IRFBG30PBF, TO-220, and generic 10.0 x 4.4 x 9.2 mm body dimensions. The existing manufacturer PDF SHA-256 `234f5820d474f25cb3241b8cced573af03df40f6d4423f4ed43f17d6514f859b` was visually inspected on page 1; it identifies the IRFBG30PbF family and TO-220AB package. The cover image does not establish an exact device marking layout or complete marking for the orderable.
+
+Use `IRFBG30` as an illustrative identifier, not a verified complete marking. Typeface, position, logo and variable lot/date information are unverified. The KiCad TO-220-3 model SHA-256 `7cb065d935df5771f0ba6e48ddd180863a121af76483dad7f18e667a7b68204a` is laid face-up for display; its 10.25 x 4.455 x 28.525 mm overall includes leads and differs from source body dimensions. This is display-only, not a verified mechanical model or footprint.

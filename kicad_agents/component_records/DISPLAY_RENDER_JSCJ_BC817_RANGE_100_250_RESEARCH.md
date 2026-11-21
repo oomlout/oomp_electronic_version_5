@@ -1,0 +1,7 @@
+# JSCJ BC817 100–250 SOT-23 display research
+
+The source `electronic_transistor_sot_23_bipolar_npn_45_volt_500_milliamp_jiangsu_changjing_electronics_technology_co_ltd_bc817_range_100_250` identifies Jiangsu Changjing Electronics Technology Co., Ltd. BC817(RANGE:100-250), SOT-23 and generic 2.9 x 1.3 x 1.1 mm body dimensions. The local PDF SHA-256 `39de72837d9ca295d1061f324dbaf492315687b00f553df5a565e32ad15f416c` is branded Jiangsu Changjiang/JCST, a different manufacturer; page 1 was inspected but some text is unreadable due to font encoding.
+
+A [JSCJ BC817 family document indexed by a distributor](https://www.compel.ru/infosheet/JSCJ/BC817) identifies 6A/6B/6C as device codes. A [JSCJ BC817W sheet](https://www.jscj-elec.com/gallery/file/BC817WSOT-323V1.pdf) associates 6A with gain 100–250, but describes SOT-323; the [AD-BC817 sheet](https://www.jscj-elec.com/gallery/file/AD-BC817.pdf) shows an overline for its automotive version. Therefore 6A without an overline is an illustrative family code, not a verified exact marking for this non-AD SOT-23 part. Typography, placement and any compound indicator are unverified.
+
+KiCad SOT-23 model SHA-256 `dd5d1711204e1d8d26cd11490923bd84340820baa69538c385a4300ec2539bc0` measures 2.5 x 3.0 x 1.2 mm overall including leads, scaled to 1.1 mm height. Source body dimensions differ from overall bounds. This is display-only, not a verified footprint or mechanical model.

@@ -1,0 +1,7 @@
+# MDD KBP206 and KBP210 bridge rectifiers
+
+The existing KBP206 local MDD family PDF SHA-256 `5cd52df2def43b3dda4ed781f9a858671cfb12ee02ca6e402e1a3faa7fc0466f`, page 1, lists KBP206 and KBP210 and their identifier-based marking row. The illustrated front identifies the four connections left to right as `+`, `~`, `~`, `-`, with the bevel at the upper-left corner. The KBP210 source record has no local PDF. Both catalogue records name `MDD(Microdiode Semiconductor)`, use placeholder-like 10 x 5 mm dimensions and have no selected footprint. Do not infer the separate KBP310 from this 2 A family document.
+
+The drawing describes a 13.80–14.20 mm wide, 10.40–10.80 mm tall and 3.00–3.40 mm thick body, terminal pitch 3.56–4.06 mm and terminal projection 12.70–13.70 mm. Body-to-lead step, lead width/thickness, bevel and material finish must be treated as illustrative if drawn procedurally. The installed KiCad `Diode_THT.3dshapes` contains KBPC, KBPM and other bridge models, but no exact KBP model was found by name; do not silently substitute one of those distinct packages.
+
+A procedural display-only geometry can use nominal 14.0 x 10.6 x 3.2 mm body, 3.81 mm pitch, nominal 13.2 mm terminal projection and a bevel at the front upper-left. Show the part identifier and `+ ~ ~ -` markings legibly on the front as illustrative, preserving their order, and disclose that the source dimensions and selected-footprint data are incomplete. Preview the model and polarity before any full render; do not export a large CAD or mesh asset.

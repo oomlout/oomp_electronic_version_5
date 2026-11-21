@@ -34,6 +34,20 @@ dimensions_mm:
   length: 10.0
   width: 5.0
 directory: parts/electronic_diode_fast_recovery_do_15_mdd_microdiode_semiconductor_her204
+display_render:
+  description: KiCad DO-15 model has bent leads at 10.16 mm pitch; manufacturer drawing
+    shows straight leads. Model body diameter is approximately 3.62 mm, 0.02 mm above
+    drawing maximum. Source 10 x 5 mm dimensions and missing footprint conflict with
+    the drawing. Display illustration only; not manufacturer CAD or PCB footprint.
+    HER204 is the documented identifier, with MDD logo omitted; actual typography
+    and placement are illustrative.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: HER204
+  model_credit: 2017 kicad StepUp
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Diode_THT.3dshapes/D_DO-15_P10.16mm_Horizontal.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C3074
@@ -234,6 +248,20 @@ oomlout_ai_roboclick_3:
         length: 10.0
         width: 5.0
       directory: parts\electronic_diode_fast_recovery_do_15_mdd_microdiode_semiconductor_her204
+      display_render:
+        description: KiCad DO-15 model has bent leads at 10.16 mm pitch; manufacturer
+          drawing shows straight leads. Model body diameter is approximately 3.62
+          mm, 0.02 mm above drawing maximum. Source 10 x 5 mm dimensions and missing
+          footprint conflict with the drawing. Display illustration only; not manufacturer
+          CAD or PCB footprint. HER204 is the documented identifier, with MDD logo
+          omitted; actual typography and placement are illustrative.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: HER204
+        model_credit: 2017 kicad StepUp
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Diode_THT.3dshapes/D_DO-15_P10.16mm_Horizontal.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C3074
@@ -736,8 +764,8 @@ oomlout_ai_roboclick_4:
 oomlout_ai_roboclick_5:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

@@ -1,0 +1,7 @@
+# JSCJ S9012 2T1 SOT-23 display research
+
+The source `electronic_transistor_sot_23_bipolar_pnp_25_volt_500_milliamp_jiangsu_changjing_electronics_technology_co_ltd_s9012_2t1_range_200_350` identifies Jiangsu Changjing Electronics Technology Co., Ltd. `S9012 2T1(RANGE:200-350)`, SOT-23 and generic 2.9 x 1.3 x 1.1 mm body dimensions. Its distributor-style gain range name is not a verified complete manufacturer order code.
+
+The existing local datasheet SHA-256 `91e50ac7c99f273b31127168b9e17765210dcd36244d9644e0a6915ac637e21f` was visually reviewed on page 1. It is branded Jiangsu Changjiang/JCST, not the source's Jiangsu Changjing/JSCJ, and lists 2T1 for S9012 and a 200-350 H gain grade. The [JSCJ S9012 manufacturer sheet](https://www.jscj-elec.com/gallery/file/S9012%20SOT-23V2.pdf) also lists 2T1 for S9012. The exact complete orderable, typeface, placement and variable details remain illustrative; no logo is asserted. Do not describe the local JCST sheet as a JSCJ document.
+
+The inspected KiCad SOT-23 model SHA-256 `dd5d1711204e1d8d26cd11490923bd84340820baa69538c385a4300ec2539bc0` measures 2.5 x 3.0 x 1.2 mm overall including leads. Use the reviewed 1.1 mm vertical scale and map the indicator-colour face to the body. Generic body dimensions differ from overall bounds. This is a display-only representation, not a verified footprint or mechanical model; inspect preview and final and preserve all source fields.

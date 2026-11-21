@@ -1,0 +1,5 @@
+# YXC HC-49SMD crystal: initial rendering evidence
+
+The 10 MHz source record identifies YXC X49SM10MSD2SC. Its local family datasheet `parts_source/electronic_crystal_hc_49s_smd_surface_mount_2_pin_10_mhz_20_pf_60_ohm_esr/datasheet.pdf`, SHA-256 `6e7d2d4116b38ecf854eb09bc31dda421ca7d8ab91492b81df9b5c4792783b41`, was visually reviewed. The drawing shows a metallic oval can on an SMD carrier with two underside terminals, approximately 11.4 × 4.8 × 3.8 mm overall and 10.0 ± 0.3 mm body length. It is a family sheet and does not establish exact 10 MHz marking text; illustrative text must be disclosed.
+
+KiCad `Crystal_SMD_HC49-SD.step`, SHA-256 `dd38aecf8628f7c874854f509a085f8692ce3b6264ab09ced3b167e99ad5eb5e`, has total bounds 12.5 × 4.65 × 4.0 mm. The 12.5 mm total length exceeds the drawing's 11.4 ± 0.1 mm; inspect carrier and terminals, consider a suitable custom model or explicitly justified display approximation, and verify material and marking projection before use. No recipe is staged.

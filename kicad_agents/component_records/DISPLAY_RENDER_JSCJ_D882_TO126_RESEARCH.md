@@ -1,0 +1,9 @@
+# JSCJ D882 TO-126 render research — model adaptation pending
+
+The catalogue record is JSCJ D882, gain range 160–320, TO-126-3. Its locally stored JSCJ datasheet has SHA-256 `26329a5b3bcdc31a0e72464d65808051b97874c8767099a90f1701f2f6246e29`. The same revision is [available online](https://pdf.voron.ua/files/pdf/CJ/Transistors/D882_TO_126_V2.pdf). The manufacturer identifies the range as rank Y and shows D882 as the device marking; the green-compound dot and variable code are optional or variable details.
+
+The manufacturer's TO-126 outline gives body width 7.4–7.8 mm, height 10.6–11.0 mm, thickness 2.5–2.9 mm, lead projection 15.3–15.7 mm, and lead pitch 2.29 mm typical. The catalogue dimensions are 9 × 4.5 × 8.5 mm and do not agree directly with the drawing; do not silently overwrite the catalogue record.
+
+The local KiCad `Package_TO_SOT_THT.3dshapes/TO-126-3_Vertical.step` has SHA-256 `6cb4ab2049af821a4bd7162ee7b11b91bdea76f43915d9c1fbb0cb1cdeeaa9c6`. It has one fused solid and uncoloured faces, so the normal coloured-STEP importer rejects it. Its measured bounds are 8 × 3.25 × 23.75 mm; the body extends approximately z=3–14 mm and leads to z=-9.75 mm, giving about 12.75 mm lead projection. Its body width and thickness exceed the drawing maxima by about 0.2 and 0.35 mm, respectively, and its leads are about 2.55 mm shorter than the minimum.
+
+The display adapter classifies lead and rear thermal-pad faces using their checked locations and extends lead vertices below z=0 by 2.75 mm, leaving the cross section unchanged. This yields a 15.50 mm projection, within the drawing's range. The model remains about 0.2 mm wider and 0.35 mm thicker than the drawing's maxima, and its detailed form and finish remain approximate; it is not manufacturing CAD. The fixed D882 device code is shown without the optional green-compound dot or variable production code. Typeface and placement are illustrative.

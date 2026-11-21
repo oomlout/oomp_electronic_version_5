@@ -1,0 +1,5 @@
+# MDD SS210, SS34 and SS54 SMA display evidence
+
+The local MDD SS210, SS34 and SS54 PDFs (SHA-256 respectively `a456a883171824a32cec75ed39dae86d8a54b9a2c1774a4bc99262d3b05d3bae`, `fb4970875779696914d235bcf954240569302fb325399838f2861d474cbf9760`, and `d90558a8db9d6ea0e8712c740ffea6d9c106544653faf724af75f1ab276dee66`) were visually reviewed at page 1. Each marking row lists the matching part identifier with MDD and each shows the same DO-214AC/SMA outline and cathode band: body 3.80–4.50 x 2.30–2.80 mm, height 1.85–2.45 mm and terminal span 4.70–5.30 mm. The illustration uses the part identifier, omitting the MDD logo; typography and production details are illustrative.
+
+KiCad `D_SMA.step`, SHA-256 `1cfddd4e3b1bf22b8fc6ee3258c2aade882ed7b85b528e23b9db42437775a1db`, measures about 5.00 x 2.70 x 2.22 mm overall. The 4.56 mm body exceeds the 4.50 mm drawing maximum by about 0.06 mm; the remaining overall dimensions fit. Its cathode band is on the negative-X pin-1 side of the selected KiCad footprint. The image is display-only, not manufacturing CAD.

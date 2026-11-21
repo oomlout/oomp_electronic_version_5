@@ -1,0 +1,3 @@
+# YXC HC-49SMD 24 MHz display evidence
+
+The source identifies YXC X49SM24MSD2SC and a 24 MHz HC-49S surface-mount crystal. It has no local datasheet. The visually reviewed YXC HC-49SMD family drawing is held with the sibling 10 MHz part at `parts_source/electronic_crystal_hc_49s_smd_surface_mount_2_pin_10_mhz_20_pf_60_ohm_esr/datasheet.pdf`, SHA-256 `6e7d2d4116b38ecf854eb09bc31dda421ca7d8ab91492b81df9b5c4792783b41`. The family drawing supports the low-profile oval SMD package and 3.2768–32 MHz standard range, but does not identify this exact orderable number or specify its printed inscription. Frequency text, placement, typography and finish are illustrative. See `DISPLAY_RENDER_YXC_HC49SMD_RESEARCH.md` for dimensions and the KiCad model comparison.

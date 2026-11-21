@@ -5,7 +5,13 @@
 Diode W06 DIP-4 is an OOMP electronic diode definition. It uses the dip 4 package or form factor. Its nominal drawing size is 8.6 &#x00D7; 6.5 mm. The definition includes 4 documented pins.
 
 
-![Diode W06 DIP-4 pinout](data/working_svg_square_pins.svg)
+![Diode W06 DIP-4 studio render](data/display_render/render.png)
+
+Procedural round WOM body 8.8 mm diameter x 5.5 mm tall with 0.75 mm leads on 5.1 mm centres; the positive lead is longer. The source record specifies a rectangular DIP footprint and 8.6 x 6.5 x 3.6 mm dimensions, which conflict with the manufacturer round-body drawing. This image follows the drawing; verify the source footprint before use. Display illustration only; not manufacturing CAD or a PCB footprint. W06 is a partial manufacturer family identifier; the MDD logo is omitted. The +, ~, ~, - positions follow the drawing connection arrangement, but their placement on the top face, typeface and production artwork are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://github.com/oomlout/oomp_electronic_version_5/blob/main/kicad_agents/display_model_mdd_w06.py)
+
+Model credit: Procedural model generated in this repository. Project source; procedural display geometry.
 
 
 
@@ -95,6 +101,7 @@ Diode W06 DIP-4 is an OOMP electronic diode definition. It uses the dip 4 packag
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -128,6 +135,7 @@ Diode W06 DIP-4 is an OOMP electronic diode definition. It uses the dip 4 packag
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_diode_bridge_rectifier_dip_4_mdd_microdiode_semiconductor_w06.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |

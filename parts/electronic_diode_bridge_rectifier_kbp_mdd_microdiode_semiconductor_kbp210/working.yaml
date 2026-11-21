@@ -34,6 +34,23 @@ dimensions_mm:
   length: 10.0
   width: 5.0
 directory: parts/electronic_diode_bridge_rectifier_kbp_mdd_microdiode_semiconductor_kbp210
+display_render:
+  description: Procedural KBP body is 14.0 x 10.6 x 3.2 mm with 3.81 mm lead pitch
+    and 13.2 mm projection. The bevel and lead details are illustrative. Source 10
+    x 5 mm dimensions appear to be placeholders and no footprint is selected. Display
+    illustration only; not manufacturing CAD or a PCB footprint. Part identifier and
+    +, ~, ~, - polarity labels follow the family drawing; typeface, exact placement,
+    finish and production details are illustrative. No local PDF is stored for this
+    entry; the KBP206 family PDF is the source.
+  image: data/display_render/render.png
+  license: Project source; procedural display geometry
+  marking: 'KBP210
+
+    +  ~  ~  -'
+  model_credit: Procedural model generated in this repository
+  model_source: https://github.com/oomlout/oomp_electronic_version_5/blob/main/kicad_agents/display_model_mdd_kbp.py
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C3081
@@ -230,6 +247,23 @@ oomlout_ai_roboclick_3:
         length: 10.0
         width: 5.0
       directory: parts\electronic_diode_bridge_rectifier_kbp_mdd_microdiode_semiconductor_kbp210
+      display_render:
+        description: Procedural KBP body is 14.0 x 10.6 x 3.2 mm with 3.81 mm lead
+          pitch and 13.2 mm projection. The bevel and lead details are illustrative.
+          Source 10 x 5 mm dimensions appear to be placeholders and no footprint is
+          selected. Display illustration only; not manufacturing CAD or a PCB footprint.
+          Part identifier and +, ~, ~, - polarity labels follow the family drawing;
+          typeface, exact placement, finish and production details are illustrative.
+          No local PDF is stored for this entry; the KBP206 family PDF is the source.
+        image: data/display_render/render.png
+        license: Project source; procedural display geometry
+        marking: 'KBP210
+
+          +  ~  ~  -'
+        model_credit: Procedural model generated in this repository
+        model_source: https://github.com/oomlout/oomp_electronic_version_5/blob/main/kicad_agents/display_model_mdd_kbp.py
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C3081
@@ -727,8 +761,8 @@ oomlout_ai_roboclick_4:
 oomlout_ai_roboclick_5:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

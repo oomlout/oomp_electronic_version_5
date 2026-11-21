@@ -1,0 +1,5 @@
+# B5819W SL SOD-123 display evidence
+
+The catalogue record names Jiangsu Changjing Electronics Technology Co., Ltd. (JSCJ) and MPN `B5819W SL`. Its local PDF SHA-256 `1a0fd53a8ed6c62591a3983fd4c29b607975d30ba96c9381679109461399d442` instead identifies Jiangsu Changjiang Electronics Technology Co., Ltd. (JCET). Page 1 explicitly maps JCET B5819W to `SL` and shows a cathode stripe and an optional green-moulding dot. The catalogue's `SL` may be a marking rather than an orderable suffix; that remains unconfirmed. Omit the optional dot because the source record does not specify it.
+
+The PDF's page 3 dimensioned SOD-123 outline shows body length 2.60–2.80 mm, body width 1.50–1.70 mm, lead span 3.55–3.85 mm and height 1.05–1.25 mm. The reviewed KiCad SOD-123 display model is 3.8 x 1.6 x 1.26 mm overall and thus 0.01 mm taller than the example drawing's maximum. This is a different-manufacturer example, not a confirmed JSCJ factory marking or manufacturing model. The catalogue's 10 x 5 mm dimensions appear to be placeholders; no footprint is selected. Typeface and placement are illustrative.

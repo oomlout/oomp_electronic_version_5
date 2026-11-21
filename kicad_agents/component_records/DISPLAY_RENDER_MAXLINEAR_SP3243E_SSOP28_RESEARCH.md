@@ -1,0 +1,5 @@
+# MaxLinear SP3243EEA-L/TR SSOP-28 research
+
+The source identifies exact MaxLinear SP3243EEA-L/TR with generic 10 × 5 mm dimensions and an SSOP-28-208mil package ID. MaxLinear's [data sheet](https://www.maxlinear.com/ds/sp3243e.pdf) identifies the 28-lead SSOP and its mechanical table gives 9.9–10.5 mm body length, 5.0–5.6 mm body width, 7.4–8.2 mm lead span, 0.65 mm pitch and 2.0 mm maximum height. The source's generic dimensions have no defined reference.
+
+The inspected KiCad `Package_SO.3dshapes/SSOP-28_5.3x10.2mm_P0.65mm.step` has SHA-256 `7aa76979ae41da44bded1ed74115012868f2f3f5a757faf32bb9df4f92c1e313`, expected material colours and overall bounds 7.8 × 10.2 × 2.1 mm. Its nominal body dimensions and pitch match, but its height exceeds the manufacturer's 2.0 mm maximum; vertically scale a display candidate to 1.9 mm and disclose that approximation. No exact physical marking is established here: `SP3243E` is a representative family identifier only, with logo, font, lot, date and placement unverified. Disclose the source dimension limitations and do not treat the display as a verified mechanical model or footprint.

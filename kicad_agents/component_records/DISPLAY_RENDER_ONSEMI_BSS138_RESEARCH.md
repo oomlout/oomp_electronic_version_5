@@ -1,0 +1,5 @@
+# onsemi BSS138 SOT-23 display research
+
+Source `electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138` identifies onsemi BSS138, SOT-23, with dimensions 2.9 x 2.4 mm and no height. The local onsemi manufacturer datasheet SHA-256 `d7ef8509e41f2def9147c14a68a0578155f7400c58e3b9514aad07524d6dd4dd` was visually inspected on page 1: it identifies BSS138 in SOT-23 case 318-08 and depicts SS as the device code. Its date code and Pb-free microdot vary in position; both are omitted in the display. The [current onsemi sheet](https://www.onsemi.com/download/data-sheet/pdf/bss138-d.pdf) independently presents the same marking diagram. The fixed code is shown; typeface and placement are illustrative.
+
+The KiCad SOT-23 model SHA-256 `dd5d1711204e1d8d26cd11490923bd84340820baa69538c385a4300ec2539bc0` measures 2.5 x 3.0 x 1.2 mm overall including leads. As source height is unspecified, the reviewed 1.1 mm scaled height is an illustrative approximation, not a measured match. Source 2.9 x 2.4 mm dimensions differ from overall model bounds. This is a display-only representation, not a verified mechanical model or footprint.

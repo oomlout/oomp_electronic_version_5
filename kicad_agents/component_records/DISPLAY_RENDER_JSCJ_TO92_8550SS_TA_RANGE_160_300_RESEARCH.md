@@ -1,0 +1,5 @@
+# JSCJ 8550SS-TA(RANGE:160-300) TO-92 display research
+
+Source `electronic_transistor_to_92_bipolar_pnp_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_8550ss_ta_range_160_300` identifies Jiangsu Changjing Electronics Technology Co., Ltd. 8550SS-TA(RANGE:160-300), TO-92 and generic body dimensions 5.2 x 4.2 x 5.2 mm. Local PDF SHA-256 `719b36a5f64af94c8037e7575d40c5647a5cd954186781d8c18f328b406a93ac` was visually reviewed on page 1. The local PDF is branded Jiangsu Changjiang/JCST, a different manufacturer. The source and distributor identify the JSCJ 8550SS family and 1.5 A rating; exact JSCJ marking, lot and gain-rank code are unverified. The identifier 8550SS is an illustrative family label; it is not proof of a production marking or its typeface, size, layout, gain grade or lot information.
+
+KiCad TO-92_Inline model SHA-256 `f0b61c32ecbf0067157adc5a3d4966ceadf5d6dafe93c51af35f76c41c71a54a` is laid flat-face-up for display. Its 5 mm straight leads are shorter than typical uncut leads and source body dimensions differ. It is not a verified mechanical model or footprint.

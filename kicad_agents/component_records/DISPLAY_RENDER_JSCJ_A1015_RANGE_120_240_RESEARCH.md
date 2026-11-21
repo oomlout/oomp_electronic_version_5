@@ -1,0 +1,5 @@
+# JSCJ A1015(RANGE:120-240) SOT-23 display research
+
+Source `electronic_transistor_sot_23_bipolar_pnp_50_volt_150_milliamp_jiangsu_changjing_electronics_technology_co_ltd_a1015_range_120_240` identifies Jiangsu Changjing Electronics Technology Co., Ltd. A1015(RANGE:120-240), SOT-23 and generic 2.9 x 1.3 x 1.1 mm body dimensions. Local PDF SHA-256 `71cdb63cc25c91ea0d23ca7e90953e8f8fed47c71c3909e360aaa1b42ea49f89` was visually reviewed on page 1. The local PDF is Jiangsu Changjiang/JCST, a different manufacturer, and gives gain L=130–200; the [JSCJ sheet](https://www.jscj-elec.com/gallery/file/A1015%20SOT-23%20V2.pdf) identifies BA and L=120–240, matching the source range.
+
+Typeface, placement and variable details are illustrative. KiCad SOT-23 model SHA-256 `dd5d1711204e1d8d26cd11490923bd84340820baa69538c385a4300ec2539bc0` measures 2.5 x 3.0 x 1.2 mm overall including leads, scaled vertically to 1.1 mm. Source body dimensions differ from overall bounds. This is display-only, not a verified mechanical model or footprint.

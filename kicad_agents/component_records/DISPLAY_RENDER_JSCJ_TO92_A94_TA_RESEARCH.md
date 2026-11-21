@@ -1,0 +1,5 @@
+# JSCJ A94-TA TO-92 display research
+
+Source `electronic_transistor_to_92_bipolar_pnp_400_volt_200_milliamp_jiangsu_changjing_electronics_technology_co_ltd_a94_ta` identifies Jiangsu Changjing Electronics Technology Co., Ltd. A94-TA, TO-92 and generic body dimensions 5.2 x 4.2 x 5.2 mm. Local PDF SHA-256 `0cd87a59cebb7c2a63ea8d3b5e350a95820cde581250a20d922b6a6f1a6b4f53` was visually reviewed on page 1. The local A94 PDF first page lacks a readable manufacturer name; its attribution and exact JSCJ marking are unverified. The source identifies the JSCJ A94 family. The identifier A94 is an illustrative family label; it is not proof of a production marking or its typeface, size, layout, gain grade or lot information.
+
+KiCad TO-92_Inline model SHA-256 `f0b61c32ecbf0067157adc5a3d4966ceadf5d6dafe93c51af35f76c41c71a54a` is laid flat-face-up for display. Its 5 mm straight leads are shorter than typical uncut leads and source body dimensions differ. It is not a verified mechanical model or footprint.

@@ -1,0 +1,5 @@
+# Infineon Technologies IRFB4110PBF TO-220 display research
+
+Source `electronic_transistor_to_220_mosfet_n_channel_enhancement_mode_100_volt_180_amp_infineon_technologies_irfb4110pbf` identifies Infineon Technologies IRFB4110PBF, TO-220, and generic 10.0 x 4.4 x 9.2 mm body dimensions. The existing manufacturer PDF SHA-256 `bb0efb1b0dd40f530c3b3530b1f890b179e6bc08412f697141dc1dd47d22e6f6` was visually inspected on page 1; it identifies the IRFB4110PbF family and TO-220AB package. The cover image does not establish an exact device marking layout or complete marking for the orderable.
+
+Use `IRFB4110` as an illustrative identifier, not a verified complete marking. Typeface, position, logo and variable lot/date information are unverified. The KiCad TO-220-3 model SHA-256 `7cb065d935df5771f0ba6e48ddd180863a121af76483dad7f18e667a7b68204a` is laid face-up for display; its 10.25 x 4.455 x 28.525 mm overall includes leads and differs from source body dimensions. This is display-only, not a verified mechanical model or footprint.

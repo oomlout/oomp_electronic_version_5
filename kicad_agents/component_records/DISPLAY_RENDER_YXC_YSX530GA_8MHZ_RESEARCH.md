@@ -1,0 +1,5 @@
+# YXC 5032 8 MHz crystal initial evidence
+
+The source identifies YXC X50328MSB2GI, 8 MHz, 20 pF and a 5.0 × 3.2 mm two-pad package, with no height in the source dimensions. Its local YXC YSX530GA family datasheet, SHA-256 `8bf08a3bf19c155396a5113bbd11ab3b6bfdfe78b26c652125f18df11eb0eda2`, was visually reviewed. The drawing gives 5.0 ± 0.15 × 3.2 ± 0.15 × 1.2 ± 0.15 mm, a glass-sealed two-pad package and an 8–54 MHz standard range. It does not list the exact orderable number or specify the actual 8 MHz top inscription. The pictured dark package illustrates the family; any frequency text, typography and finish are illustrative.
+
+KiCad `Crystal_SMD_5032-2Pin_5.0x3.2mm.step`, SHA-256 `8db55547119e47f2a8f852b629b1df468b0a50286dbb4b62a50e10c6115975cc`, measures 5.0 × 3.2 × 1.13 mm, within the drawing tolerances. A face-colour audit found a single flat top face, gold-coloured side region, dark base and two underside contacts; marking projection and final appearance must still be visually verified. No exact manufacturer CAD or physical marking has been established.

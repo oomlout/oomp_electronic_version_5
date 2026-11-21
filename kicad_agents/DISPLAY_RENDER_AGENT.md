@@ -188,7 +188,38 @@ sleeve markings; that does not imply general curved-marking support.
 | Electrolytic capacitors | Sleeve, exposed metal, insulating base; cylindrical UV mapping | Verified capacitance/voltage series text and polarity stripe |
 | Tantalum/polymer capacitors | Moulded case and metal terminals | Verified value/voltage code and polarity bar, with correct polarity convention |
 | ICs | Separate mould compound and leads/pads; planar top marking; pin-one feature | Exact manufacturer top-mark lookup, line order and pin-one orientation |
+| LEDs | Unlit body/lens and contacts, with lens material based on evidence | Do not infer the unlit lens colour from emitted colour; omit unverified markings |
 | Connectors | Separate housing and contacts, multipart assembly transforms | Logos/cavity numbers only where verified |
+
+For generic LEDs, check the actual position of any coloured KiCad region: the
+green region on reviewed 0201–1206 SMD models is an underside orientation
+feature, not an illuminated lens. A `_clear` or `_tint` entry carries lens
+information and must not be treated as an unspecified-lens example. The
+standard `reused_image` manifest field is validated against the source render,
+matching complete visual recipe and source hashes; currently only the explicitly
+reviewed unspecified-lens 0201, 0402, 0603, 0805 and 1206 variants are allowed. Never use a
+generic pilot for a named manufacturer part without its own evidence. See
+`component_records/DISPLAY_RENDER_LED_OTHER_PACKAGE_INVENTORY.md` and the
+generic 0201/0402/0603/0805/1206 family evidence for the current boundaries.
+
+For chip inductors, check the actual manufacturer and MPN in `working.yaml`:
+a generic-looking folder can contain a named part, and a named folder can have
+blank manufacturer or footprint fields. Disclose any identity inferred from a
+folder ID. Read the exact manufacturer family drawing for package height and
+marking; a generic KiCad model can be too tall. Any display-only scaling must
+be recorded in the recipe and page, checked against the drawing and never be
+presented as verified manufacturing geometry. The four expressly reviewed
+Fenghua CMI321609 variants and the three explicitly reviewed unspecified 0603
+magnetic records may share an unmarked illustration within their own group only
+through the checked reuse workflow and explicit per-page provenance; other
+inductor families need separate evidence and validation.
+
+For bridge rectifiers, compare the exact manufacturer drawing to both source
+identity and footprint before placing polarity marks. A bottom view may reverse
+left and right relative to a front view, and a generic package name can hide a
+round-versus-rectangular mismatch. Keep any source discrepancy and shortened or
+bent lead geometry explicit in the rendered page. See
+`component_records/DISPLAY_RENDER_MDD_BRIDGE_FAMILY_REVIEW.md` for examples.
 
 IC date/lot codes are not derivable from MPNs. Omit them unless an example is
 explicitly documented as illustrative. Do not add brand logos from memory.
@@ -760,3 +791,25 @@ manufacturer, voltage or tolerance are the generic item's selected ratings.
 The 1210 68 µF entry is one such case: see
 `component_records/DISPLAY_RENDER_TDK_1210_68UF_EXAMPLE_EVIDENCE.md` before
 using its recipe. Preserve the source discrepancy until independently resolved.
+
+## TO-220 display pose
+
+For the ST L78/L79 regulators, read
+`component_records/DISPLAY_RENDER_ST_L78_L79_TO220_EVIDENCE.md` and check the
+exact orderable before choosing the single- or dual-gauge variant. The reviewed
+KiCad `TO-220-3_Vertical.step` has its marked front facing negative Y. The
+`to220_face_up` display orientation rotates the existing coloured mesh without
+changing the source STEP; the renderer records the original and oriented bounds
+and the adapter hash. It is a display pose, not a footprint change. Check the
+model hash, body face, leads and evidence for every new package instead of
+assuming all TO-220 models use this coordinate system.
+
+The metal tab extends beyond the dark body, so the whole-model centre is not
+the centre of the marking face. The reviewed L78/L79 model uses a -3.52 mm
+X offset after orientation; visually inspect the label on the body in a preview
+and again in the full render. The generic KiCad leads have not been verified
+against the manufacturer's single- or dual-gauge lead geometry, and the
+product-family text is illustrative: disclose both points. The guarded
+`display_render_st_l78_l79_to220_batch.py` checks the selected source identity
+and pilot recipe, but staging is not a substitute for individual review,
+artifact verification and targeted publication.

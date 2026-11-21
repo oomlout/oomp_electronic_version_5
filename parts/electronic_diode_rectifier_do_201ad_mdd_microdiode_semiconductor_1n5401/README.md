@@ -5,7 +5,13 @@
 Diode 1N5401 DO-201AD is an OOMP electronic diode definition. It uses the do 201ad package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
 
 
-![Diode 1N5401 DO-201AD pinout](data/working_svg_square_pins.svg)
+![Diode 1N5401 DO-201AD studio render](data/display_render/render.png)
+
+KiCad DO-201AD model has bent leads at 12.70 mm pitch; manufacturer drawing shows straight leads. Model width is 5.22 mm, within the drawing body diameter range. Source 10 x 5 mm dimensions and missing footprint do not match the manufacturer drawing. Display illustration only; not manufacturer CAD or PCB footprint. 1N5401 is the documented identifier, with MDD logo omitted; actual typography and placement are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Diode_THT.3dshapes/D_DO-201AD_P12.70mm_Horizontal.step)
+
+Model credit: 2017 kicad StepUp. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -83,6 +89,7 @@ Diode 1N5401 DO-201AD is an OOMP electronic diode definition. It uses the do 201
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -116,6 +123,7 @@ Diode 1N5401 DO-201AD is an OOMP electronic diode definition. It uses the do 201
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_diode_rectifier_do_201ad_mdd_microdiode_semiconductor_1n5401.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |

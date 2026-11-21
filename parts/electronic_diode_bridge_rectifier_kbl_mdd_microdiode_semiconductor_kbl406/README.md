@@ -5,7 +5,13 @@
 Diode KBL406 KBL is an OOMP electronic diode definition. It uses the kbl package or form factor. Its nominal drawing size is 28.6 &#x00D7; 7.3 mm. The definition includes 4 documented pins.
 
 
-![Diode KBL406 KBL pinout](data/working_svg_square_pins.svg)
+![Diode KBL406 KBL studio render](data/display_render/render.png)
+
+Generic KiCad KBL model shown with its broad face up; its 19.5 mm body width is at the MDD drawing maximum. Model leads project about 14 mm rather than the drawing minimum 16.4 mm. Source 28.6 x 7.3 x 4.0 mm dimensions differ from the drawing body envelope. Display illustration only; not manufacturer CAD or a PCB footprint. KBL406 is a partial MDD family identifier; the logo is omitted. The +, ~, ~, - layout follows the manufacturer drawing and selected KiCad pad numbering. Typeface, placement and finish are illustrative.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Diode_THT.3dshapes/Diode_Bridge_Vishay_KBL.step)
+
+Model credit: KiCad 3D Model Libraries contributors. CC-BY-SA 4.0 with KiCad library exception.
 
 
 
@@ -95,6 +101,7 @@ Diode KBL406 KBL is an OOMP electronic diode definition. It uses the kbl package
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -128,6 +135,7 @@ Diode KBL406 KBL is an OOMP electronic diode definition. It uses the kbl package
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_diode_bridge_rectifier_kbl_mdd_microdiode_semiconductor_kbl406.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |

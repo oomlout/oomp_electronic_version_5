@@ -1,0 +1,7 @@
+# BOOMELE three-position 2.54 mm header display research
+
+The source record `electronic_connector_header_2_54_mm_pitch_through_hole_3_pin` identifies BOOMELE `2.54-1*3P针`, records 7.62 × 2.48 mm, selects `Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical` and has no local PDF. The [JLCPCB listing for C49257](https://jlcpcb.com/partdetail/C49257) identifies one row of three straight through-hole square pins at 2.54 mm, black insulator, gold-plated brass, 2.5 mm insulation height, 6 mm mating pins and 3 mm tails. This is secondary distributor evidence rather than exact manufacturer CAD; finish and small details are illustrative.
+
+The installed KiCad `Connector_PinHeader_2.54mm.3dshapes/PinHeader_1x03_P2.54mm_Vertical.step` has SHA-256 `b91b4ac5acf1a0d28a676703db972d17b8f11ef26a85b58d60786a69246b921b` and bounds 2.54 × 7.62 × 11.54 mm, with 22 dark-body and 54 gold-coloured terminal faces. Its header credits 2017 kicad StepUp under CC BY-SA 4.0 with the KiCad library exception. Its 2.54 mm body width and height differ from the source width 2.48 mm and the listing's 2.5 mm insulation height. It has 6 mm mating pins and 3 mm tails like the listing. The model is an illustrative generic example, not manufacturer CAD or a verified mechanical footprint.
+
+No PDF was downloaded for this review. The local 10-position BOOMELE record PDF is by a different manufacturer and is not used as BOOMELE evidence.

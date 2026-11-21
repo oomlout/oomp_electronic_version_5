@@ -1,0 +1,5 @@
+# Epson FC-135 32.768 kHz crystal display evidence
+
+The source identifies Seiko Epson Q13FC13500004 and a 32.768 kHz, 12.5 pF two-pad crystal. Its local datasheet, SHA-256 `6473c2f06c482eb2c3f1eaeaad37af139de02669d641de4e6a5cdb2bc703210d`, was visually reviewed. The Epson FC-135 drawing identifies the Q13FC13500004 ordering-code family and shows 3.2 ± 0.1 × 1.5 ± 0.1 × 0.8 ± 0.1 mm dimensions. A top-view illustration shows `C622J`, but the sheet does not establish it as a fixed inscription for every physical part; it is used here only as an illustrative drawing example, with typography and placement approximated.
+
+KiCad `Crystal_SMD_3215-2Pin_3.2x1.5mm.step`, SHA-256 `70191ff5204d0ce50e154f75b1186923e3123cfdb58d647b5cce319de5485701`, is 3.2 × 1.5 × 0.93 mm overall, approximately 0.03 mm above the drawing's maximum height. Its top marking surface, gold-coloured rim, dark base and two underside contacts are distinct model regions. Finishes and exact lettering are illustrative. The image is display only, not manufacturer CAD or a footprint.

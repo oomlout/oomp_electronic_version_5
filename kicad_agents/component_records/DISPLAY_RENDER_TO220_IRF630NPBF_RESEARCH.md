@@ -1,0 +1,5 @@
+# Infineon IRF630NPBF TO-220AB display research
+
+Source `electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_200_volt_9_3_amp_infineon_technologies_irf630npbf` identifies Infineon Technologies IRF630NPBF, TO-220AB and generic 10.0 x 4.4 x 9.2 mm body dimensions. The existing International Rectifier manufacturer PDF SHA-256 `1b3a7635ef73977b3b598e06d094fb390116e748a734d00979fd9dc21383f225` was visually inspected on page 1; it identifies IRF630NPbF and TO-220AB. The cover drawing does not establish exact marking layout or complete marking for the orderable.
+
+Use `IRF630N` as an illustrative device identifier, not a verified complete marking. Typeface, placement, logo and variable lot/date information are unverified. KiCad TO-220-3 model SHA-256 `7cb065d935df5771f0ba6e48ddd180863a121af76483dad7f18e667a7b68204a` is laid face-up for display; its 10.25 x 4.455 x 28.525 mm overall includes leads and differs from source body dimensions. This is display-only, not a verified mechanical model or footprint.
