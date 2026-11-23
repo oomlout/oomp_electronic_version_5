@@ -31,9 +31,6 @@ electrical:
   resistance: 2.7 Ω
   temperature_coefficient: ±250 ppm/°C
   tolerance: ±5%
-file_copy:
-- file_destination: datasheet.pdf
-  file_source: parts_source/electronic_resistor_0402_150000_ohm_5_percent/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: The electronic_resistor_0603_2_7_ohm generic did not exist
     in the evaluated population. Add this missing generic value/package for FH C1186
@@ -42,13 +39,14 @@ jlcpcb_selection:
     and the applicable TCR range; keep C1186's live 50 V rating, below the series
     75 V limit.
   datasheet_pages:
-    document: Fenghua General Thick Film Chip Fixed Resistor series; local family
-      datasheet
+    document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared
+      family copy)
     marking:
-    - 11
-    - 12
+    - 3
     part_number_system:
-    - 1
+    - 2
+    resistance_range_dimensions:
+    - 4
   footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/1538-RS03L2R7JT/C1186
   pcba_min_qty_observed: null
@@ -101,8 +99,6 @@ research_notes:
   lists 50 V and 100 mW, so retain the supplier's 50 V rating.
 - The FH series datasheet gives ±200 or ±250 ppm/°C for 0603 values below 10 Ω at
   ±5% tolerance; C1186's live page specifies ±250 ppm/°C.
-- 'Datasheet correction: the existing linked Fenghua RS family PDF replaces a stale
-  generated UNI-ROYAL copy; page references now match the local Fenghua document.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

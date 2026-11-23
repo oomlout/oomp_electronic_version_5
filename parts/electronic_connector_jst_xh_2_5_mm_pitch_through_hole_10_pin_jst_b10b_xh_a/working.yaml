@@ -101,7 +101,7 @@ oomlout_ai_roboclick_2:
     delete_before_copy: true
     exit_on_missing: true
     file_destination: data/datasheet.pdf
-    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_connector_jst_xh_2_5_mm_pitch_through_hole_10_pin_jst_b10b_xh_a/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_connector_jst_xh_2_5_mm_pitch_housing_1_pin_white_jst_xhp_1/datasheet.pdf
   description: Copy part-specific source files into the working data directory.
   file_test: data/datasheet.pdf
   retries_until_complete: 0
@@ -288,7 +288,7 @@ oomlout_ai_roboclick_5:
           delete_before_copy: true
           exit_on_missing: true
           file_destination: data/datasheet.pdf
-          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_connector_jst_xh_2_5_mm_pitch_through_hole_10_pin_jst_b10b_xh_a/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_connector_jst_xh_2_5_mm_pitch_housing_1_pin_white_jst_xhp_1/datasheet.pdf
         description: Copy part-specific source files into the working data directory.
         file_test: data/datasheet.pdf
         retries_until_complete: 0
@@ -418,6 +418,7 @@ oomlout_ai_roboclick_5:
           contact sheet.
         file_test: data/kicad/contact_sheet.png
         retries_until_complete: 0
+      oomp_datasheet_common_with: electronic_connector_jst_xh_2_5_mm_pitch_housing_1_pin_white_jst_xhp_1
       package_drawing:
         body:
         - 27.4
@@ -935,8 +936,8 @@ oomlout_ai_roboclick_6:
 oomlout_ai_roboclick_7:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml
@@ -945,6 +946,7 @@ oomlout_ai_roboclick_7:
   description: Regenerate the deterministic web.yaml after every other part action.
   file_test: ''
   retries_until_complete: 0
+oomp_datasheet_common_with: electronic_connector_jst_xh_2_5_mm_pitch_housing_1_pin_white_jst_xhp_1
 oomp_key: oomp_electronic_connector_jst_xh_2_5_mm_pitch_through_hole_10_pin_jst_b10b_xh_a
 package_drawing:
   body:

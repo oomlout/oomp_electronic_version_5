@@ -1,13 +1,16 @@
 category: resistor
 category_name: Resistor
-datasheet_url: https://datasheet.lcsc.com/lcsc/Guangdong-Fenghua-Advanced-Tech-RS-06000JT_C115323.pdf
+datasheet_url: ''
 dimension_reference:
-  document: Fenghua RC/RS approval sheet R-6.1 (reviewed online)
-  notes: 1206 nominal body 3.2 × 1.6 × 0.55 mm; E24 markings use three digits.
+  document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared
+    family copy, C1504 provenance)
+  notes: 'Part number system page 2 decodes 1206 / WB = 1/4 W / F = +-1% / 68 kOhm;
+    resistance range page 4 covers the 1206 family; dimension table page 4: 1206 L
+    3.20+-0.15, W 1.60+-0.15, H 0.55+-0.10 mm.'
   pages:
+  - 2
   - 3
   - 4
-  - 7
 dimensions_mm:
   height: 0.55
   length: 3.2
@@ -40,7 +43,10 @@ electrical:
   rated_voltage: 200 V
   resistance: 68 kOhm (68 kOhm)
   temperature_coefficient: +-100 ppm/C
-  tolerance: +-5% (J)
+  tolerance: +-1% (F)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_resistor_1206_68000_ohm/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'No reviewed house preference exists for the generic electronic_resistor_1206_68000_ohm,
     and the E12 grid in working_oomp_populate_resistor.py already generates the 1206
@@ -51,14 +57,14 @@ jlcpcb_selection:
     might suggest 0603, but the live page package field and specification table both
     state 1206, matching the queue description.'
   datasheet_pages:
-    document: Fenghua RC/RS approval sheet R-6.1 (reviewed online)
+    document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared
+      family copy)
     marking:
-    - 7
-    part_number_system:
-    - 4
-    resistance_range_dimensions:
     - 3
-    - 10
+    part_number_system:
+    - 2
+    resistance_range_dimensions:
+    - 4
   footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/1856-RS06K683JT/C1504
   pcba_min_qty_observed: null
@@ -93,6 +99,7 @@ manufacturers:
 name_proper: Resistor 68000 Ohm 1206
 name_readable: Resistor 68000 Ohm 1206
 name_short: Resistor 68000 Ohm 1206
+oomp_datasheet_common_with: electronic_resistor_0402_0_ohm
 package_name_manufacturer: 1206 (3216 metric)
 part_id: R1
 part_number_jlcpcb: C1504
@@ -116,11 +123,12 @@ pins:
     type: passive
 product_url: https://jlcpcb.com/partdetail/1856-RS06K683JT/C1504
 research_notes:
-- Fenghua RS-06 selected supplier part and JLCPCB ratings identify 5% tolerance; Fenghua
-  R-6.1 decodes J as 5%.
-- Earlier 1% and UNI-ROYAL datasheet statements belonged to a different manufacturer
-  and were removed. The prior datasheet provenance is retained as historical unrelated
-  evidence, not as the selected part datasheet.
+- 'The official JLC page lists Extended FH (Guangdong Fenghua Advanced Tech) RS-06K683JT
+  (C1504): 68 kOhm (68 kOhm), 1/4 W, +-1%, +-100 ppm/C in 1206; identity and ratings
+  observed live at intake 2026-09-28.'
+- 'Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with
+  = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 68 kOhm; the resistance-range
+  table page 4 covers the 1206 family.'
 svg_details:
 - filename_extra: assembly
   make_a4: false
