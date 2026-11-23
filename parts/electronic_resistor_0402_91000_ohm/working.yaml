@@ -30,14 +30,17 @@ bip_39_full_space: obvious toward mind shock permit split shock expose another n
 bip_39_full_underscore: obvious_toward_mind_shock_permit_split_shock_expose_another_nothing_cotton_degree
 category: resistor
 category_name: Resistor
-datasheet_url: https://datasheet.lcsc.com/datasheet/pdf/8d58778925076bf80f4c3e6ed51a56f5.pdf?productCode=C115306
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588899050775326720-C1161.pdf
 dimension_reference:
-  document: Fenghua RC/RS approval sheet R-6.1 (reviewed online)
-  notes: 0402 nominal 1.00 × 0.50 × 0.30 mm, with no marking on the glass side.
+  document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared
+    family copy, C1161 provenance)
+  notes: 'Part number system page 2 decodes 0402 / WG = 1/16 W / F = +-1% / 91 kOhm;
+    resistance range page 4 covers the 0402 family; dimension table page 4: 0402 L
+    1.00+-0.10, W 0.50+-0.05, H 0.35+-0.05 mm; no body marking at 0402 (page 3).'
   pages:
+  - 2
   - 3
   - 4
-  - 7
 dimensions_mm:
   height: 0.35
   length: 1.0
@@ -70,7 +73,10 @@ electrical:
   rated_voltage: 50 V
   resistance: 91 kOhm (91 kOhm)
   temperature_coefficient: +-100 ppm/C
-  tolerance: +-5% (J)
+  tolerance: +-1% (F)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_resistor_0402_91000_ohm/datasheet.pdf
 id: electronic_resistor_0402_91000_ohm
 id_no_class: electronic_resistor_0402_91000_ohm
 id_no_size: electronic_resistor_0402_91000_ohm
@@ -81,14 +87,14 @@ jlcpcb_selection:
     row for C1161, verified as FH RC-02K913JT 91 kΩ ±5%, 62.5 mW, 50 V, ±100 ppm/°C;
     retain ±5% rating and confirm application derating in full integration.
   datasheet_pages:
-    document: Fenghua RC/RS approval sheet R-6.1 (reviewed online)
+    document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared
+      family copy)
     marking:
-    - 7
-    part_number_system:
-    - 4
-    resistance_range_dimensions:
     - 3
-    - 10
+    part_number_system:
+    - 2
+    resistance_range_dimensions:
+    - 4
   footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/1513-RC02K913JT/C1161
   pcba_min_qty_observed: null
@@ -153,6 +159,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_resistor_0402_0_ohm/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -242,7 +258,7 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
   actions:
   - command: run_python
     description: Render this part's KiCad symbol and footprints to SVG and PNG, and
@@ -256,7 +272,7 @@ oomlout_ai_roboclick_3:
     sheet.
   file_test: data/kicad/contact_sheet.png
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -264,14 +280,18 @@ oomlout_ai_roboclick_4:
     dict_data:
       category: resistor
       category_name: Resistor
-      datasheet_url: https://datasheet.lcsc.com/datasheet/pdf/8d58778925076bf80f4c3e6ed51a56f5.pdf?productCode=C115306
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588899050775326720-C1161.pdf
       dimension_reference:
-        document: Fenghua RC/RS approval sheet R-6.1 (reviewed online)
-        notes: 0402 nominal 1.00 × 0.50 × 0.30 mm, with no marking on the glass side.
+        document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3
+          (shared family copy, C1161 provenance)
+        notes: 'Part number system page 2 decodes 0402 / WG = 1/16 W / F = +-1% /
+          91 kOhm; resistance range page 4 covers the 0402 family; dimension table
+          page 4: 0402 L 1.00+-0.10, W 0.50+-0.05, H 0.35+-0.05 mm; no body marking
+          at 0402 (page 3).'
         pages:
+        - 2
         - 3
         - 4
-        - 7
       dimensions_mm:
         height: 0.35
         length: 1.0
@@ -304,21 +324,24 @@ oomlout_ai_roboclick_4:
         rated_voltage: 50 V
         resistance: 91 kOhm (91 kOhm)
         temperature_coefficient: +-100 ppm/C
-        tolerance: +-5% (J)
+        tolerance: +-1% (F)
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_resistor_0402_91000_ohm/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: No existing electronic_resistor_0402_91000_ohm 0402 generic
           was present in the evaluated population. Added this missing generic value/package
           row for C1161, verified as FH RC-02K913JT 91 kΩ ±5%, 62.5 mW, 50 V, ±100
           ppm/°C; retain ±5% rating and confirm application derating in full integration.
         datasheet_pages:
-          document: Fenghua RC/RS approval sheet R-6.1 (reviewed online)
+          document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3
+            (shared family copy)
           marking:
-          - 7
-          part_number_system:
-          - 4
-          resistance_range_dimensions:
           - 3
-          - 10
+          part_number_system:
+          - 2
+          resistance_range_dimensions:
+          - 4
         footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/1513-RC02K913JT/C1161
         pcba_min_qty_observed: null
@@ -368,6 +391,16 @@ oomlout_ai_roboclick_4:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_resistor_0402_0_ohm/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -458,7 +491,7 @@ oomlout_ai_roboclick_4:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
-      oomlout_ai_roboclick_3:
+      oomlout_ai_roboclick_4:
         actions:
         - command: run_python
           description: Render this part's KiCad symbol and footprints to SVG and PNG,
@@ -472,6 +505,7 @@ oomlout_ai_roboclick_4:
           contact sheet.
         file_test: data/kicad/contact_sheet.png
         retries_until_complete: 0
+      oomp_datasheet_common_with: electronic_resistor_0402_0_ohm
       package_name_manufacturer: 0402 (1005 metric)
       part_id: R1
       part_number_jlcpcb: C1161
@@ -550,7 +584,7 @@ oomlout_ai_roboclick_4:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -612,13 +646,12 @@ oomlout_ai_roboclick_4:
       project_usage_url: https://oomlout.github.io/oomp_electronic_project_version_5/usage/index.html#electronic_resistor_0402_91000_ohm
       regenerate_pngs: false
       research_notes:
-      - Fenghua product listing https://fhcomp.com/en/product_info/?prod_code=RC-02K913JT
-        and JLCPCB identify RC-02K913JT as a 5% 0402 part.
-      - Prior 1% and UNI-ROYAL datasheet notes applied to a different manufacturer
-        and were removed; original source records are retained in the display-render
-        research backup.
-      - The Fenghua approval sheet was reviewed online; any retained local distributor
-        PDF has its own acquisition provenance.
+      - 'The official JLC page lists Extended FH (Guangdong Fenghua Advanced Tech)
+        RC-02K913JT (C1161): 91 kOhm (91 kOhm), 1/16 W, +-1%, +-100 ppm/C in 0402;
+        identity and ratings observed live at intake 2026-09-27.'
+      - 'Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with
+        = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 91 kOhm; the
+        resistance-range table page 4 covers the 0402 family.'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -795,7 +828,7 @@ oomlout_ai_roboclick_4:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_5:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Read current component details and prepare drawer labels; remove
@@ -821,11 +854,11 @@ oomlout_ai_roboclick_5:
     file_template: C:\gh\oomp_electronic_version_5\source_file\template_jinja\label_drawer\1_5x1.svg.j2
   always_run_on_regeneration: true
   file_test: ''
-oomlout_ai_roboclick_6:
+oomlout_ai_roboclick_7:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml
@@ -834,6 +867,7 @@ oomlout_ai_roboclick_6:
   description: Regenerate the deterministic web.yaml after every other part action.
   file_test: ''
   retries_until_complete: 0
+oomp_datasheet_common_with: electronic_resistor_0402_0_ohm
 oomp_key: oomp_electronic_resistor_0402_91000_ohm
 package_name_manufacturer: 0402 (1005 metric)
 part_id: R1
@@ -913,7 +947,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -975,12 +1009,12 @@ product_url: https://jlcpcb.com/partdetail/1513-RC02K913JT/C1161
 project_usage_url: https://oomlout.github.io/oomp_electronic_project_version_5/usage/index.html#electronic_resistor_0402_91000_ohm
 regenerate_pngs: false
 research_notes:
-- Fenghua product listing https://fhcomp.com/en/product_info/?prod_code=RC-02K913JT
-  and JLCPCB identify RC-02K913JT as a 5% 0402 part.
-- Prior 1% and UNI-ROYAL datasheet notes applied to a different manufacturer and were
-  removed; original source records are retained in the display-render research backup.
-- The Fenghua approval sheet was reviewed online; any retained local distributor PDF
-  has its own acquisition provenance.
+- 'The official JLC page lists Extended FH (Guangdong Fenghua Advanced Tech) RC-02K913JT
+  (C1161): 91 kOhm (91 kOhm), 1/16 W, +-1%, +-100 ppm/C in 0402; identity and ratings
+  observed live at intake 2026-09-27.'
+- 'Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with
+  = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 91 kOhm; the resistance-range
+  table page 4 covers the 0402 family.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

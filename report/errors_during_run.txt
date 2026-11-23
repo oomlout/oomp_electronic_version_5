@@ -52714,3 +52714,21 @@ Traceback (most recent call last):
     raise ValueError("Provide canonical OOMP part IDs.")
 ValueError: Provide canonical OOMP part IDs.
 
+[2026-11-23T15:53:22.241042+00:00] working_action
+Error type: OSError
+Error message: [Errno 22] Invalid argument: 'parts\\electronic_connector_jst_ph_2_mm_pitch_through_hole_right_angle_16_pin_jst_s16b_ph_k_s\\working.yaml'
+Traceback:
+Traceback (most recent call last):
+  File "C:\gh\oomp_electronic_version_5\working.py", line 98, in run
+    working_action.main(**kwargs_2)
+  File "C:\gh\oomp_electronic_version_5\working_action.py", line 42, in main
+    working_oomp.main(**kwargs)
+  File "C:\gh\oomp_electronic_version_5\working_oomp.py", line 428, in main
+    load_parts(**kwargs)
+  File "C:\gh\oomp_electronic_version_5\working_oomp.py", line 434, in load_parts
+    create_generic(**kwargs)
+  File "C:\gh\oomp_electronic_version_5\working_oomp.py", line 799, in create_generic
+    with open(generated_working_file, "w", encoding="utf-8") as working_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument: 'parts\\electronic_connector_jst_ph_2_mm_pitch_through_hole_right_angle_16_pin_jst_s16b_ph_k_s\\working.yaml'
+

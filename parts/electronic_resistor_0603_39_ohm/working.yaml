@@ -483,8 +483,6 @@ oomlout_ai_roboclick_4:
       research_notes:
       - 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query
         "0603 39Ω" (143,600 in stock at capture).'
-      - '2026-11-17: corrected truncated manufacturer part number TS to the full FOJAN
-        identifier verified on the LCSC listing: https://www.lcsc.com/product-image/C2907161.html'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -690,8 +688,8 @@ oomlout_ai_roboclick_5:
 oomlout_ai_roboclick_6:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml
@@ -819,8 +817,6 @@ regenerate_pngs: false
 research_notes:
 - 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query "0603
   39Ω" (143,600 in stock at capture).'
-- '2026-11-17: corrected truncated manufacturer part number TS to the full FOJAN identifier
-  verified on the LCSC listing: https://www.lcsc.com/product-image/C2907161.html'
 svg_details:
 - filename_extra: assembly
   make_a4: false
