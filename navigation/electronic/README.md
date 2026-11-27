@@ -1,7 +1,7 @@
 # Electronic
 
 [Up one level](../README.md)
-This category contains 3012 parts in total.
+This category contains 3067 parts in total.
 
 ## Categories
 

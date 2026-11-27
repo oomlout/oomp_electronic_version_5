@@ -1,6 +1,8 @@
 # Adding components
 
 Edit population data here and run `python action_generate.py --filter <oomp-id>`.
+Add `--exact` when supplying one full ID to limit source population and
+generation to that record. The relevant navigation pages are still refreshed.
 Boards live in the [project repository](https://github.com/oomlout/oomp_electronic_project_version_5).
 
 For display-only studio images using KiCad geometry and verified package markings,

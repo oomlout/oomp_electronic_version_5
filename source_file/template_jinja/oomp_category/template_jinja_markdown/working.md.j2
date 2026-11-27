@@ -42,9 +42,21 @@ Model credit: {{ p.display_render.model_credit }}. {{ p.display_render.license }
 
 ![{{ p.name_short }} 3D reference render]({{ p.model_3d.render }})
 
-[Download STEP]({{ p.model_3d.step }}) · [Model source and limitations]({{ p.model_3d.provenance }})
+{% if p.model_3d.step is defined %}[Download STEP]({{ p.model_3d.step }}) · {% endif %}{% if p.model_3d.rear_render is defined %}[Rear render]({{ p.model_3d.rear_render }}) · {% endif %}[Model source and limitations]({{ p.model_3d.provenance }})
 
+{% if p.model_3d.step is defined %}
 OOMP model based on the manufacturer drawing, with nominal outer dimensions and simplified internal geometry. Use it for layout and illustration.
+{% else %}
+Display model based on the supplier drawing, with nominal outer dimensions and simplified thread and contact geometry.
+{% endif %}
+
+{% endif %}
+{% if p.mechanical_drawing is defined %}
+## Mechanical drawing
+
+![{{ p.name_short }} mechanical drawing]({{ p.mechanical_drawing.png }})
+
+[Download drawing SVG]({{ p.mechanical_drawing.svg }})
 
 {% endif %}
 {% if p.connector_details is defined and p.connector_details %}
@@ -115,6 +127,8 @@ OOMP model based on the manufacturer drawing, with nominal outer dimensions and 
 ## Datasheet
 
 [View the datasheet]({{ p.part_page.datasheet_path }})
+{% if p.supplier_page_capture is defined %} · [Supplier page capture]({{ p.supplier_page_capture }})
+{% endif %}
 {% if p.datasheet_note is defined and p.datasheet_note %}
 
 {{ p.datasheet_note }}

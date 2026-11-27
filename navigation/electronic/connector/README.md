@@ -1,7 +1,7 @@
 # Electronic / Connector
 
 [Up one level](../README.md)
-This category contains 501 parts in total.
+This category contains 556 parts in total.
 
 ## Categories
 
@@ -11,6 +11,8 @@ This category contains 501 parts in total.
 - [Easyc](easyc/README.md)
 - [Gnss Header](gnss_header/README.md)
 - [Header](header/README.md)
+- [Header Long](header_long/README.md)
+- [Header Oobb](header_oobb/README.md)
 - [Housing Contact](housing_contact/README.md)
 - [IC Socket](ic_socket/README.md)
 - [Idc Box Header](idc_box_header/README.md)

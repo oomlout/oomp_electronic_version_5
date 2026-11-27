@@ -278,11 +278,14 @@ def build_part(part_directory, masters=None, candidates=None):
         return None
     if part.get('kicad', {}).get('applicability') == 'not_applicable':
         selection = part['kicad']
-        if (part.get('taxonomy_2') != 'connector' or part.get('taxonomy_5') not in ('crimp', 'housing')
+        cable_item = part.get('taxonomy_5') in ('crimp', 'housing')
+        panel_socket = (part.get('taxonomy_5') == 'panel_mount'
+                        and part.get('component_role') == 'panel_mount_socket')
+        if (part.get('taxonomy_2') != 'connector' or not (cable_item or panel_socket)
                 or part.get('pcb_mountable') is not False or not selection.get('reason')):
-            raise ValueError('KiCad not_applicable requires an explicitly non-PCB crimp contact/housing and a reason.')
+            raise ValueError('KiCad not_applicable requires an explicitly non-PCB cable item or panel socket and a reason.')
         if any(selection.get(key) for key in ('symbol', 'machine_solder', 'hand_solder')):
-            raise ValueError('A non-PCB cable item cannot also select PCB library assets.')
+            raise ValueError('A non-PCB connector cannot also select PCB library assets.')
         output = directory / 'data/kicad'
         previous = output / 'manifest.json'
         if previous.is_file() and json.loads(previous.read_text(encoding='utf-8')).get('assets'):

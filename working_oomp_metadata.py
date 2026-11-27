@@ -221,7 +221,7 @@ def add_distributor_links(part):
         part_number = str(part_number or "").strip()
         if part_number == "":
             return
-        if part_number.isascii() and part_number.isdigit():
+        if key != "switch_electronics" and part_number.isascii() and part_number.isdigit():
             part_number = "C" + part_number
         identity = (key, part_number.upper())
         product_name = str(product_name or "").strip()
@@ -262,6 +262,10 @@ def add_distributor_links(part):
                 option_url = url_template.format(part_number=option_number)
             add_distributor(distributor_key, distributor_title, option_number, option_url,
                             option.get("product_name", ""))
+    switch_code = part.get("part_number_switch_electronics")
+    switch_url = part.get("part_number_switch_electronics_url")
+    if switch_code and switch_url:
+        add_distributor("switch_electronics", "Switch Electronics", switch_code, switch_url)
     part["distributors"] = distributors
 
     manufacturers = []

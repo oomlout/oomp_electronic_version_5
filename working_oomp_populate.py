@@ -90,6 +90,11 @@ def main(**kwargs):
                 option["svg_details"] = svg_details
 
     #load the options into full list
+    exact_part_id = kwargs.get("exact_part_id")
+    if exact_part_id:
+        options = [option for option in options if build_oomp_id(option) == exact_part_id]
+        if len(options) != 1:
+            raise ValueError(f"Expected one population record for {exact_part_id}; found {len(options)}")
     extras = []
     for option in options:
         extra = {}
@@ -115,6 +120,10 @@ def main(**kwargs):
     import working_oomp_metadata
     working_oomp_metadata.add_readable_metadata(extras)
 
+
+    if exact_part_id:
+        write_extras(extras)
+        return
 
     # write_extras rewrites each working.yaml from scratch, which drops the
     # oomp_datasheet_common_with pointer recorded by datasheet deduplication.

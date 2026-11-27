@@ -1,5 +1,7 @@
 def main(**kwargs):
     options = kwargs.get("options", [])
+    from working_oomp_populate_connector_dc_022b import NAME, TAXONOMY
+    options.append(dict(TAXONOMY, name_short=NAME))
     from kicad_agents.header_oobb_3d import VARIANTS, attach_assets, variant_option, stock_id, long_option
     options.extend(variant_option(kind) for kind in VARIANTS)
     options.extend(long_option(count) for count in range(1, 41))

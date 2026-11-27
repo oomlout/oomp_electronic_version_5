@@ -413,6 +413,8 @@ def _wire_screw_terminal_blocks(extras_dict):
 
 def main(**kwargs):
     extras_dict = kwargs.get("extras_dict", {})
+    from working_oomp_populate_connector_dc_022b import apply_extras as apply_dc_022b_extras
+    apply_dc_022b_extras(extras_dict)
 
     # The family table supplies the identity and KiCad library match. Its
     # legacy right-angle/dual-row geometry is replaced here with the current
